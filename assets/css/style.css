@@ -493,8 +493,7 @@ canvas {
     font-weight: 500;
 }
 .nav-uppercase .navbar-nav .nav-link {
-    font-size: 0.7rem;
-    text-transform: uppercase;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
 }
 .dropdown-menu {
