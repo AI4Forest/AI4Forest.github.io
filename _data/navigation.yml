@@ -3,69 +3,11 @@ main_menu:
   - text: "AI4Forest"
     url: "/"
     menu_type: "primary"
-    submenu:
-
-      #- text: "Digital Startup"
-      #  url: "/"
-
-      #- text: "Saas Landing"
-      #  url: "/index-2"
-
-      #- text: "Design Agency"
-      #  url: "/index-5"
-
-      #- text: "Creative Landing"
-      #  url: "/index-7"
-
-      #- text: "Marketing Startup"
-      #  url: "/index-8"
-
-      #- text: "Digital Agency"
-      #  url: "/index-9"
-
-      #- text: "Creative Agency"
-      #  url: "/index-13"
-
-      #- text: "Creative Onepage"
-      #  url: "/index-16"
-
-      #- text: "Marketing Company"
-      #  url: "/index-17"
-
-      #- text: "Startup Business"
-      #  url: "/index-18"
-
-
-
-
-
- ##- text: "Pages"
-  ##  url: "/"
-   # menu_type: "dropdown"
-  #  has_submenu: "true"
-    
-  #  label_two:
- 
-  #    - sub_menu_text: "About Us"
-  #      sub_menu:
-
-  #        - text: "About 04"
-  #          url: "/about/about-4"
-      
-
-  #    - sub_menu_text: "Contact"
-  #     sub_menu:
-
-
-  #        - text: "Contact 04"
-  #          url: "/contact/contact-4"
 
 
   - text: "Researchers"
     url: "/elements/team"
     menu_type: "primary"
-
-
 
 
   - text: "Publications"
