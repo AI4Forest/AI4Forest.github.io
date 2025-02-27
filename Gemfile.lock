@@ -10,11 +10,15 @@ GEM
   specs:
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.9)
     colorator (1.1.0)
     concurrent-ruby (1.3.5)
+    csv (3.3.2)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
+    ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
     http_parser.rb (0.8.0)
@@ -86,9 +90,13 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  arm64-darwin-24
   x64-mingw-ucrt
 
 DEPENDENCIES
+  base64
+  bigdecimal
+  csv
   eventmachine (= 1.2.7)!
   jekyll (~> 4.3.4)
   jekyll-archives
