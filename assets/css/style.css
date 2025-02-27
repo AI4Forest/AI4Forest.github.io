@@ -1439,10 +1439,25 @@ footer.dark-wrapper,
 /*  13. IMAGE BACKGROUND WRAPPER
 /*-----------------------------------------------------------------------------------*/
 .image-wrapper {
-    background: no-repeat center center;
-    background-size: cover;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    width: 100%;
 }
+
+.page-title-wrapper.image-wrapper {
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.page-title-wrapper.image-wrapper .container {
+    position: relative;
+    z-index: 2;
+}
+
 .image-wrapper:not(.mobile) {
     background-attachment: fixed !important
 }
