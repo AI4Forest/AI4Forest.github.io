@@ -14,4 +14,8 @@ main_menu:
     url: "/blogs/index"
     menu_type: "primary"
 
+  - text: "Announcements"
+    url: "elements/open-positions.html"
+    menu_type: "primary"
+
 
