@@ -9,12 +9,36 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-archives
 
+source: src
+destination: _site
+
+exclude:
+  - 'node_modules'
+  - 'templates'
+
+
 collections:
   authors:
     output: true
   shop_items:
     output: true
     permalink: /shop/:name
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page_2"
+      permalink: "/:basename/"
+  - scope:
+      path: "index.html"
+    values:
+      permalink: "/"
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
@@ -35,7 +59,7 @@ pagination:
   per_page: 5
 
   # The permalink structure for the paginated pages (this can be any level deep)
-  permalink: '/page/:num/' # Pages are index.html inside this folder (default)
+  permalink: '/pages/:num/' # Pages are index.html inside this folder (default)
   #permalink: '/page/:num.html' # Pages are simple html files 
   #permalink: '/page/:num' # Pages are html files, linked jekyll extensionless permalink style.
   # Pagination Settings
