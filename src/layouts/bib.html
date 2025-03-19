@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<div class="publications">
+  {% for pub in site.data.publications %}
+    <div class="publication">
+      <h3>{{ pub.title }}</h3>
+      <p class="authors">
+        {% for author in pub.authors %}
+          {% if author == pub.authors.last %}
+            {{ author }}
+          {% else %}
+            {{ author }},
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p class="venue">
+        {% if pub.journal %}
+          {{ pub.journal }}
+        {% elsif pub.booktitle %}
+          {{ pub.booktitle }}
+        {% elsif pub.school %}
+          {{ pub.school }}
+        {% endif %}
+      </p>
+      <p class="date">
+        {% if pub.month %}
+          {{ pub.month }}
+        {% endif %}
+        {% if pub.year %}
+          {% if pub.month %}{{ " " }}{% endif %}{{ pub.year }}
+        {% endif %}
+      </p>
+      {% if pub.links %}
+        <div class="links">
+          {% for link in pub.links %}
+            <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if pub.abstract %}
+        <div class="abstract">
+          <p>{{ pub.abstract }}</p>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.publications {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.publication {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.publication h3 {
+  margin: 0;
+  color: #333;
+}
+
+.authors {
+  color: #666;
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.venue {
+  color: #888;
+  margin: 5px 0;
+}
+
+.date {
+  color: #888;
+  margin: 5px 0;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.abstract {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+</style> 

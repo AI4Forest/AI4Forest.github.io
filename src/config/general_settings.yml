@@ -1,7 +1,9 @@
 # General Settings
+#title: "AI4Forest"
+email: ""
+email_2: ""
 description: >- # this means to ignore newlines until "baseurl:"
   AI4Forest is a research project that aims to develop a new generation of AI-based tools for forest management.
 
 address_01: 'Fabian Gieseke, <br>University of Münster<br />'
 copyright_text: "© 2025 AI4Forest. All rights reserved."
-

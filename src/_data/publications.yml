@@ -1,0 +1,37 @@
+- key: example2024
+  title: "Example Paper Title"
+  author_array:
+    - first: "John"
+      last: "Author"
+    - first: "Jane"
+      last: "Smith"
+  journal: "Journal of Examples"
+  year: "2024"
+  month: "March"
+  abstract: "This is an example abstract for the paper."
+  doi: "10.1234/example.2024"
+  url: "https://example.com/paper.pdf"
+  pdf: "https://example.com/paper.pdf"
+  html: "https://example.com/paper.html"
+  arxiv: "2403.12345"
+  bibtex_show: true
+
+- key: example2023
+  title: "Another Example Paper"
+  author_array:
+    - first: "John"
+      last: "Author"
+    - first: "Jane"
+      last: "Smith"
+    - first: "Richard"
+      last: "Doe"
+  journal: "Another Journal"
+  year: "2023"
+  month: "December"
+  abstract: "This is another example abstract."
+  doi: "10.1234/example.2023"
+  url: "https://example.com/paper2.pdf"
+  pdf: "https://example.com/paper2.pdf"
+  html: "https://example.com/paper2.html"
+  arxiv: "2312.12345"
+  bibtex_show: true 

@@ -1,0 +1,5 @@
+  <footer class="{% if include.extra_class %} {{include.extra_class}} {% else %} dark-wrapper inverse-text {% endif %}" style="display: flex; align-items: center; justify-content: center; min-height: 40px;">
+      {% if site.data.general_settings.copyright_text %}
+      <p class="text-center mb-0">{{site.data.general_settings.copyright_text}}</p>
+      {% endif %}
+  </footer>

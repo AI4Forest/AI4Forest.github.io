@@ -8,14 +8,22 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-archives
+  - bibtex
 
 source: src
 destination: _site
 
+# Custom folder paths without underscores
+layouts_dir: layouts
+includes_dir: includes
+posts_dir: posts
+
+# Data files configuration
+data_dir: _data
+
 exclude:
   - 'node_modules'
   - 'templates'
-
 
 collections:
   authors:

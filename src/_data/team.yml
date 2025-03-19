@@ -1,0 +1,297 @@
+coordinators:
+  - first_name: Philippe
+    last_name: Ciais
+    lab_name: "LSCE, Paris Saclay"
+    location: Paris
+    image_file: philippe.jpg
+    website_url: https://scholar.google.com/citations?user=PJhqfAoAAAAJ&hl=fr
+    website_type: google-scholar
+  
+  - first_name: Alexandre
+    last_name: D'Aspremont
+    lab_name: "CNRS, ENS, INRIA"
+    location: Paris
+    image_file: alex.jpg
+    website_url: https://www.di.ens.fr/~aspremon/index.html
+    website_type: link
+    
+  - first_name: Fabian
+    last_name: Gieseke
+    lab_name: University of Münster
+    location: Münster
+    image_file: fabian.jpg
+    website_url: https://www.wi.uni-muenster.de/department/mlde/people/fabian-gieseke
+    website_type: link
+    
+  - first_name: Cornelius
+    last_name: Senf
+    lab_name: TUM
+    location: Munich
+    image_file: cornelius.jpg
+    website_url: "#"
+    website_type: link
+    
+  - first_name: Sebastian
+    last_name: Pokutta
+    lab_name: "Zuse Institute, Berlin"
+    location: Berlin
+    image_file: sebastian_prokutta.jpg
+    website_url: https://scholar.google.com/citations?user=23kB13QAAAAJ&hl=de
+    website_type: google-scholar
+
+researchers:
+  - first_name: Berkant
+    last_name: Turan
+    lab_name: Zuse Institute
+    location: Berlin
+    image_file: philippe.jpg
+    website_url: https://b-turan.github.io/
+    website_type: link
+    
+  - first_name: Max
+    last_name: Zimmer
+    lab_name: Zuse Institute
+    location: Berlin
+    image_file: alex.jpg
+    website_url: https://maxzimmer.org/
+    website_type: link
+    
+  - first_name: Katja
+    last_name: Kowalski
+    lab_name: TUM
+    location: Munich
+    image_file: philippe.jpg
+    website_url: https://scholar.google.de/citations?user=PkNeUkoAAAAJ&hl=de
+    website_type: google-scholar
+
+  - first_name: Srilakshmi
+    last_name: Nagarajan
+    lab_name: TUM
+    location: Munich
+    image_file: alex.jpg
+    website_url: https://scholar.google.com/citations?user=pJBsmEUAAAAJ&hl=en
+    website_type: google-scholar
+    
+  - first_name: Alba
+    last_name: Viana Soto
+    lab_name: TUM
+    location: Munich
+    image_file: fabian.jpg
+    website_url: https://scholar.google.es/citations?user=c1LP1CcAAAAJ&hl=es
+    website_type: google-scholar
+    
+  - first_name: Oleg
+    last_name: Zheleznyy
+    lab_name: TUM
+    location: Munich
+    image_file: cornelius.jpg
+    website_url: https://scholar.google.com/citations?user=EobRWZgAAAAJ
+    website_type: google-scholar
+    
+  - first_name: Sugandha
+    last_name: Arora
+    lab_name: University of Münster
+    location: Münster
+    image_file: philippe.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/sugandha-sugandha
+    website_type: link
+    
+  - first_name: Nina
+    last_name: Herrmann
+    lab_name: University of Münster
+    location: Münster
+    image_file: alex.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/nina-herrmann-1
+    website_type: link
+    
+  - first_name: Una
+    last_name: Kelly
+    lab_name: University of Münster
+    location: Münster
+    image_file: fabian.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/una-kelly
+    website_type: link
+    
+  - first_name: Julian
+    last_name: Kranz
+    lab_name: University of Münster
+    location: Münster
+    image_file: cornelius.jpg
+    website_url: "#"
+    website_type: link
+    
+  - first_name: Jorunn
+    last_name: Mense
+    lab_name: University of Münster
+    location: Münster
+    image_file: sebastian_prokutta.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/jorunn-anna-mense
+    website_type: link
+    
+  - first_name: Karsten
+    last_name: Schrödter
+    lab_name: University of Münster
+    location: Münster
+    image_file: alex.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/karsten-schroedter
+    website_type: link
+    
+  - first_name: Jan
+    last_name: Pauls
+    lab_name: University of Münster
+    location: Münster
+    image_file: philippe.jpg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/jan-pauls
+    website_type: link
+    
+  - first_name: Yasmine
+    last_name: Badrane
+    lab_name: LSCE
+    location: Paris
+    image_file: sebastian_prokutta.jpg
+    website_url: "#"
+    website_type: link
+    
+  - first_name: Sélim
+    last_name: Behloul
+    lab_name: LSCE/IGN
+    location: Paris
+    image_file: sebastian_prokutta.jpg
+    website_url: https://fr.linkedin.com/in/s%C3%A9lim-behloul-454877218
+    website_type: link
+    
+  - first_name: Gabriel
+    last_name: Belouze
+    lab_name: "LSCE, Paris Saclay"
+    location: Paris
+    image_file: philippe.jpg
+    website_url: https://gabriel.belouze.com/
+    website_type: link
+    
+  - first_name: Nikola
+    last_name: Besic
+    lab_name: IGN
+    location: Paris
+    image_file: alex.jpg
+    website_url: https://scholar.google.fr/citations?user=gztS0AIAAAAJ&hl=fr
+    website_type: google-scholar
+    
+  - first_name: Thomas
+    last_name: Boudras
+    lab_name: LSCE
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://fr.linkedin.com/in/thomas-boudras
+    website_type: link
+    
+  - first_name: Sarah
+    last_name: Brood
+    lab_name: ENS/LSCE
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://github.com/sbrood
+    website_type: github
+    
+  - first_name: Arthur
+    last_name: Calvi
+    lab_name: INRIA
+    location: Paris
+    image_file: fabian.jpg
+    website_url: https://arthurcalvi.github.io/
+    website_type: link
+    
+  - first_name: Ibrahim
+    last_name: Fayad
+    lab_name: LSCE/CEA
+    location: Paris
+    image_file: philippe.jpg
+    website_url: https://scholar.google.com/citations?user=71-hqUwAAAAJ&hl=en
+    website_type: google-scholar
+    
+  - first_name: Clement
+    last_name: Goldmann
+    lab_name: IGN
+    location: Paris
+    image_file: alex.jpg
+    website_url: https://fr.linkedin.com/in/cl%C3%A9ment-goldmann
+    website_type: link
+    
+  - first_name: Sami
+    last_name: Jouaber
+    lab_name: ENS/LSCE
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://github.com/sbrood
+    website_type: github
+    
+  - first_name: Alvin
+    last_name: Opler
+    lab_name: IPSL
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://fr.linkedin.com/in/alvin-opler-303b45212
+    website_type: link
+    
+  - first_name: Agnès
+    last_name: Pellissier-Tanon
+    lab_name: LSCE
+    location: Paris
+    image_file: fabian.jpg
+    website_url: https://scholar.google.com/citations?user=-xnqFxcAAAAJ&hl=fr
+    website_type: google-scholar
+    
+  - first_name: Francois
+    last_name: Ritter
+    lab_name: LSCE/CEA
+    location: Paris
+    image_file: philippe.jpg
+    website_url: https://scholar.google.com/citations?user=2oWAJU4AAAAJ&hl=fr
+    website_type: google-scholar
+    
+  - first_name: Martin
+    last_name: Schwartz
+    lab_name: IGN
+    location: Paris
+    image_file: alex.jpg
+    website_url: https://scholar.google.fr/citations?user=myVMGXUAAAAJ&hl=fr
+    website_type: google-scholar
+    
+  - first_name: Yang
+    last_name: Su
+    lab_name: INRAE
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://scholar.google.com/citations?user=Dn2gnHYAAAAJ&hl=zh-CN
+    website_type: google-scholar
+    
+  - first_name: David
+    last_name: Purnell
+    lab_name: LSCE
+    location: Paris
+    image_file: alex.jpg
+    website_url: https://scholar.google.ca/citations?user=Zt-ozTAAAAAJ&hl=en
+    website_type: google-scholar
+    
+  - first_name: Liang
+    last_name: Wan
+    lab_name: INRAE
+    location: Paris
+    image_file: cornelius.jpg
+    website_url: https://www.lsce.ipsl.fr/en/pisp/liang-wan/
+    website_type: link
+    
+  - first_name: Yidi
+    last_name: Xu
+    lab_name: LSCE
+    location: Paris
+    image_file: fabian.jpg
+    website_url: https://scholar.google.com/citations?user=62j-dqgAAAAJ&hl=zh-CN
+    website_type: google-scholar
+    
+  - first_name: Chuanlong
+    last_name: Zhou
+    lab_name: LSCE/CEA
+    location: Paris
+    image_file: philippe.jpg
+    website_url: https://scholar.google.com/citations?user=I1xZXuEAAAAJ&hl=en
+    website_type: google-scholar 
