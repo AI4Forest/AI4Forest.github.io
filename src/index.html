@@ -11,6 +11,43 @@ hero_area:
   sub_title: ""
   btn_text: "See Projects"
   btn_url: "#"
+  btn2_text: "See People"
+  btn2_url: "/researchers"
+  logo_rows:
+    - title: "Institutions"
+      logos:
+        - title: "ENS"
+          image: "/assets/images/logos/ENS.jpg"
+          url: "https://www.ens.psl.eu/"
+          custom_style: "max-height: 105px; width: auto;"
+        - title: "LSCE"
+          image: "/assets/images/logos/LSCE.jpg"
+          url: "https://www.lsce.ipsl.fr/"
+          custom_style: "max-height: 100px; width: auto;"
+        - title: "TUM"
+          image: "/assets/images/logos/TUM.png"
+          url: "https://www.ls.tum.de/en/ls/home/"
+          custom_style: "max-height: 60px; width: auto;"
+          wide: true
+        - title: "WWU"
+          image: "/assets/images/logos/WWU.jpg"
+          url: "https://www.uni-muenster.de/de/"
+          custom_style: "max-height: 130px; width: auto;"
+          wide: true
+        - title: "ZIB"
+          image: "/assets/images/logos/ZIB.png"
+          url: "https://www.zib.de/"
+          custom_style: "max-height: 80px; width: auto;"
+    - title: "Grant Providers"
+      logos:
+        - title: "ANR"
+          image: "/assets/images/logos/ANR.jpg"
+          url: "https://anr.fr/"
+          custom_style: "max-height: 130px; width: auto;"
+        - title: "german one"
+          image: "/assets/images/logos/ANR.jpg"
+          url: "#"
+          custom_style: "max-height: 90px; width: auto;"
 
 about_area: 
   enable: true
@@ -269,57 +306,194 @@ contact_area:
 
 {% include header.html container_class="container" extra_class="absolute transparent inverse-text navbar-hover-opacity navbar-expand-lg" light_logo= "true"%}
 {% if page.hero_area.enable %}
-<div class="wrapper light-wrapper">
-  <div class="rev_slider_wrapper fullscreen-container">
-    <div id="slider8" class="rev_slider fullscreenbanner" data-version="5.4.7">
-      <ul>
-        <li data-transition="fade" data-thumb="">
-          <img src="{{page.hero_area.bg_image}}" alt="{{page.hero_area.title}}"/>
-          <div class="tp-caption font-weight-600 color-white text-center" 
-          data-x="center" 
-          data-y="middle" 
-          data-voffset="['-75','-75','-65','-95']" 
-          data-fontsize="['50','50','35','30']" 
-          data-lineheight="['65','65','50','45']" 
-          data-width="['1000','1000','600','340']" 
-          data-textalign="['center','center','center','center']" 
-          data-whitespace="['normal','normal','normal','normal']" 
-          data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" 
-          data-responsive="on" 
-          data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.title}}  
-          </div>
-          <div class="tp-caption font-weight-400 color-white text-center" 
-          data-x="center" data-y="middle" 
-          data-voffset="['0','0','0','0']" 
-          data-fontsize="['26','26','26','20']" 
-          data-lineheight="['36','36','36','30']" 
-          data-width="['1000','1000','600','340']" 
-          data-textalign="['center','center','center','center']" 
-          data-whitespace="['normal','normal','normal','normal']"
-          data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-          data-responsive="on" 
-          data-responsive_offset="on" 
-          style="z-index: 9;">{{page.hero_area.sub_title}}
-          </div>
-          <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
-               data-x="center" 
-               data-y="middle" 
-               data-voffset="['85','85','85','85']" 
-               data-width="['auto','auto','auto','auto']" 
-               data-textAlign="['center','center','center','center']" 
-               data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
-               data-responsive="on" 
-               data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.btn_url}}"> {{page.hero_area.btn_text}}
-          </a>
-        </li>
-      </ul>
-      <div class="tp-bannertimer tp-bottom"></div>
+<style>
+  /* Set the entire hero container to full viewport height */
+  .hero-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Top section with image - 65% of viewport */
+  .hero-image-section {
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Bottom section with logos - 35% of viewport */
+  .hero-white-section {
+    height: 35vh;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+  
+  /* Ensure the slider fits perfectly in the top section */
+  .rev_slider_wrapper.fullscreen-container {
+    height: 65vh !important;
+  }
+
+  #slider8 {
+    height: 65vh !important;
+    max-height: 65vh !important;
+  }
+  
+  #slider8 img {
+    object-fit: cover;
+    height: 65vh !important;
+  }
+  
+  /* Style the logo rows */
+  .logo-row:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* Make logo section titles more prominent but compact */
+  .logo-row h4 {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Make logos container more compact */
+  .logo-row .row {
+    margin-bottom: 0;
+  }
+  
+  /* Special handling for wider logos */
+  .logo-wide img {
+    max-width: none !important;
+  }
+
+  /* Better logo distribution */
+  .logo-row .d-flex {
+    margin: 0 -15px;
+  }
+  
+  .logo-item {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 20%;
+    min-width: 120px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Center logos for Grant Providers section */
+  .logo-row:nth-child(2) .d-flex {
+    justify-content: center !important;
+  }
+  
+  .logo-row:nth-child(2) .logo-item {
+    width: auto;
+    max-width: 250px;
+    margin: 0 25px;
+  }
+  
+  @media (max-width: 768px) {
+    .logo-item {
+      width: 33.333%;
+    }
+  }
+</style>
+
+<!-- Full height hero container -->
+<div class="hero-container">
+  <!-- Top section with hero image - 75% -->
+  <div class="hero-image-section">
+    <div class="rev_slider_wrapper fullscreen-container">
+      <div id="slider8" class="rev_slider fullscreenbanner" data-version="5.4.7">
+        <ul>
+          <li data-transition="fade" data-thumb="">
+            <img src="{{page.hero_area.bg_image}}" alt="{{page.hero_area.title}}"/>
+            <div class="tp-caption font-weight-600 color-white text-center" 
+            data-x="center" 
+            data-y="middle" 
+            data-voffset="['-75','-75','-65','-95']" 
+            data-fontsize="['50','50','35','30']" 
+            data-lineheight="['65','65','50','45']" 
+            data-width="['1000','1000','600','340']" 
+            data-textalign="['center','center','center','center']" 
+            data-whitespace="['normal','normal','normal','normal']" 
+            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" 
+            data-responsive="on" 
+            data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.title}}  
+            </div>
+            <div class="tp-caption font-weight-400 color-white text-center" 
+            data-x="center" data-y="middle" 
+            data-voffset="['0','0','0','0']" 
+            data-fontsize="['26','26','26','20']" 
+            data-lineheight="['36','36','36','30']" 
+            data-width="['1000','1000','600','340']" 
+            data-textalign="['center','center','center','center']" 
+            data-whitespace="['normal','normal','normal','normal']"
+            data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+            data-responsive="on" 
+            data-responsive_offset="on" 
+            style="z-index: 9;">{{page.hero_area.sub_title}}
+            </div>
+            <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
+                data-x="center" 
+                data-y="middle" 
+                data-voffset="['85','85','85','85']" 
+                data-hoffset="['-100','-100','-80','-60']"
+                data-width="['auto','auto','auto','auto']" 
+                data-textAlign="['center','center','center','center']" 
+                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+                data-responsive="on" 
+                data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.btn_url}}"> {{page.hero_area.btn_text}}
+            </a>
+            <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
+                data-x="center" 
+                data-y="middle" 
+                data-voffset="['85','85','85','85']" 
+                data-hoffset="['100','100','80','60']"
+                data-width="['auto','auto','auto','auto']" 
+                data-textAlign="['center','center','center','center']" 
+                data-frames='[{"delay":1700,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+                data-responsive="on" 
+                data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.btn2_url}}"> {{page.hero_area.btn2_text}}
+            </a>
+          </li>
+        </ul>
+        <div class="tp-bannertimer tp-bottom"></div>
+      </div>
+      <!-- /.rev_slider -->
     </div>
-    <!-- /.rev_slider -->
+    <!-- /.rev_slider_wrapper -->
   </div>
-  <!-- /.rev_slider_wrapper -->
+  
+  <!-- Bottom section with logos - 25% -->
+  {% if page.hero_area.logo_rows %}
+  <div class="hero-white-section">
+    <div class="container">
+      {% for row in page.hero_area.logo_rows %}
+      <div class="logo-row">
+        <h4 class="text-center mb-15">{{ row.title }}</h4>
+        <div class="d-flex justify-content-evenly align-items-center flex-wrap">
+          {% for logo in row.logos %}
+          <div class="logo-item px-3">
+            <figure class="px-2 mb-0 {% if logo.wide %}logo-wide{% endif %}">
+              <a href="{{ logo.url }}">
+                <img src="{{ logo.image }}" alt="{{ logo.title }}" class="img-fluid" {% if logo.custom_style %}style="{{ logo.custom_style }}"{% endif %}>
+              </a>
+            </figure>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 </div>
-<!-- /.wrapper -->
 {% endif %}
 
 
