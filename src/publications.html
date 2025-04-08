@@ -1,12 +1,11 @@
 ---
 layout: page_2
-title: "Publications"
-sub_title: "Current Research"
-header_image: "/assets/images/art/canopy_height_pauls.png"
-white_menu: true
-permalink: "/publications"
-header_style: "one"
+page_header:
+  enable: true
+  title: "Publications"
+  background_image: "/assets/images/maps_content/canopy_height_pauls.png"
 ---
+
 
 <div class="wrapper light-wrapper">
   <div class="container inner">
@@ -14,89 +13,7 @@ header_style: "one"
     <div class="row">
       <div class="col-md-12">
         <div class="publication-list">
-          {% assign entries = site.data.publications %}
-          {% if entries == nil %}
-            <p>Error loading publications. Please try again later.</p>
-          {% elsif entries.size == 0 %}
-            <p>No publications available at the moment.</p>
-          {% else %}
-            {% assign entries = entries | sort: "year" | reverse %}
-            
-            <div class="publications">
-              {% for entry in entries %}
-                {% if entry.journal and entry.journal != "" %}
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <h5 class="card-title">{{ entry.title }}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">
-                            {% for author in entry.author_array %}
-                              {% if author.last != "" %}
-                                {{ author.first }} {{ author.last }}{% unless forloop.last %}, {% endunless %}
-                              {% else %}
-                                {{ author.first }}{% unless forloop.last %}, {% endunless %}
-                              {% endif %}
-                            {% endfor %}
-                          </h6>
-                          <p class="card-text">
-                            <em>{{ entry.journal }}</em>
-                            {% if entry.month and entry.month != "" %}
-                              , {{ entry.month }}
-                            {% endif %}
-                            {% if entry.year and entry.year != "" %}
-                              , {{ entry.year }}
-                            {% endif %}
-                          </p>
-                          <div class="publication-links">
-                            {% if entry.pdf and entry.pdf != "" %}
-                              <a href="{{ entry.pdf }}" class="btn btn-sm btn-primary" target="_blank">PDF</a>
-                            {% endif %}
-                            {% if entry.doi and entry.doi != "" %}
-                              <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm btn-primary" target="_blank">DOI</a>
-                            {% endif %}
-                            {% if entry.arxiv and entry.arxiv != "" %}
-                              <a href="{{ entry.arxiv }}" class="btn btn-sm btn-primary" target="_blank">arXiv</a>
-                            {% endif %}
-                            {% if entry.html and entry.html != "" %}
-                              <a href="{{ entry.html }}" class="btn btn-sm btn-primary" target="_blank">HTML</a>
-                            {% endif %}
-                            {% if entry.supp and entry.supp != "" %}
-                              <a href="{{ entry.supp }}" class="btn btn-sm btn-primary" target="_blank">Supplements</a>
-                            {% endif %}
-                            {% if entry.blog and entry.blog != "" %}
-                              <a href="{{ entry.blog }}" class="btn btn-sm btn-primary" target="_blank">Blog</a>
-                            {% endif %}
-                            {% if entry.code and entry.code != "" %}
-                              <a href="{{ entry.code }}" class="btn btn-sm btn-primary" target="_blank">Code</a>
-                            {% endif %}
-                            {% if entry.poster and entry.poster != "" %}
-                              <a href="{{ entry.poster }}" class="btn btn-sm btn-primary" target="_blank">Poster</a>
-                            {% endif %}
-                            {% if entry.slides and entry.slides != "" %}
-                              <a href="{{ entry.slides }}" class="btn btn-sm btn-primary" target="_blank">Slides</a>
-                            {% endif %}
-                            {% if entry.abstract and entry.abstract != "" %}
-                              <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#abstract-{{ forloop.index }}" aria-expanded="false" aria-controls="abstract-{{ forloop.index }}">
-                                Abstract
-                              </button>
-                            {% endif %}
-                          </div>
-                          {% if entry.abstract and entry.abstract != "" %}
-                            <div class="collapse mt-3" id="abstract-{{ forloop.index }}">
-                              <div class="card card-body">
-                                {{ entry.abstract }}
-                              </div>
-                            </div>
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          {% endif %}
+          {% bibliography %}
         </div>
       </div>
     </div>

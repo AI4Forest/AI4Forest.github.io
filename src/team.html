@@ -3,18 +3,19 @@ layout: page_2
 page_header:
   enable: true
   title: "Team"
-  background_image: "/assets/images/berlin_team.jpeg"
+  background_image: "/assets/images/people/berlin_team.jpeg"
 ---
 
 {% if site.data.team and site.data.team.coordinators.size > 0 %}
-<div class="wrapper light-wrapper">
+<div class="wrapper light-wrapper" style="margin-top: -100px;">
   <div class="container inner">
     <h2 class="section-title mb-40 text-center">Project Coordinators</h2>
     <div class="row text-center justify-content-center">
       {% for member in site.data.team.coordinators %}
+      {% assign random_blob = forloop.index0 | plus: 1 | times: 7 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
-        <figure class="img-blob blob1 mb-25">
-          <img src="{{relative_url}}/assets/images/art/{{ member.image_file }}" style="width: 15rem" alt="{{ member.first_name }} {{ member.last_name }}" />
+        <figure class="img-blob blob{{ random_blob }} mb-25">
+          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" style="width: 100%; height: auto; max-width: 15rem;" alt="{{ member.first_name }} {{ member.last_name }}" />
         </figure>
         <h4 class="mb-15">{{ member.first_name }}</br>{{ member.last_name }}</h4>
         <div class="meta mb-5">{{ member.lab_name }}</div>
@@ -38,7 +39,7 @@ page_header:
     <!--/.row -->
   </div>
   <!-- /.container -->
-</div>
+</div
 {% else %}
 <div class="wrapper light-wrapper">
   <div class="container inner">
@@ -63,9 +64,10 @@ page_header:
     <!--/.row -->
     <div class="row text-center justify-content-center mt-5">
       {% endif %}
+      {% assign random_blob = forloop.index0 | plus: 1 | times: 13 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
-        <figure class="img-blob blob1 mb-25">
-          <img src="{{relative_url}}/assets/images/art/{{ member.image_file }}" style="width: 15rem" alt="{{ member.first_name }} {{ member.last_name }}" />
+        <figure class="img-blob blob{{ random_blob }} mb-25">
+          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" style="width: 100%; height: auto; max-width: 15rem;" alt="{{ member.first_name }} {{ member.last_name }}" />
         </figure>
         <h4 class="mb-15">{{ member.first_name }}</br>{{ member.last_name }}</h4>
         <div class="meta mb-5">{{ member.lab_name }}</div>

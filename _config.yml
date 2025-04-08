@@ -129,3 +129,18 @@ feed:
   collections:
     posts:
       path: "/index.xml"
+
+# Jekyll-Scholar configuration
+scholar:
+  style: apa
+  locale: en
+  source: _bibliography
+  bibliography: papers.bib
+  sort_by: year,month
+  order: descending
+  bibliography_template: bib
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+  query: "@*"
+

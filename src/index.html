@@ -6,7 +6,7 @@ custom_font: font4
 
 hero_area:
   enable: true
-  bg_image: "/assets/images/art/slider-bg7.jpg"
+  bg_image: "/assets/images/photos/jorunn_forest.jpg"
   title: "AI4Forest"
   sub_title: ""
   btn_text: "See Projects"
@@ -19,11 +19,11 @@ hero_area:
         - title: "ENS"
           image: "/assets/images/logos/ENS.jpg"
           url: "https://www.ens.psl.eu/"
-          custom_style: "max-height: 105px; width: auto;"
+          custom_style: "max-height: 100px; width: auto;"
         - title: "LSCE"
           image: "/assets/images/logos/LSCE.jpg"
           url: "https://www.lsce.ipsl.fr/"
-          custom_style: "max-height: 100px; width: auto;"
+          custom_style: "max-height: 90px; width: auto;"
         - title: "TUM"
           image: "/assets/images/logos/TUM.png"
           url: "https://www.ls.tum.de/en/ls/home/"
@@ -37,7 +37,7 @@ hero_area:
         - title: "ZIB"
           image: "/assets/images/logos/ZIB.png"
           url: "https://www.zib.de/"
-          custom_style: "max-height: 80px; width: auto;"
+          custom_style: "max-height: 75px; width: auto;"
     - title: "Grant Providers"
       logos:
         - title: "ANR"
@@ -374,6 +374,7 @@ contact_area:
   /* Better logo distribution */
   .logo-row .d-flex {
     margin: 0 -15px;
+    align-items: center;
   }
   
   .logo-item {
@@ -383,7 +384,24 @@ contact_area:
     min-width: 120px;
     padding: 0 15px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    height: 100%;
+  }
+  
+  /* Ensure figures maintain aspect ratio and center content */
+  .logo-item figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+  }
+
+  .logo-item img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
   }
   
   /* Center logos for Grant Providers section */

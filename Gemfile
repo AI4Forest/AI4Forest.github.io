@@ -22,6 +22,7 @@ group :jekyll_plugins do
   gem 'bibtex-ruby'
   gem 'citeproc'
   gem 'csl-styles'
+  gem 'jekyll-scholar'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
