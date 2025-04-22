@@ -10,6 +10,9 @@ plugins:
   - jekyll-archives
   - bibtex
 
+# Disable comments globally
+comments: false
+
 source: src
 destination: _site
 

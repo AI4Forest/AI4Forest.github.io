@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post">
+  {% if page.post_image %}
+  <div class="post-image">
+    <img src="{{ page.post_image }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      {%- if page.author -%}
+        • {{ page.author }}
+      {%- endif -%}
+      {%- if page.date -%}
+        • {{ page.date | date: "%B %-d, %Y" }}
+      {%- endif -%}
+    </p>
+  </header>
+
+  {% if page.intro_text %}
+  <div class="post-intro">
+    <p>{{ page.intro_text }}</p>
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article> 
