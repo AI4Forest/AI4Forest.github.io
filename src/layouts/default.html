@@ -13,6 +13,31 @@
   <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/type/type.css"/>
   <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/style.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <style>
+    .profilepic img {
+      height: 160px;
+      object-fit: cover; /* Ensures the image fills the area without distortion */
+    }
+    /* For Chrome, Edge, and Safari */
+    ::-webkit-scrollbar {
+      width: 8px; /* Make it thinner */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Transparent track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.4); /* Semi-transparent thumb */
+      border-radius: 10px; /* Rounded corners for smoother look */
+      border: 2px solid transparent; /* Optional padding space */
+      background-clip: content-box; /* Makes border visible */
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+  </style>
   <!--page wise css-->
   {% if page.custom_css -%}
     {%- for stylesheet in page.custom_css -%}

@@ -4,8 +4,10 @@ layout: default
 
 <div class="publication-item d-flex" style="margin-bottom: 1.5rem; padding: 0.8rem; border: 1px solid #e8e8e8; border-radius: 6px;">
   {% if entry.preview %}
-  <div class="publication-thumbnail mr-3">
-    <img src="{{ entry.preview }}" alt="Publication preview" style="width: 110px; height: auto; border-radius: 3px; object-fit: cover;">
+  <div class="publication-thumbnail mr-3" style="width: 110px; height: 110px; overflow: hidden; display: flex; justify-content: flex-end;">
+    <div style="width: 150px; height: 100%;">
+      <img src="{{ entry.preview }}" alt="Publication preview" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
+    </div>
   </div>
   {% endif %}
   
@@ -60,9 +62,17 @@ layout: default
     </div>
     
     <div class="publication-links">
-      <a href="#" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;">ABS</a>
+      {% if entry.abstract %}
+        <a href="{{ entry.abstract }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">ABS</a>
+      {% endif %}
       
-      <a href="#" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;">BIB</a>
+      {% if entry.bibtex or entry.bibtex_show %}
+        {% if entry.bibtex %}
+          <a href="{{ entry.bibtex }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
+        {% elsif entry.url %}
+          <a href="{{ entry.url }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
+        {% endif %}
+      {% endif %}
       
       {% if entry.pdf and entry.pdf != "" %}
         <a href="{{ entry.pdf }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">PDF</a>

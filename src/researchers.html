@@ -14,11 +14,11 @@ page_header:
           AI4Forest is coordinated by a distinguished team of scientists from leading French and German research institutions. Their expertise spans climate science, remote sensing, artificial intelligence, optimization, and forest ecosystem dynamics. Together, they guide the strategic direction of the project, ensuring scientific excellence and effective integration of interdisciplinary approaches for advancing forest monitoring at global scale.
         </p>
         <div class="mb-40 coordinator-bios">
-          <p><strong>Philippe Ciais</strong> is Research Director at LSCE, specializing in quantifying the global carbon cycle and forest–climate interactions using atmospheric measurements and satellite data.</p>
+          <p><strong>Philippe Ciais</strong> is Research Director at LSCE, specializing in quantifying the global carbon cycle and forest–climate interactions via remote sensing.</p>
           <p><strong>Alexandre d'Aspremont</strong> is CNRS Research Director at ENS, focused on convex optimization and its applications in machine learning, statistics, and Earth observation.</p>
-          <p><strong>Fabian Gieseke</strong> leads the Machine Learning & Data Engineering group at the University of Münster, developing scalable AI methods for high-performance satellite data analysis.</p>
-          <p><strong>Sebastian Pokutta</strong> is Vice President of Zuse Institute Berlin and Professor at TU Berlin, researching scalable optimization and AI algorithms for complex systems.</p>
-          <p><strong>Cornelius Senf</strong> heads the Remote Sensing Group at TUM, advancing spaceborne monitoring techniques to map and analyze forest disturbances.</p>
+          <p><strong>Fabian Gieseke</strong> leads the Machine Learning & Data Engineering group at the University of Münster, developing DL methods for high-performance computing.</p>
+          <p><strong>Sebastian Pokutta</strong> is Vice President of the Zuse Institute Berlin and Professor at TU Berlin, doing research in scalable optimization and DL algorithms for complex systems.</p>
+          <p><strong>Cornelius Senf</strong> leads the Remote Sensing Group at TUM, advancing spaceborne monitoring techniques to map and analyze forest disturbances.</p>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ page_header:
       {% for member in site.data.team.coordinators %}
       {% assign random_blob = forloop.index0 | plus: 1 | times: 7 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
-        <figure class="img-blob blob{{ random_blob }} mb-25">
+        <figure class="img-blob blob{{ random_blob }} mb-25 profilepic">
           <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem;" />
         </figure>
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
@@ -79,7 +79,7 @@ page_header:
       {% for member in site.data.team.researchers %}
       {% assign random_blob = forloop.index0 | plus: 1 | times: 13 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
-        <figure class="img-blob blob{{ random_blob }} mb-25">
+        <figure class="img-blob blob{{ random_blob }} mb-25 profilepic">
           <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem;" />
         </figure>
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
@@ -113,14 +113,4 @@ page_header:
   </div>
 </div>
 {% endif %}
-<!-- /.wrapper -->
-
-
-
-
-
-
-
-
-
-
+<!-- /.wrapper --> 

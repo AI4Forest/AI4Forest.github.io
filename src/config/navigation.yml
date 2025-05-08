@@ -4,7 +4,7 @@ main_menu:
     menu_type: "primary"
 
   - text: "Researchers"
-    url: "/team"
+    url: "/researchers"
     menu_type: "primary"
 
   - text: "Publications"
