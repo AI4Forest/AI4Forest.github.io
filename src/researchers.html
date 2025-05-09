@@ -6,12 +6,12 @@ page_header:
   background_image: "/assets/images/people/berlin_team.jpeg"
 ---
 
-<div class="wrapper light-wrapper">
+<div class="wrapper light-wrapper" style="margin-top: -150px;">
   <div class="container-fluid inner px-5">
-    <div class="row justify-content-center">
+    <div class="row">
       <div class="col-lg-12">
         <p class="lead text-left mb-40">
-          AI4Forest is coordinated by a distinguished team of scientists from leading French and German research institutions. Their expertise spans climate science, remote sensing, artificial intelligence, optimization, and forest ecosystem dynamics. Together, they guide the strategic direction of the project, ensuring scientific excellence and effective integration of interdisciplinary approaches for advancing forest monitoring at global scale.
+          AI4Forest is coordinated by a distinguished team of scientists from leading French and German research institutions. Their expertise spans over climate science, remote sensing, artificial intelligence, optimization to forest ecosystem dynamics. Together, they guide the strategic direction of the project, ensuring scientific excellence and effective integration of interdisciplinary approaches for advancing forest monitoring at national and global scale.
         </p>
         <div class="mb-40 coordinator-bios">
           <p><strong>Philippe Ciais</strong> is Research Director at LSCE, specializing in quantifying the global carbon cycle and forest–climate interactions via remote sensing.</p>
@@ -33,9 +33,11 @@ page_header:
       {% for member in site.data.team.coordinators %}
       {% assign random_blob = forloop.index0 | plus: 1 | times: 7 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
+        {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob{{ random_blob }} mb-25 profilepic">
           <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem;" />
         </figure>
+        {% endif %}
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
         <div class="meta mb-5 text-center">{{ member.lab_name }}</div>
         <ul class="social social-s ml-auto">
@@ -79,10 +81,15 @@ page_header:
       {% for member in site.data.team.researchers %}
       {% assign random_blob = forloop.index0 | plus: 1 | times: 13 | modulo: 8 | plus: 1 %}
       <div class="col-lg-2 col-md-4 mx-2">
+        {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob{{ random_blob }} mb-25 profilepic">
           <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem;" />
         </figure>
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
+        {% else %}
+        <div style="height: 9.2rem;"></div>
+        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
+        {% endif %}
         <div class="meta mb-5 text-center">{{ member.lab_name }}</div>
         <ul class="social social-s ml-auto">
           <li>
