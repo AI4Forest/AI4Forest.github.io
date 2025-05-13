@@ -62,31 +62,27 @@ layout: default
     </div>
     
     <div class="publication-links">
-      {% if entry.abstract %}
+      {% if entry.abstract and entry.abstract != "" and entry.abstract != "false" and entry.abstract != "{}" %}
         <a href="{{ entry.abstract }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">ABS</a>
       {% endif %}
       
-      {% if entry.bibtex or entry.bibtex_show %}
-        {% if entry.bibtex %}
-          <a href="{{ entry.bibtex }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
-        {% elsif entry.url %}
-          <a href="{{ entry.url }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
-        {% endif %}
+      {% if entry.bibtex and entry.bibtex != "" and entry.bibtex != "false" and entry.bibtex_show != false and entry.bibtex != "{}" %}
+        <a href="{{ entry.bibtex }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
       {% endif %}
       
-      {% if entry.pdf and entry.pdf != "" %}
+      {% if entry.pdf and entry.pdf != "" and entry.pdf != "false" and entry.pdf != "{}" %}
         <a href="{{ entry.pdf }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">PDF</a>
       {% endif %}
       
-      {% if entry.code and entry.code != "" %}
+      {% if entry.code and entry.code != "" and entry.code != "false" and entry.code != "{}" %}
         <a href="{{ entry.code }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">CODE</a>
       {% endif %}
       
-      {% if entry.doi and entry.doi != "" %}
+      {% if entry.doi and entry.doi != "" and entry.doi != "false" and entry.doi != "{}" %}
         <a href="https://doi.org/{{ entry.doi }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">DOI</a>
       {% endif %}
       
-      {% if entry.url contains "earth" %}
+      {% if entry.url and entry.url != "" and entry.url != "false" and entry.url != "{}" and entry.url contains "earth" %}
         <a href="{{ entry.url }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">EARTH ENGINE</a>
       {% endif %}
     </div>
