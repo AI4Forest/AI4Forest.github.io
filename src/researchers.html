@@ -33,8 +33,8 @@ page_header:
       {% for member in site.data.team.coordinators %}
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
-        <figure class="img-blob blob1 mb-25 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(0.75);" />
+        <figure class="img-blob blob1 mb-50 profilepic">
+          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
         </figure>
         {% endif %}
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
@@ -81,7 +81,7 @@ page_header:
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob1 mb-25 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(0.75);" />
+          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
         </figure>
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
         {% else %}
@@ -132,7 +132,7 @@ page_header:
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob1 mb-25 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(0.75);" />
+          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
         </figure>
         <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
         {% else %}

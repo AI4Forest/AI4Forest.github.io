@@ -221,9 +221,10 @@ researchers:
 
 
 former_researchers:
-  - first_name: Arthur 
-    last_name: Calvi
-    lab_name: ENS
+  - first_name: Fajwel 
+    last_name: Fogel
+    lab_name: ENS Paris
     location: Paris
-    image_file: 
-    website_url: https://arthurcalvi.github.io/index.html
+    image_file: fajwel.jpg
+    website_url: https://scholar.google.com/citations?user=GABZ5ucAAAAJ&hl=en
+    website_type: google-scholar
