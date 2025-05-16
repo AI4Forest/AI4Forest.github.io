@@ -66,9 +66,7 @@ layout: default
         <a href="{{ entry.abstract }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">ABS</a>
       {% endif %}
       
-      {% if entry.bibtex and entry.bibtex != "" and entry.bibtex != "false" and entry.bibtex_show != false and entry.bibtex != "{}" %}
-        <a href="{{ entry.bibtex }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">BIB</a>
-      {% endif %}
+
       
       {% if entry.pdf and entry.pdf != "" and entry.pdf != "false" and entry.pdf != "{}" %}
         <a href="{{ entry.pdf }}" style="display: inline-block; background-color: rgba(73, 144, 186, 0.15); color: #4990BA; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">PDF</a>
