@@ -9,6 +9,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-archives
   - bibtex
+  - jekyll-scholar
 
 # Disable comments globally
 comments: false
