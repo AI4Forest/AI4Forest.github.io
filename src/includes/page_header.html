@@ -1,7 +1,22 @@
 </style>
+<style>
+  @media (max-width: 1000px) {
+    .team-header-wrapper {
+      background-size: cover !important;
+      background-position: center center !important;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .team-header-wrapper {
+      background-size: contain !important;
+      background-position: center top !important;
+    }
+  }
+</style>
 <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper" 
      data-image-src="{{page.page_header.background_image}}"
-     style="background-position: center center; background-size: cover; background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center;">
+     style="background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center;">
   <div class="container inner text-center" style="padding: 0.5rem;">
     {% if page.page_header.title %}
      <h1 class="page-title" style="margin-bottom: 0;">{{page.page_header.title}}</h1>
