@@ -40,7 +40,7 @@ layout: default
             {{ first_name | slice: 0 }}.
           {% endif %}
           <span>{{ last_name }}</span>{% unless forloop.last %}, {% endunless %}
-          {% if forloop.last == false and forloop.index == author_array.size|minus:1 %}
+          {% if forloop.last == false and forloop.index == author_array.size | minus:1 %}
             and 
           {% endif %}
         {% endif %}

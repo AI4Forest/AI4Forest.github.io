@@ -218,3 +218,12 @@ researchers:
     website_url: https://maxzimmer.org/
     website_type: link
     
+
+
+former_researchers:
+  - first_name: Arthur 
+    last_name: Calvi
+    lab_name: ENS
+    location: Paris
+    image_file: 
+    website_url: https://arthurcalvi.github.io/index.html

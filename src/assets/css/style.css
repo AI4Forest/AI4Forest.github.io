@@ -2235,6 +2235,9 @@ ol {
     -webkit-mask-image: url(../images/blob/blob1.svg);
             mask-image: url(../images/blob/blob1.svg);
     -webkit-mask-box-image-repeat: space;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(0.8);
 }
 .img-blob.blob2 img {
     -webkit-mask-box-image: url(../images/blob/blob2.svg);
