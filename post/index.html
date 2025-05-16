@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+  <title> </title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/type/type.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <style>
+    .profilepic img {
+      height: 160px;
+      object-fit: cover; /* Ensures the image fills the area without distortion */
+    }
+    /* For Chrome, Edge, and Safari */
+    ::-webkit-scrollbar {
+      width: 8px; /* Make it thinner */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Transparent track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.4); /* Semi-transparent thumb */
+      border-radius: 10px; /* Rounded corners for smoother look */
+      border: 2px solid transparent; /* Optional padding space */
+      background-clip: content-box; /* Makes border visible */
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+  </style>
+  <!--page wise css-->
+  
+  <!--/.page wise css-->
+  
+</head>
+<body >
+  <div class="content-wrapper">
+    <nav
+  class="navbar  navbar-hover-opacity navbar-expand-lg">
+  <div
+    class=" container-fluid  flex-row justify-content-center">
+    <div class="navbar-brand">
+      <a href="/">
+        
+        <img src=""
+          srcset=" 1x,  2x"
+          class=" logo  "
+          alt="" />
+      </a>
+    </div>
+    <div class="navbar-other ml-auto order-lg-3">
+      <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
+        <li class="nav-item">
+          <div class="navbar-hamburger d-lg-none d-xl-none ml-auto">
+            <button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <button class="plain" data-toggle="offcanvas-info"><i class="jam jam-info"></i></button>
+        </li>
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-other -->
+    <div class="navbar-collapse offcanvas-nav">
+      <div class="offcanvas-header d-lg-none d-xl-none">
+        <a href="/">
+          <img src=""
+            srcset=" 1x,  2x"
+            alt="" /></a>
+        <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
+      </div>
+      <ul class="navbar-nav  mx-auto ">
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/">AI4Forest</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/researchers">Researchers</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/publications">Publications</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/announcements">Announcements</a>
+        </li>
+        
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div class="wrapper light-wrapper">
+  <div class="container inner pt-80">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="blog classic-view">
+          <div class="post mb-0">
+            
+            <div class="space40"></div>
+            <div class="post-content">
+              
+              <h2 class="post-title text-center"></h2>
+              <div class="meta text-center">
+                
+                
+              </div>
+               {% include header.html  logo_class="logo" %}
+<div class="wrapper light-wrapper">
+  <div class="container inner pt-80">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="blog classic-view">
+          <div class="post mb-0">
+            {% if page.post_image %}
+            <figure class="rounded text-center">
+              <img src="{{page.post_image}}" alt="{{page.title}}"/>
+            </figure>
+            {% endif %}
+            <div class="space40"></div>
+            <div class="post-content">
+              {% if page.categories %}
+              <div class="category text-center">
+                <a href="/category/{{page.categories[0] | slugify}}" class="badge badge-pill bg-hibiscus">{{page.categories[0]}}</a>
+              </div>
+              {% endif %}
+              <h2 class="post-title text-center">{{page.title}}</h2>
+              <div class="meta text-center">
+                {% if page.date %}
+                 <span class="date"><i class="jam jam-clock"></i>{{page.date | date_to_string}}</span>
+                {% endif %}
+                {% if page.author %}
+                 <span class="author"><i class="jam jam-user"></i><a href="/author/{{page.author | slugify}}">By {{page.author}}</a></span>
+                {% endif %}
+              </div>
+               {{page.content}}
+              {% if page.post_format == "gallery" %}
+              <div class="space20"></div>
+              <div class="post-gallery light-gallery-wrapper">
+                <div class="tiles tiles-s">
+                  <div class="items row">
+                    {% for gallery in page.gallery %}
+                    <div class="item {% if forloop.index < 3 %} col-md-6 {% else %} col-md-4 {% endif %}">
+                      <figure class="overlay overlay1 rounded">
+                        <a href="{{gallery.img}}" class="lightbox">
+                        <img src="{{gallery.img}}" alt="{{gallery.img}}"></a>
+                        <figcaption>
+                          <h5 class="from-top mb-0">View Larger</h5>
+                        </figcaption>
+                      </figure>
+                    </div>
+                    <!--/.item -->
+                    {% endfor %}
+                  </div>
+                  <!--/.items -->
+                </div>
+                <!--/.tiles -->
+              </div>
+              <!--/.post-gallery -->
+              {% endif %}
+              <div class="clearfix"></div>
+              <div class="space40"></div>
+              <div class="space10"></div>
+              <div class="d-lg-flex justify-content-between align-items-center meta-footer">
+                 <ul class="list-unstyled tag-list">
+                    {% capture tags %}
+                      {% for tag in page.tags %}
+                        <li data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}">
+                           <a class="btn btn-s" href="/tag/{{tag |slugify}}">{{ tag }}</a>
+                        </li>
+                      {% endfor %}
+                    {% endcapture %}
+                    {{ tags | split:'</li>' | sort | join:'</li>' }}
+                </ul>
+              </div>
+            </div>
+            <!-- /.post-content -->
+          </div>
+          <!-- /.post -->
+        </div>
+        <!-- /.blog -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+{% if page.author %}
+{% assign check_author = site.authors | where: "title", page.author %}
+{% for author_data in check_author %}
+<div class="wrapper gray-wrapper">
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="row align-items-center">
+          {% if author_data.image %}
+          <div class="col-md-4">
+            <figure class="rounded">
+              <a href="/authors/{{author_data.title | slugify}}"><img alt="{{author_data.title}}" src="{{author_data.image}}" /></a>
+            </figure>
+          </div>
+          <!--/column -->
+          {% endif %}
+          <div class="col-md-8">
+            <h4>{{author_data.title}}</h4>
+            {% if author_data.bio %}
+            <p class="mb-10">{{author_data.bio}}</p>
+            {% endif %}
+            {% if author_data.social_accounts %}
+            <ul class="social">
+              {% for author_social in author_data.social_accounts %}
+               <li><a href="{{author_social.url}}"><i class="{{author_social.icon}}"></i></a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+{% endfor %}
+{% endif %}
+{% include footer.html light_logo="true" %}
+</div>
+
+              
+              <div class="clearfix"></div>
+              <div class="space40"></div>
+              <div class="space10"></div>
+              <div class="d-lg-flex justify-content-between align-items-center meta-footer">
+                 <ul class="list-unstyled tag-list">
+                    
+                    
+                      
+                    
+                </ul>
+              </div>
+            </div>
+            <!-- /.post-content -->
+          </div>
+          <!-- /.post -->
+        </div>
+        <!-- /.blog -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+
+  <footer class=" dark-wrapper inverse-text " style="padding: 0.8rem 0 0 0;">
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">AI4Forest</h3>
+            <p style="margin: 0; font-size: 0.65rem;">Advancing forest monitoring through artificial intelligence and remote sensing technologies.</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Research</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="/publications">Publications</a> | 
+              <a href="/team">Team</a> | 
+              <a href="/projects">Projects</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Partners</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="#">LSCE</a> | 
+              <a href="#">ENS</a> | 
+              <a href="#">University of Münster</a> | 
+              <a href="#">Zuse Institute Berlin</a> | 
+              <a href="#">TU Berlin</a> | 
+              <a href="#">TUM</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Contact</h3>
+            <div style="font-size: 0.65rem;">
+              Fabian Gieseke<br>
+              University of Münster<br>
+              Münster, Germany<br>
+              Email: <a href="mailto:fabian.gieseke at uni-muenster.de">fabian.gieseke at uni-muenster.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-12 text-center" style="margin: 0; padding: 0;">
+          <p style="margin: 0; font-size: 0.65rem;">Copyright © AI4Forest. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  </div>
+  <div class="offcanvas-info inverse-text" style="background-image: url('/assets/images/main_page/background_tree_3.png'); background-repeat: no-repeat; background-position: top right; background-size: 150px;">
+  <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
+  <a href="/">
+    <img src=""
+      srcset=" 1x,  2x"
+      class="logo-light" alt="" />
+  </a>
+  <div class="space10"></div>
+  <h3 class="mb-0"><strong>AI4Forest</strong></h3>
+  <div class="space30"></div>
+  <p>AI4Forest is a research project that combines artificial intelligence and forest science to better understand and manage forest ecosystems.</p>
+  <div class="space20"></div>
+  <div class="widget">
+    <h5 class="widget-title">Research Areas</h5>
+    <ul class="list-unstyled">
+      <li>Climate Science</li>
+      <li>Remote Sensing</li>
+      <li>Artificial Intelligence</li>
+      <li>Forest Ecosystem Dynamics</li>
+      <li>Optimization</li>
+    </ul>
+  </div>
+  <!-- /.widget -->
+  <div class="widget">
+    <h5 class="widget-title">Contact Principal Investigators</h5>
+    <address>
+      <strong>Prof. Dr. Philippe Ciais</strong><br>
+      Laboratoire des Sciences du Climat et de l'Environnement<br>
+      Université Paris Saclay<br>
+      Tél. : 01.69.08.95.06<br>
+      <a href="mailto:philippe.ciais@lsce.ipsl.fr" class="nocolor">philippe.ciais (at) lsce.ipsl.fr</a>
+      <div class="space20"></div>
+      <strong>Prof. Alexandre d'Aspremont</strong><br>
+      CNRS - ENS<br>
+      45 rue d'Ulm<br>
+      Paris, France<br>
+      48 rue Barrault<br>
+      75013 Paris<br>
+      <a href="mailto:aspremon@ens.fr" class="nocolor">aspremon (at) ens.fr</a>
+      <div class="space20"></div>
+      <strong>Prof. Dr. Fabian Gieseke</strong><br>
+      University of Münster<br>
+      Leonardo Campus 3<br>
+      48149 Münster<br>
+      Telefon: +49 251 83-38151<br>
+      <a href="mailto:fabian.gieseke@wi.uni-muenster.de" class="nocolor">fabian.gieseke (at) wi.uni-muenster.de</a>
+      <div class="space20"></div>
+      <strong>Prof. Dr. Cornelius Senf</strong><br>
+      School of Life Sciences<br>
+      Hans-Carl-v.-Carlowitz-Platz 2<br>
+      85354 Freising<br>
+      Tel.: +49.8161.71.4371<br>
+      <a href="mailto:office.eoem@ls.tum.de" class="nocolor">office.eoem (at) ls.tum.de</a>
+    </address>
+  </div>
+  <!-- /.widget -->
+</div>
+<!-- /.offcanvas-info --> 
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+  <script src="/assets/js/plugins.js"></script>
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+</body>
+</html>

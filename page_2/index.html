@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+  <title> </title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/type/type.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <style>
+    .profilepic img {
+      height: 160px;
+      object-fit: cover; /* Ensures the image fills the area without distortion */
+    }
+    /* For Chrome, Edge, and Safari */
+    ::-webkit-scrollbar {
+      width: 8px; /* Make it thinner */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Transparent track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.4); /* Semi-transparent thumb */
+      border-radius: 10px; /* Rounded corners for smoother look */
+      border: 2px solid transparent; /* Optional padding space */
+      background-clip: content-box; /* Makes border visible */
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+  </style>
+  <!--page wise css-->
+  
+  <!--/.page wise css-->
+  
+</head>
+<body >
+  <div class="content-wrapper">
+    <nav
+  class="navbar  absolute transparent inverse-text nav-uppercase  navbar-hover-opacity navbar-expand-lg">
+  <div
+    class=" container  flex-row justify-content-center">
+    <div class="navbar-brand">
+      <a href="/">
+        
+        <img src=""
+          srcset=" 1x,  2x"
+          class=" logo-light "
+          alt="" />
+        
+        <img src=""
+          srcset=" 1x,  2x"
+          class=" logo-dark  "
+          alt="" />
+      </a>
+    </div>
+    <div class="navbar-other ml-auto order-lg-3">
+      <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
+        <li class="nav-item">
+          <div class="navbar-hamburger d-lg-none d-xl-none ml-auto">
+            <button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <button class="plain" data-toggle="offcanvas-info"><i class="jam jam-info"></i></button>
+        </li>
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-other -->
+    <div class="navbar-collapse offcanvas-nav">
+      <div class="offcanvas-header d-lg-none d-xl-none">
+        <a href="/">
+          <img src=""
+            srcset=" 1x,  2x"
+            alt="" /></a>
+        <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
+      </div>
+      <ul class="navbar-nav  mx-auto ">
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/">AI4Forest</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/researchers">Researchers</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/publications">Publications</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/announcements">Announcements</a>
+        </li>
+        
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+</style>
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper" 
+     data-image-src=""
+     style="background-position: center top; background-size: contain; background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center;">
+  <div class="container inner text-center" style="padding: 0.5rem;">
+    
+    
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+
+
+
+
+<nav
+  class="navbar  absolute transparent inverse-text navbar-hover-opacity navbar-expand-lg  navbar-hover-opacity navbar-expand-lg">
+  <div
+    class=" container  flex-row justify-content-center">
+    <div class="navbar-brand">
+      <a href="/">
+        
+        <img src=""
+          srcset=" 1x,  2x"
+          class=" logo-light "
+          alt="" />
+        
+        <img src=""
+          srcset=" 1x,  2x"
+          class=" logo-dark  "
+          alt="" />
+      </a>
+    </div>
+    <div class="navbar-other ml-auto order-lg-3">
+      <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
+        <li class="nav-item">
+          <div class="navbar-hamburger d-lg-none d-xl-none ml-auto">
+            <button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <button class="plain" data-toggle="offcanvas-info"><i class="jam jam-info"></i></button>
+        </li>
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-other -->
+    <div class="navbar-collapse offcanvas-nav">
+      <div class="offcanvas-header d-lg-none d-xl-none">
+        <a href="/">
+          <img src=""
+            srcset=" 1x,  2x"
+            alt="" /></a>
+        <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
+      </div>
+      <ul class="navbar-nav  mx-auto ">
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/">AI4Forest</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/researchers">Researchers</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/publications">Publications</a>
+        </li>
+        
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/announcements">Announcements</a>
+        </li>
+        
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+
+<style>
+  /* Set the entire hero container to full viewport height */
+  .hero-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Top section with image - 65% of viewport */
+  .hero-image-section {
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Bottom section with logos - 35% of viewport */
+  .hero-white-section {
+    height: 35vh;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+  
+  /* Ensure the slider fits perfectly in the top section */
+  .rev_slider_wrapper.fullscreen-container {
+    height: 65vh !important;
+  }
+
+  #slider8 {
+    height: 65vh !important;
+    max-height: 65vh !important;
+  }
+  
+  #slider8 img {
+    object-fit: cover;
+    height: 65vh !important;
+  }
+  
+  /* Style the logo rows */
+  .logo-row:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* Make logo section titles more prominent but compact */
+  .logo-row h4 {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Make logos container more compact */
+  .logo-row .row {
+    margin-bottom: 0;
+  }
+  
+  /* Special handling for wider logos */
+  .logo-wide img {
+    max-width: none !important;
+  }
+
+  /* Better logo distribution */
+  .logo-row .d-flex {
+    margin: 0 -15px;
+    align-items: center;
+  }
+  
+  .logo-item {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 20%;
+    min-width: 120px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* Ensure figures maintain aspect ratio and center content */
+  .logo-item figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+  }
+
+  .logo-item img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* Center logos for Grant Providers section */
+  .logo-row:nth-child(2) .d-flex {
+    justify-content: center !important;
+  }
+  
+  .logo-row:nth-child(2) .logo-item {
+    width: auto;
+    max-width: 250px;
+    margin: 0 25px;
+  }
+  
+  @media (max-width: 768px) {
+    .logo-item {
+      width: 33.333%;
+    }
+  }
+</style>
+
+<!-- Full height hero container -->
+<div class="hero-container">
+  <!-- Top section with hero image - 75% -->
+  <div class="hero-image-section">
+    <div class="rev_slider_wrapper fullscreen-container">
+      <div id="slider8" class="rev_slider fullscreenbanner" data-version="5.4.7">
+        <ul>
+          <li data-transition="fade" data-thumb="">
+            <img src="/assets/images/photos/jorunn_forest.jpg" alt="AI4Forest"/>
+            <div class="tp-caption font-weight-600 color-white text-center" 
+            data-x="center" 
+            data-y="middle" 
+            data-voffset="['-75','-75','-65','-95']" 
+            data-fontsize="['50','50','35','30']" 
+            data-lineheight="['65','65','50','45']" 
+            data-width="['1000','1000','600','340']" 
+            data-textalign="['center','center','center','center']" 
+            data-whitespace="['normal','normal','normal','normal']" 
+            data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" 
+            data-responsive="on" 
+            data-responsive_offset="on" style="z-index: 9;">AI4Forest  
+            </div>
+            <div class="tp-caption font-weight-400 color-white text-center" 
+            data-x="center" data-y="middle" 
+            data-voffset="['0','0','0','0']" 
+            data-fontsize="['26','26','26','20']" 
+            data-lineheight="['36','36','36','30']" 
+            data-width="['1000','1000','600','340']" 
+            data-textalign="['center','center','center','center']" 
+            data-whitespace="['normal','normal','normal','normal']"
+            data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+            data-responsive="on" 
+            data-responsive_offset="on" 
+            style="z-index: 9;">
+            </div>
+            <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
+                data-x="center" 
+                data-y="middle" 
+                data-voffset="['85','85','85','85']" 
+                data-hoffset="['-100','-100','-80','-60']"
+                data-width="['auto','auto','auto','auto']" 
+                data-textAlign="['center','center','center','center']" 
+                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+                data-responsive="on" 
+                data-responsive_offset="on" style="z-index: 9;" href="/publications"> See Projects
+            </a>
+            <a class="tp-caption btn btn-l btn-white btn-strong-hover scroll" 
+                data-x="center" 
+                data-y="middle" 
+                data-voffset="['85','85','85','85']" 
+                data-hoffset="['100','100','80','60']"
+                data-width="['auto','auto','auto','auto']" 
+                data-textAlign="['center','center','center','center']" 
+                data-frames='[{"delay":1700,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.7;sY:0.7;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+                data-responsive="on" 
+                data-responsive_offset="on" style="z-index: 9;" href="/researchers"> See People
+            </a>
+          </li>
+        </ul>
+        <div class="tp-bannertimer tp-bottom"></div>
+      </div>
+      <!-- /.rev_slider -->
+    </div>
+    <!-- /.rev_slider_wrapper -->
+  </div>
+  
+  <!-- Bottom section with logos - 25% -->
+  
+</div>
+
+
+
+<div class="wrapper light-wrapper" style="margin-top: -200px;">
+  <div class="container inner">
+    
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          
+           <h2 class="section-title mb-20">About</h2>
+          
+          
+           <p class="lead larger text-justify" style="font-size: 1.1rem; line-height: 1.5; color: #666;">Climate change is one of the most crucial and complex challenges of the 21st century, with far-reaching impacts on ecosystems, economies, and societies worldwide. Among the many natural systems affected, forests play a pivotal role—not only as rich biodiversity regions but also as vital carbon sinks that help mitigate the adverse effects of global warming. Recognizing the importance of preserving and managing forest ecosystems, the French-German research initiative AI4Forest is dedicated to exploring how cutting-edge artificial intelligence can be used to better understand, monitor, and respond to the environmental stresses brought about by climate change.</p>
+          
+          <div class="space20"></div>
+          
+          <div class="space20"></div>
+          <ul class="progress-list">
+            
+          </ul>
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+
+<div class="wrapper light-wrapper" style="margin-top: -150px; margin-bottom: -100px;">
+  <div class="container inner">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <figure class="mb-0">
+          <img src="/assets/images/main_page/forest.png" alt="About" class="img-fluid" style="max-width: 100%; height: auto;"/>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <h2 class="section-title text-center mb-40">Transforming Forest Monitoring Through AI and Satellite Data</h2>
+        
+        <div class="text-content">
+          <p class="lead"></p>
+
+<p>Thanks to recent technological advances, we are entering a new era of precision and scale in environmental monitoring. The influence of two major developments makes this possible:</p>
+
+<ul>
+  <li><strong>An increase in satellite data availability:</strong> Modern satellite constellations now capture high-resolution imagery of the entire planet daily, with spatial resolutions as fine as 3 meters or better. This unprecedented data availability enables the observation of forest properties that, until recently, could only be studied at a limited number of ground-based plots.</li>
+  <li><strong>Breakthroughs in Artificial Intelligence:</strong> In particular, deep learning models have unlocked new possibilities for analyzing vast volumes of high-dimensional, spatiotemporal data. These advances open the door to intelligent monitoring systems capable of detecting subtle patterns across space and time. However, despite recent progress, current AI-based approaches still fall short of delivering global forest maps at the necessary spatial and temporal precision.</li>
+</ul>
+
+<h3>Introducing AI4Forest</h3>
+
+<p>AI4Forest is a research project designed to overcome these challenges. It will deliver high-resolution forest maps of Europe—and eventually the entire earth- a level of detail and frequency never before achieved. By combining AI models with modern satellite and airborne data, AI4Forest will enable cost-effective, scalable analysis of massive environmental datasets.</p>
+
+<p>The project is centered around two core objectives:</p>
+
+<h4>1. High-Resolution, AI-Driven Forest Mapping</h4>
+
+<p>AI4Forest will generate highly accurate forest maps for Europe and major global biomes, resolving details down to the level of individual trees. These maps will be updated monthly or even weekly, allowing the continuous monitoring of key forest variables such as tree health, biomass, and disturbances.</p>
+
+<p>Leveraging Earth observation data and tailored AI methods, AI4Forest will significantly enhance the current capabilities in forest monitoring. This includes quantifying forest biomass and carbon dynamics.
+
+<h4>2. Scalable AI for Global Data Processing</h4>
+
+<p>The volume of satellite time series data generated today poses a major challenge for AI applications, often requiring days or weeks of processing time even with substantial computing power. AI4Forest will develop efficient, scalable AI techniques designed specifically for large-scale environmental analysis. These methods will minimize computational and storage costs, ensuring faster and more accessible processing across a variety of platforms.</p>
+
+<p>While the primary focus is forest monitoring, the developed AI techniques will be broadly applicable to other data-intensive domains in Earth and environmental science.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper bg-white">
+  <div class="container inner">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <h2 class="section-title text-center mb-40">Our Mission</h2>
+        
+        <div class="text-content">
+          <p>At AI4Forest, we aim to advance forest monitoring through the development of scalable, AI-based methods that integrate high-resolution Earth observation data.
+Our mission is threefold:</p>
+
+<h4>Research Excellence</h4>
+<p>We conduct foundational research at the intersection of artificial intelligence and forest science, improving our ability to quantify forest dynamics, health, and carbon fluxes under changing environmental conditions.</p>
+
+<h4>Interdisciplinary Collaboration</h4>
+<p>We bring together expertise from computer science, ecology, and climate research to develop data-driven tools for understanding and managing forest ecosystems at regional to global scales. AI4Forest will also expand current AI capabilities in both France and Germany and will
+  significantly strengthen the bilateral collaborations in this interdisciplinary field. AI4Forest is also
+  training PhD students and postdoctoral domain experts in both Earth observation and AI, as well as undergraduate
+  students via joint teaching activities.</p>
+
+<h4>Applied Sustainability</h4>
+<p>Our work supports evidence-based forest management by delivering actionable insights that promote long-term ecological resilience and climate mitigation.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper light-wrapper">
+  <div class="container inner pb-0">
+    <div class="row align-items-center">
+      
+      <div class="col-md-5 col-lg-4 offset-lg-1 d-none d-md-flex">
+        <figure><img src="/assets/images/main_page/background_tree_3.png" alt="What People Say"></figure>
+      </div>
+      
+      <div class="col-md-7 col-lg-6 pl-60 pl-md-15">
+        <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
+          
+          <div class="item">
+            <blockquote class="icon icon-left larger text-left">
+              <p>""With the AI4Forest project, we aim to enhance forest monitoring by combining cutting-edge AI techniques with satellite time-series data. Our goal is to provide high-resolution, up-to-date forest information - down to individual trees - on a global scale. This will enable more effective responses to deforestation and support climate change mitigation strategies."
+"</p>
+              <div class="blockquote-details">
+                <div class="info p-0">
+                  <h6 class="mb-0">Prof. Dr. Fabian Gieseke</h6>
+                  <span class="meta mb-0">Machine Learning Researcher</span>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+          
+        </div>
+        <div class="space20 d-lg-none"></div>
+        <div class="space60 d-md-none"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Logo Blocks -->
+
+<div class="wrapper bg-white">
+  <div class="container inner">
+    
+    <div class="row justify-content-center text-center ">
+      <div class="col-lg-10">
+        <h2 class="section-title mb-20">Institutions</h2>
+        <div class="space20"></div>
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.ens.psl.eu/" target="_blank">
+                <img src="/assets/images/logos/ENS.jpg" alt="" class="img-fluid" style="max-height: 70px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.lsce.ipsl.fr/" target="_blank">
+                <img src="/assets/images/logos/LSCE.jpg" alt="" class="img-fluid" style="max-height: 70px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.ls.tum.de/en/ls/home/" target="_blank">
+                <img src="/assets/images/logos/TUM.png" alt="" class="img-fluid" style="max-height: 90px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.uni-muenster.de/de/" target="_blank">
+                <img src="/assets/images/logos/universitat-munster.png" alt="" class="img-fluid" style="max-height: 240px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.zib.de/" target="_blank">
+                <img src="/assets/images/logos/ZIB.png" alt="" class="img-fluid" style="max-height: 60px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center text-center mt-60">
+      <div class="col-lg-10">
+        <h2 class="section-title mb-20">Grant Providers</h2>
+        <div class="space20"></div>
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://anr.fr/" target="_blank">
+                <img src="/assets/images/logos/ANR.jpg" alt="" class="img-fluid" style="max-height: 50px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://www.bmbf.de/DE/Home/home_node.html" target="_blank">
+                <img src="/assets/images/logos/bmbf.jpg" alt="" class="img-fluid" style="max-height: 130px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+          <div class="col mb-30">
+            <figure class="mb-0">
+              <a href="https://projekttraeger.dlr.de/de" target="_blank">
+                <img src="/assets/images/logos/dlr.svg" alt="" class="img-fluid" style="max-height: 80px; width: auto;">
+              </a>
+            </figure>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<!--wrapper video CTA-->
+
+<!--/.wrapper video CTA-->
+<!--wrapper portfolio-->
+
+<!--/.wrapper portfolio-->
+<!--wrapper testimonial-->
+
+<div class="wrapper overflow-top bleed-s">
+  <div class="container inner pt-0">
+    
+    <div class="space80"></div>
+      <div class="carousel owl-carousel clients" data-margin="30" data-loop="true" data-dots="false" data-autoplay="true" data-autoplay-timeout="3000" data-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "5"}, "1140":{"items": "6"}}'>
+  
+</div>
+    </div>
+    <!-- /.owl-carousel -->
+    
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+<!--wrapper Blog-->
+
+<!--/.wrapper blog-->
+<!--wrapper Contact Us-->
+
+
+
+
+
+
+    <footer class=" dark-wrapper inverse-text " style="padding: 0.8rem 0 0 0;">
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">AI4Forest</h3>
+            <p style="margin: 0; font-size: 0.65rem;">Advancing forest monitoring through artificial intelligence and remote sensing technologies.</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Research</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="/publications">Publications</a> | 
+              <a href="/team">Team</a> | 
+              <a href="/projects">Projects</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Partners</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="#">LSCE</a> | 
+              <a href="#">ENS</a> | 
+              <a href="#">University of Münster</a> | 
+              <a href="#">Zuse Institute Berlin</a> | 
+              <a href="#">TU Berlin</a> | 
+              <a href="#">TUM</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Contact</h3>
+            <div style="font-size: 0.65rem;">
+              Fabian Gieseke<br>
+              University of Münster<br>
+              Münster, Germany<br>
+              Email: <a href="mailto:fabian.gieseke at uni-muenster.de">fabian.gieseke at uni-muenster.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-12 text-center" style="margin: 0; padding: 0;">
+          <p style="margin: 0; font-size: 0.65rem;">Copyright © AI4Forest. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <footer class=" dark-wrapper inverse-text " style="padding: 0.8rem 0 0 0;">
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">AI4Forest</h3>
+            <p style="margin: 0; font-size: 0.65rem;">Advancing forest monitoring through artificial intelligence and remote sensing technologies.</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Research</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="/publications">Publications</a> | 
+              <a href="/team">Team</a> | 
+              <a href="/projects">Projects</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Partners</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="#">LSCE</a> | 
+              <a href="#">ENS</a> | 
+              <a href="#">University of Münster</a> | 
+              <a href="#">Zuse Institute Berlin</a> | 
+              <a href="#">TU Berlin</a> | 
+              <a href="#">TUM</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Contact</h3>
+            <div style="font-size: 0.65rem;">
+              Fabian Gieseke<br>
+              University of Münster<br>
+              Münster, Germany<br>
+              Email: <a href="mailto:fabian.gieseke at uni-muenster.de">fabian.gieseke at uni-muenster.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-12 text-center" style="margin: 0; padding: 0;">
+          <p style="margin: 0; font-size: 0.65rem;">Copyright © AI4Forest. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class=" dark-wrapper inverse-text " style="padding: 0.8rem 0 0 0;">
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">AI4Forest</h3>
+            <p style="margin: 0; font-size: 0.65rem;">Advancing forest monitoring through artificial intelligence and remote sensing technologies.</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Research</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="/publications">Publications</a> | 
+              <a href="/team">Team</a> | 
+              <a href="/projects">Projects</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Partners</h3>
+            <div style="font-size: 0.65rem;">
+              <a href="#">LSCE</a> | 
+              <a href="#">ENS</a> | 
+              <a href="#">University of Münster</a> | 
+              <a href="#">Zuse Institute Berlin</a> | 
+              <a href="#">TU Berlin</a> | 
+              <a href="#">TUM</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">Contact</h3>
+            <div style="font-size: 0.65rem;">
+              Fabian Gieseke<br>
+              University of Münster<br>
+              Münster, Germany<br>
+              Email: <a href="mailto:fabian.gieseke at uni-muenster.de">fabian.gieseke at uni-muenster.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid inner" style="margin: 0; padding: 0;">
+      <div class="row" style="margin: 0;">
+        <div class="col-12 text-center" style="margin: 0; padding: 0;">
+          <p style="margin: 0; font-size: 0.65rem;">Copyright © AI4Forest. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+  <div class="offcanvas-info inverse-text" style="background-image: url('/assets/images/main_page/background_tree_3.png'); background-repeat: no-repeat; background-position: top right; background-size: 150px;">
+  <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
+  <a href="/">
+    <img src=""
+      srcset=" 1x,  2x"
+      class="logo-light" alt="" />
+  </a>
+  <div class="space10"></div>
+  <h3 class="mb-0"><strong>AI4Forest</strong></h3>
+  <div class="space30"></div>
+  <p>AI4Forest is a research project that combines artificial intelligence and forest science to better understand and manage forest ecosystems.</p>
+  <div class="space20"></div>
+  <div class="widget">
+    <h5 class="widget-title">Research Areas</h5>
+    <ul class="list-unstyled">
+      <li>Climate Science</li>
+      <li>Remote Sensing</li>
+      <li>Artificial Intelligence</li>
+      <li>Forest Ecosystem Dynamics</li>
+      <li>Optimization</li>
+    </ul>
+  </div>
+  <!-- /.widget -->
+  <div class="widget">
+    <h5 class="widget-title">Contact Principal Investigators</h5>
+    <address>
+      <strong>Prof. Dr. Philippe Ciais</strong><br>
+      Laboratoire des Sciences du Climat et de l'Environnement<br>
+      Université Paris Saclay<br>
+      Tél. : 01.69.08.95.06<br>
+      <a href="mailto:philippe.ciais@lsce.ipsl.fr" class="nocolor">philippe.ciais (at) lsce.ipsl.fr</a>
+      <div class="space20"></div>
+      <strong>Prof. Alexandre d'Aspremont</strong><br>
+      CNRS - ENS<br>
+      45 rue d'Ulm<br>
+      Paris, France<br>
+      48 rue Barrault<br>
+      75013 Paris<br>
+      <a href="mailto:aspremon@ens.fr" class="nocolor">aspremon (at) ens.fr</a>
+      <div class="space20"></div>
+      <strong>Prof. Dr. Fabian Gieseke</strong><br>
+      University of Münster<br>
+      Leonardo Campus 3<br>
+      48149 Münster<br>
+      Telefon: +49 251 83-38151<br>
+      <a href="mailto:fabian.gieseke@wi.uni-muenster.de" class="nocolor">fabian.gieseke (at) wi.uni-muenster.de</a>
+      <div class="space20"></div>
+      <strong>Prof. Dr. Cornelius Senf</strong><br>
+      School of Life Sciences<br>
+      Hans-Carl-v.-Carlowitz-Platz 2<br>
+      85354 Freising<br>
+      Tel.: +49.8161.71.4371<br>
+      <a href="mailto:office.eoem@ls.tum.de" class="nocolor">office.eoem (at) ls.tum.de</a>
+    </address>
+  </div>
+  <!-- /.widget -->
+</div>
+<!-- /.offcanvas-info --> 
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+  <script src="/assets/js/plugins.js"></script>
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+</body>
+</html>
