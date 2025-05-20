@@ -6,6 +6,7 @@ categories: announcements
 author: AI4Forest Team
 post_image: "/assets/images/summerschool/ai4_Forest_conference_summer_School.jpg"
 background_image: "/assets/images/maps_content/canopy_height_pauls.png"
+published: false
 ---
 
 Welcome to the AI4Forest initiative! We are dedicated to advancing the application of artificial intelligence in forest science and management. Our goal is to bring together researchers, practitioners, and students to explore innovative solutions for forest monitoring and conservation.
