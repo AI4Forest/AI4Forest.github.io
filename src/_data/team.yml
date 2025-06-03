@@ -76,7 +76,7 @@ researchers:
     last_name: Brandt
     lab_name: University of Copenhagen
     location: Paris
-    image_file: 
+    image_file: background_tree_3.png
     website_url: www.treesoutsideforests.com
     website_type: link
 
@@ -148,7 +148,7 @@ researchers:
     last_name: Pellissier-Tanon
     lab_name: LSCE
     location: Paris
-    image_file: 
+    image_file: background_tree_3.png
     website_url: https://scholar.google.com/citations?user=-xnqFxcAAAAJ&hl=fr
     website_type: google-scholar
 
@@ -165,7 +165,7 @@ researchers:
     last_name: Ritter
     lab_name: UCPH/LSCE
     location: Paris
-    image_file: 
+    image_file: background_tree_3.png
     website_url: https://scholar.google.com/citations?user=2oWAJU4AAAAJ&hl=fr
     website_type: google-scholar
 
@@ -206,7 +206,7 @@ researchers:
     last_name: Wan
     lab_name: LSCE
     location: Paris
-    image_file: 
+    image_file: background_tree_3.png
     website_url: https://scholar.google.fr/citations?user=fJz28LoAAAAJ&hl=en
     website_type: google-scholar
 

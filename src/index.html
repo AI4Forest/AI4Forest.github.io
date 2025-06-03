@@ -80,13 +80,20 @@ testimonials:
   enable: true
   title: "What People Say"
   sub_title: "Hear from our partners and collaborators about their experience working with AI4Forest"
-  image: "/assets/images/main_page/background_tree_3.png"
+  image: "/assets/images/main_page/satellite_.png"
   feedback:
+    - quote: |
+        Satellites offer a unique way to observe forests but previously, they were limited to forest cover and greenness. Now with AI and the use of multiple sensors, we can make new maps of trees height, biomass, species that are going to revolutionize our knowledge of forest ecology and help understand how forest respond to climate change, including increasing disturbances.
+      name: "Philippe Ciais"
+      designation: "Forest Ecology Specialist<br>LSCE"
+      image: "/assets/images/main_page/background_tree_3.png"
     - quote: |
         With the AI4Forest project, we aim to enhance forest monitoring by combining cutting-edge AI techniques with satellite time-series data. Our goal is to provide high-resolution, up-to-date forest information - down to individual trees - on a global scale. This will enable more effective responses to deforestation and support climate change mitigation strategies.
       name: "Fabian Gieseke"
       designation: "Machine Learning and Data Engineering<br>University of Münster"
-      image: "/assets/images/main_page/background_tree_3.png"
+      image: "/assets/images/main_page/satellite_.png"
+    
+
 
 
 logo_blocks:
@@ -688,22 +695,32 @@ contact_area:
 {% if page.testimonials.enable %}
 <div class="wrapper light-wrapper">
   <div class="container inner pb-0">
-    <div class="row align-items-center">
-      {% if page.testimonials.image %}
-      <div class="col-md-5 col-lg-4 offset-lg-1 d-none d-md-flex">
-        <figure><img src="{{page.testimonials.image}}" alt="{{page.testimonials.title}}"></figure>
+    {% if page.testimonials.title %}
+    <div class="row">
+      <div class="col-12 text-center mb-40">
+        <h2 class="section-title">{{page.testimonials.title}}</h2>
+        {% if page.testimonials.sub_title %}
+        <p class="lead larger">{{page.testimonials.sub_title}}</p>
+        {% endif %}
       </div>
-      {% endif %}
+    </div>
+    {% endif %}
+    <div class="row align-items-center">
+      <div class="col-md-5 col-lg-4 offset-lg-1 d-none d-md-flex">
+        <figure id="testimonial-image">
+          <img src="{{page.testimonials.feedback[0].image}}" alt="{{page.testimonials.feedback[0].name}}" class="img-fluid">
+        </figure>
+      </div>
       <div class="col-md-7 col-lg-6 pl-60 pl-md-15">
-        <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30">
-          {% for quote in page.testimonials.feedback %}
-          <div class="item">
+        <div class="basic-slider owl-carousel gap-small dots-left" data-margin="30" id="testimonial-carousel">
+          {% for feedback in page.testimonials.feedback %}
+          <div class="item" data-image="{{feedback.image}}" data-name="{{feedback.name}}">
             <blockquote class="icon icon-left larger text-left">
-              <p>"{{quote.quote}}"</p>
+              <p>"{{feedback.quote}}"</p>
               <div class="blockquote-details">
                 <div class="info p-0">
-                  <h6 class="mb-0">{{quote.name}}</h6>
-                  <span class="meta mb-0">{{quote.designation}}</span>
+                  <h6 class="mb-0">{{feedback.name}}</h6>
+                  <span class="meta mb-0">{{feedback.designation}}</span>
                 </div>
               </div>
             </blockquote>
@@ -716,6 +733,57 @@ contact_area:
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function() {
+  var currentIndex = 0;
+  var testimonialImages = [
+    '{{page.testimonials.feedback[0].image}}',
+    '{{page.testimonials.feedback[1].image}}'
+  ];
+  
+  var testimonialNames = [
+    '{{page.testimonials.feedback[0].name}}',
+    '{{page.testimonials.feedback[1].name}}'
+  ];
+  
+  // Update image function
+  function updateTestimonialImage(index) {
+    if (testimonialImages[index] && $('#testimonial-image img').length > 0) {
+      $('#testimonial-image img').attr('src', testimonialImages[index]);
+      $('#testimonial-image img').attr('alt', testimonialNames[index]);
+    }
+  }
+  
+  // Set initial image
+  updateTestimonialImage(0);
+  
+  // Listen for carousel events with a delay to ensure proper initialization
+  setTimeout(function() {
+    var carousel = $('#testimonial-carousel');
+    
+    // Try multiple event types
+    carousel.on('translate.owl.carousel', function(event) {
+      currentIndex = event.item.index;
+      updateTestimonialImage(currentIndex);
+    });
+    
+    carousel.on('translated.owl.carousel', function(event) {
+      currentIndex = event.item.index;
+      updateTestimonialImage(currentIndex);
+    });
+    
+    // Also listen for dot clicks
+    $('.owl-dots .owl-dot').on('click', function() {
+      var index = $(this).index();
+      setTimeout(function() {
+        updateTestimonialImage(index);
+      }, 200);
+    });
+    
+  }, 500);
+});
+</script>
 {% endif %}
 
 <!-- Logo Blocks -->
