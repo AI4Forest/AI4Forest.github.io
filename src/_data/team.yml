@@ -1,7 +1,7 @@
 coordinators:
   - first_name: Philippe
     last_name: Ciais
-    lab_name: "LSCE, Paris Saclay"
+    lab_name: LSCE
     location: Paris
     image_file: philippe.jpg
     website_url: https://scholar.google.com/citations?user=PJhqfAoAAAAJ&hl=fr
@@ -9,7 +9,7 @@ coordinators:
   
   - first_name: Alexandre
     last_name: D'Aspremont
-    lab_name: "CNRS - ENS"
+    lab_name: CNRS - ENS
     location: Paris
     image_file: alex.jpg
     website_url: https://www.di.ens.fr/~aspremon/index.html
@@ -33,7 +33,7 @@ coordinators:
     
   - first_name: Sebastian
     last_name: Pokutta
-    lab_name: "Zuse Institute, Berlin"
+    lab_name: Zuse Institute, Berlin
     location: Berlin
     image_file: sebastian_prokutta.jpg
     website_url: https://scholar.google.com/citations?user=23kB13QAAAAJ&hl=de
@@ -50,7 +50,7 @@ researchers:
 
   - first_name: Gabriel
     last_name: Belouze
-    lab_name: "LSCE, Paris Saclay"
+    lab_name: LSCE
     location: Paris
     image_file: gabriel_belouze.png
     website_url: https://gabriel.belouze.com/
@@ -66,7 +66,7 @@ researchers:
 
   - first_name: Thomas
     last_name: Boudras
-    lab_name: LSCE-UVSQ
+    lab_name: LSCE
     location: Paris
     image_file: Thomas_Boudras.jpg
     website_url: https://fr.linkedin.com/in/thomas-boudras
@@ -82,11 +82,11 @@ researchers:
 
   - first_name: Sarah
     last_name: Brood
-    lab_name: ENS/LSCE
+    lab_name: ENS/INRIA/LSCE
     location: Paris
     image_file: Sarah_Brood.jpg
     website_url: https://github.com/sbrood
-    website_type: github
+    website_type: link
 
   - first_name: Nina
     last_name: Herrmann
@@ -130,7 +130,7 @@ researchers:
 
   - first_name: Alvin
     last_name: Opler
-    lab_name: IPSL
+    lab_name: LSCE
     location: Paris
     image_file: alvin.jpeg
     website_url: https://fr.linkedin.com/in/alvin-opler-303b45212
@@ -172,7 +172,7 @@ researchers:
 
   - first_name: Martin
     last_name: Schwartz
-    lab_name: IGN
+    lab_name: LSCE
     location: Paris
     image_file: Martin_Schwartz.jpg
     website_url: https://scholar.google.fr/citations?user=myVMGXUAAAAJ&hl=fr
@@ -188,7 +188,7 @@ researchers:
 
   - first_name: Yang
     last_name: Su
-    lab_name: École Normale Supérieure - Université PSL
+    lab_name: ENS
     location: Paris
     image_file: Yang_Su.jpg
     website_url: https://scholar.google.com/citations?user=Dn2gnHYAAAAJ&hl=zh-CN
@@ -216,6 +216,30 @@ researchers:
     location: Berlin
     image_file: Max_Zimmer.png
     website_url: https://maxzimmer.org/
+    website_type: link
+
+  - first_name: Aurélien
+    last_name: De Truchis
+    lab_name: Kayrros
+    location: Paris
+    image_file: Aurelien_de_Truchis.png
+    website_url: https://www.kayrros.com/
+    website_type: link
+  
+  - first_name: Arnaud
+    last_name: Broquard
+    lab_name: Kayrros
+    location: Paris
+    image_file: Arnaud_Broquard.png
+    website_url: https://www.kayrros.com/
+    website_type: link
+
+  - first_name: Ewan
+    last_name: Sean
+    lab_name: Kayrros
+    location: Paris
+    image_file: Ewan_sean.jpeg
+    website_url: https://www.kayrros.com/
     website_type: link
     
 
