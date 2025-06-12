@@ -241,6 +241,23 @@ researchers:
     image_file: Ewan_Sean.jpeg
     website_url: https://www.kayrros.com/
     website_type: link
+  
+  - first_name: Otto
+    last_name: Briner
+    lab_name: LSCE
+    location: Paris
+    image_file: otto.jpg
+    website_url:  https://github.com/ottobriner/
+    website_type: link
+    
+  - first_name: Ibrahim
+    last_name: Fayad
+    lab_name: Kayrros / LSCE
+    location: Paris
+    image_file: ibrahim.png
+    website_url:  https://scholar.google.com/citations?user=71-hqUwAAAAJ&hl=en
+    website_type: google-scholar
+    
     
 
 
