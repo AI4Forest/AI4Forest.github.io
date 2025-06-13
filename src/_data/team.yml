@@ -258,6 +258,14 @@ researchers:
     website_url:  https://scholar.google.com/citations?user=71-hqUwAAAAJ&hl=en
     website_type: google-scholar
     
+  - first_name: Selim 
+    last_name: Behloul
+    lab_name: LSCE / IGN
+    location: Nancy
+    image_file: selim.jpeg
+    website_url: https://www.linkedin.com/in/s%C3%A9lim-behloul-454877218/
+    website_type: link
+    
     
 
 
