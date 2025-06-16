@@ -28,7 +28,7 @@ coordinators:
     lab_name: TU Munich
     location: Munich
     image_file: cornelius.jpeg
-    website_url: https://www.lss.ls.tum.de/eoem/startseite/
+    website_url: https://scholar.google.com/citations?user=23kB13QAAAAJ&hl=de
     website_type: link
     
   - first_name: Sebastian
@@ -36,8 +36,8 @@ coordinators:
     lab_name: Zuse Institute, Berlin
     location: Berlin
     image_file: sebastian_prokutta.jpg
-    website_url: https://scholar.google.com/citations?user=23kB13QAAAAJ&hl=de
-    website_type: google-scholar
+    website_url: https://www.pokutta.com/
+    website_type: link
 
 researchers:
   - first_name: Sugandha
