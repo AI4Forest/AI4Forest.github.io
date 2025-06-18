@@ -30,7 +30,8 @@ page_header:
   <div class="container-fluid inner px-5">
     <h2 class="section-title mb-40 text-center">Project Coordinators</h2>
     <div class="row text-center justify-content-center">
-      {% for member in site.data.team.coordinators %}
+      {% assign sorted_coordinators = site.data.team.coordinators | sort: 'last_name' %}
+      {% for member in sorted_coordinators %}
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob1 mb-50 profilepic">
@@ -77,7 +78,8 @@ page_header:
     
     <!-- Team members -->
     <div class="row text-center justify-content-center">
-      {% for member in site.data.team.researchers %}
+      {% assign sorted_researchers = site.data.team.researchers | sort: 'last_name' %}
+      {% for member in sorted_researchers %}
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob1 mb-25 profilepic">
@@ -128,7 +130,8 @@ page_header:
     
     <!-- Team members -->
     <div class="row text-center justify-content-center">
-      {% for member in site.data.team.former_researchers %}
+      {% assign sorted_former_researchers = site.data.team.former_researchers | sort: 'last_name' %}
+      {% for member in sorted_former_researchers %}
       <div class="col-lg-2 col-md-4 mx-2">
         {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
         <figure class="img-blob blob1 mb-25 profilepic">
