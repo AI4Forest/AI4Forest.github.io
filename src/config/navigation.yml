@@ -11,6 +11,6 @@ main_menu:
     url: "/publications"
     menu_type: "primary"
 
-  - text: "Announcements"
-    url: "/announcements"
-    menu_type: "primary"
+# - text: "Announcements"
+#   url: "/announcements"
+#   menu_type: "primary"
