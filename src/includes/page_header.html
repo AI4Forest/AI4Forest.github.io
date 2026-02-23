@@ -1,30 +1,96 @@
-</style>
 <style>
-  @media (max-width: 1000px) {
-    .team-header-wrapper {
-      background-size: cover !important;
-      background-position: center center !important;
-    }
+  .team-header-carousel-wrapper {
+    --team-header-height: 450px;
+    --team-header-pull-up: 5rem;
+    position: relative;
+    z-index: 0;
+    min-height: var(--team-header-height);
+    margin-top: calc(-1 * var(--team-header-pull-up));
+    margin-bottom: -2rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow-x: hidden;
   }
-  
-  @media (min-width: 1000px) {
-    .team-header-wrapper {
-      background-size: contain !important;
-      background-position: center top !important;
-    }
+
+  .team-header-carousel-wrapper .team-header-title-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .team-header-carousel-wrapper.slide-2-active .team-header-title-overlay {
+    top: 35%;
+  }
+
+  .team-header-slider {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    height: var(--team-header-height);
+    overflow: hidden;
+  }
+  .team-header-slider .team-header-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--team-header-height);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+  }
+  .team-header-slider .team-header-slide.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .team-header-slide-img {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    height: var(--team-header-height);
+    min-height: var(--team-header-height);
+    object-fit: cover;
+    object-position: center;
+  }
+  .team-header-slide:nth-child(2) .team-header-slide-img {
+    object-position: center 5%;
   }
 </style>
-<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper" 
-     data-image-src="{{page.page_header.background_image}}"
-     style="background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center;">
-  <div class="container inner text-center" style="padding: 0.5rem;">
+
+{% if page.page_header.background_images and page.page_header.background_images.size > 0 %}
+<!-- Multiple images: custom slider (no Owl) -->
+<div class="wrapper image-wrapper page-title-wrapper inverse-text team-header-wrapper team-header-carousel-wrapper" style="margin-bottom: -2rem;">
+  <div class="team-header-slider" data-interval="5000">
+    {% for img in page.page_header.background_images %}
+    <div class="team-header-slide{% if forloop.first %} active{% endif %}">
+      <img src="{{ img }}" alt="" class="team-header-slide-img">
+    </div>
+    {% endfor %}
+  </div>
+  <div class="container inner text-center team-header-title-overlay" style="padding: 0.5rem;">
     {% if page.page_header.title %}
-     <h1 class="page-title" style="margin-bottom: 0;">{{page.page_header.title}}</h1>
+    <h1 class="page-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
     {% endif %}
     {% if page.page_header.sub_title %}
-     <p class="lead">{{page.page_header.sub_title}}</p>
-     {% endif %}
+    <p class="lead">{{ page.page_header.sub_title }}</p>
+    {% endif %}
   </div>
-  <!-- /.container -->
 </div>
-<!-- /.wrapper -->
+{% else %}
+<!-- Single image -->
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper" style="position: relative; background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center;"
+     data-image-src="{{ page.page_header.background_image }}">
+  <div class="container inner text-center" style="padding: 0.5rem;">
+    {% if page.page_header.title %}
+    <h1 class="page-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
+    {% endif %}
+    {% if page.page_header.sub_title %}
+    <p class="lead">{{ page.page_header.sub_title }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

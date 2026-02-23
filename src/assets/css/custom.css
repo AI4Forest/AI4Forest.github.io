@@ -2,6 +2,83 @@
     min-height: 300px !important;
 } 
 
+/* Researchers page: navbar overlays header image (fixed to viewport, no scroll) */
+.page-hero-with-nav .navbar.absolute,
+.navbar.hero-overlay-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 70%, transparent 100%) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.page-hero-with-nav .navbar.absolute.inverse-text .nav-link,
+.page-hero-with-nav .navbar.absolute.inverse-text .navbar-other *,
+.page-hero-with-nav .navbar.absolute.inverse-text .navbar-brand a,
+.navbar.hero-overlay-nav.inverse-text .nav-link,
+.navbar.hero-overlay-nav.inverse-text .navbar-other *,
+.navbar.hero-overlay-nav.inverse-text .navbar-brand a {
+    color: #fff !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.95) !important;
+}
+.page-hero-with-nav .navbar.absolute.inverse-text .logo-dark,
+.navbar.hero-overlay-nav.inverse-text .logo-dark {
+    display: none !important;
+}
+.page-hero-with-nav .navbar.absolute.inverse-text .logo-light,
+.navbar.hero-overlay-nav.inverse-text .logo-light {
+    display: inline-block !important;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.9));
+}
+
+/* Researchers page: hide original (white text) navbar when sticky clone is visible */
+.navbar.hero-overlay-nav.hero-nav-hidden,
+.page-hero-with-nav .navbar.absolute.hero-nav-hidden {
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+/* Researchers page: when scrolling, sticky navbar matches other pages (white bg, black text) */
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick {
+    background: rgba(var(--rgb-white), 0.95) !important;
+}
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .nav-link,
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .navbar-other *,
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .navbar-other * i,
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .navbar-brand a {
+    color: #303030 !important;
+    text-shadow: none !important;
+}
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .logo-dark {
+    display: inline-block !important;
+}
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .logo-light {
+    display: none !important;
+}
+.page-hero-with-nav .navbar.absolute.banner--clone.banner--stick .navbar-other button {
+    color: #303030 !important;
+}
+/* Fallback: sticky clone may be outside page-hero-with-nav */
+.navbar.banner--clone.banner--stick.inverse-text .nav-link,
+.navbar.banner--clone.banner--stick.inverse-text .navbar-other *,
+.navbar.banner--clone.banner--stick.inverse-text .navbar-brand a {
+    color: #303030 !important;
+    text-shadow: none !important;
+}
+.navbar.banner--clone.banner--stick.inverse-text .logo-dark {
+    display: inline-block !important;
+}
+.navbar.banner--clone.banner--stick.inverse-text .logo-light {
+    display: none !important;
+}
+.navbar.banner--clone.banner--stick.inverse-text button.hamburger:before,
+.navbar.banner--clone.banner--stick.inverse-text button.hamburger span,
+.navbar.banner--clone.banner--stick.inverse-text button.hamburger:after {
+    background: #303030 !important;
+}
+
 /* Larger info sidebar icon so it's easier to notice */
 button[data-toggle="offcanvas-info"] i.jam-info {
     font-size: 1.8em;

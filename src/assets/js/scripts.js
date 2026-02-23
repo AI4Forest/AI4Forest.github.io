@@ -24,12 +24,23 @@ $(document).ready(function() {
 			},
 			onStick: function() {
 				$($.SmartMenus.Bootstrap.init);
+				if ($(".page-hero-with-nav").length) {
+					$(".navbar.hero-overlay-nav").addClass("hero-nav-hidden");
+				}
 			},
 			onUnstick: function() {
 				$('.search-dropdown .dropdown-menu').collapse('hide');
+				$(".navbar.hero-overlay-nav").removeClass("hero-nav-hidden");
 			}
 		};
 		var banner = new Headhesive('.navbar', options);
+		// Researchers page: move navbar to body so position:fixed works (no scroll)
+		if ($(".page-hero-with-nav").length) {
+			var $heroNav = $(".page-hero-with-nav .navbar.absolute:not(.banner--clone)");
+			if ($heroNav.length) {
+				$heroNav.addClass("hero-overlay-nav").prependTo("body");
+			}
+		}
 	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	HEADER BUTTONS
@@ -202,6 +213,27 @@ $(document).ready(function() {
 			loop: true,
 			margin: $bslider.data("margin")
 		});
+	});
+	// Custom researchers header slider (no Owl - fades between images)
+	$('.team-header-slider').each(function() {
+		var $slider = $(this);
+		var $slides = $slider.find('.team-header-slide');
+		var $wrapper = $slider.closest('.team-header-carousel-wrapper');
+		function updateSlideClass() {
+			var idx = $slides.index($slider.find('.team-header-slide.active'));
+			$wrapper.toggleClass('slide-2-active', idx === 1);
+		}
+		if ($slides.length < 2) return;
+		var interval = $slider.data('interval') || 5000;
+		setInterval(function() {
+			var $active = $slider.find('.team-header-slide.active');
+			$active.removeClass('active');
+			var $next = $active.next('.team-header-slide');
+			if (!$next.length) $next = $slides.first();
+			$next.addClass('active');
+			updateSlideClass();
+		}, interval);
+		updateSlideClass();
 	});
 	$('.carousel').each(function() {
 		var $carousel = $(this);
