@@ -1,5 +1,5 @@
 main_menu:
-  - text: "AI4Forest"
+  - text: "Home"
     url: "/"
     menu_type: "primary"
 
