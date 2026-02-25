@@ -1,6 +1,6 @@
 .header-short.image-wrapper {
     min-height: 300px !important;
-} 
+}
 
 /* Researchers page: navbar overlays header image (fixed to viewport, no scroll) */
 .page-hero-with-nav .navbar.absolute,
