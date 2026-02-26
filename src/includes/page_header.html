@@ -59,6 +59,12 @@
   .team-header-slide:nth-child(2) .team-header-slide-img {
     object-position: center 5%;
   }
+  
+  /* Background anchored at bottom (e.g. for Publications page) */
+  .team-header-wrapper.bg-position-bottom {
+    background-position: center 96% !important;
+    background-attachment: scroll !important;
+  }
 </style>
 
 {% if page.page_header.background_images and page.page_header.background_images.size > 0 %}
@@ -82,7 +88,7 @@
 </div>
 {% else %}
 <!-- Single image -->
-<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper" style="position: relative; background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center; min-height: 450px;"
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text team-header-wrapper{% if page.page_header.background_position == 'center bottom' %} bg-position-bottom{% endif %}" style="position: relative; background-repeat: no-repeat; margin-bottom: -2rem; display: flex; align-items: center; justify-content: center; min-height: 450px;"
      data-image-src="{{ page.page_header.background_image }}">
   <div class="container inner text-center" style="padding: 0.5rem;">
     {% if page.page_header.title %}
