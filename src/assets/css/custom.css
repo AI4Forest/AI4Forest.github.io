@@ -79,7 +79,40 @@
     background: #303030 !important;
 }
 
+/* Researchers page: link icons in same green as publications (#47a88a) */
+.researchers-page .social li a,
+.researchers-page .social li a i {
+    color: #47a88a !important;
+}
+.researchers-page .social li a:hover i {
+    opacity: 0.85;
+}
+
 /* Larger info sidebar icon so it's easier to notice */
 button[data-toggle="offcanvas-info"] i.jam-info {
     font-size: 1.8em;
+}
+
+/* Navbar: nav links in section-title style (uppercase, letter-spacing) */
+.navbar-nav .nav-link {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.navbar-brand a {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Section titles: uppercase, letter-spacing (Research Focus style) */
+.section-title {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+.section-title.larger {
+    font-size: 1.5rem;
+}
+.section-title.larger.text-uppercase {
+    font-size: 1.5rem;
 }

@@ -8,9 +8,9 @@ hero_area:
   enable: true
   bg_image: "/assets/images/maps_content/canopy_height_pauls.png"
   title: "AI4Forest"
-  sub_title: "<em>German-French joint research initiative on Artificial Intelligence</em>"
+  sub_title: "<em>German-French joint research initiative on Artificial Intelligence for Forest Monitoring</em>"
   btn_text: "See Projects"
-  btn_url: "/publications"
+  btn_url: "#research-foci"
   btn2_text: "See People"
   btn2_url: "/researchers"
 
@@ -24,7 +24,25 @@ forest_image:
   enable: true
   image: "/assets/images/main_page/forest_v3.png"
 
-
+projects_area:
+  enable: true
+  title: "Research Foci"
+  projects:
+    - title: "Biomass Estimation"
+      image: "/assets/images/maps_content/Calders_1.png"
+      url: "/publications"
+    - title: "Canopy Height Maps"
+      image: "/assets/images/maps_content/canopy_height_pauls.png"
+      url: "/publications"
+    - title: "Disturbance Detection"
+      image: "/assets/images/logos/disturbance_map.png"
+      url: "/publications"
+    - title: "Single Tree Segmentation"
+      image: "/assets/images/maps_content/Calders_1.png"
+      url: "/publications"
+    - title: "Distributed Training"
+      image: "/assets/images/main_page/forest_v3.png"
+      url: "/publications"
 
 logo_blocks:
   - enable: true
@@ -306,6 +324,12 @@ contact_area:
     height: 65vh !important;
   }
   
+  /* Hero title: section-title style (uppercase, letter-spacing) */
+  .hero-title {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
   /* Tree logo in hero title - exclude from slider img sizing */
   #slider8 .hero-tree-logo {
     height: 2.2em !important;
@@ -460,7 +484,7 @@ contact_area:
             data-whitespace="['normal','normal','normal','normal']" 
             data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" 
             data-responsive="on" 
-            data-responsive_offset="on" style="z-index: 9;"><span style="display: inline-flex; align-items: center; gap: 0.5rem;"><img class="hero-tree-logo" src="/assets/images/logos/tree_white.png" alt="" style="vertical-align: middle;" />{{page.hero_area.title}}</span>
+            data-responsive_offset="on" style="z-index: 9;"><span class="hero-title" style="display: inline-flex; align-items: center; gap: 0.5rem;"><img class="hero-tree-logo" src="/assets/images/logos/tree_white.png" alt="" style="vertical-align: middle;" />{{page.hero_area.title}}</span>
             </div>
             <div class="tp-caption font-weight-400 color-white text-center" 
             data-x="center" data-y="middle" 
@@ -548,6 +572,47 @@ contact_area:
     {% endif %}
   </div>
 </div>
+
+{% if page.projects_area.enable %}
+<style>
+  .projects-col { flex: 0 0 20%; max-width: 20%; padding: 0 1.25rem; }
+  @media (max-width: 991px) { .projects-col { flex: 0 0 33.333%; max-width: 33.333%; padding: 0 1rem; } }
+  @media (max-width: 767px) { .projects-col { flex: 0 0 50%; max-width: 50%; padding: 0 0.75rem; } }
+  .projects-area-wrapper .row { margin: 0 -1.25rem; }
+  @media (max-width: 991px) { .projects-area-wrapper .row { margin: 0 -1rem; } }
+  @media (max-width: 767px) { .projects-area-wrapper .row { margin: 0 -0.75rem; } }
+  .projects-figure { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 0.3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: all 0.4s ease; }
+  .projects-figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%); opacity: 0; transition: opacity 0.4s ease; }
+  .projects-area-wrapper a:hover .projects-figure { box-shadow: 0 12px 40px rgba(88, 179, 154, 0.25); transform: translateY(-4px); }
+  .projects-area-wrapper a:hover .projects-figure::after { opacity: 1; }
+  .projects-area-wrapper a:hover .projects-figure img { transform: scale(1.08); }
+  .projects-figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .projects-figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1rem; color: #fff; font-size: 0.9rem; font-weight: 600; z-index: 2; opacity: 0; transform: translateY(10px); transition: all 0.4s ease; }
+  .projects-area-wrapper a:hover .projects-figcaption { opacity: 1; transform: translateY(0); }
+  .projects-area-wrapper .projects-label { color: #666; font-size: 0.85rem; font-weight: 500; transition: color 0.3s ease; }
+  .projects-area-wrapper a:hover .projects-label { color: var(--color-default); }
+</style>
+<div id="research-foci" class="wrapper light-wrapper projects-area-wrapper" style="margin-top: -7rem; padding-top: 0.5rem; padding-bottom: 2rem;">
+  <div class="container inner">
+    {% if page.projects_area.title %}
+    <h2 class="section-title text-center mb-40">{{ page.projects_area.title }}</h2>
+    {% endif %}
+    <div class="row justify-content-center">
+      {% for project in page.projects_area.projects %}
+      <div class="projects-col mb-30">
+        <a href="{{ project.url }}" class="d-block text-decoration-none">
+          <figure class="main projects-figure mb-15">
+            <img src="{{ project.image }}" alt="{{ project.title }}" class="img-fluid"/>
+            <figcaption class="projects-figcaption">{{ project.title }}</figcaption>
+          </figure>
+          <h4 class="post-title text-center mb-0 projects-label" style="font-size: 0.9rem;">{{ project.title }}</h4>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
 
 {% if page.forest_image.enable %}
 <div class="wrapper light-wrapper forest-image-wrapper" style="margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
