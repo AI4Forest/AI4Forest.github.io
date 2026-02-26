@@ -13,16 +13,22 @@
   }
 
   .team-header-carousel-wrapper .team-header-title-overlay {
-    position: absolute;
+    position: absolute !important;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
     pointer-events: none;
+    padding-top: 0 !important;
   }
-  .team-header-carousel-wrapper.slide-2-active .team-header-title-overlay {
-    top: 35%;
+  .team-header-wrapper .page-title.hero-title {
+    font-family: 'HK Grotesk', sans-serif !important;
+    font-size: 1.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
 
   .team-header-slider {
@@ -83,7 +89,7 @@
   </div>
   <div class="container inner text-center team-header-title-overlay" style="padding: 0.5rem;">
     {% if page.page_header.title %}
-    <h1 class="page-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
+    <h1 class="page-title hero-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
     {% endif %}
     {% if page.page_header.sub_title %}
     <p class="lead">{{ page.page_header.sub_title }}</p>
@@ -96,7 +102,7 @@
      data-image-src="{{ page.page_header.background_image }}">
   <div class="container inner text-center" style="padding: 0.5rem;">
     {% if page.page_header.title %}
-    <h1 class="page-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
+    <h1 class="page-title hero-title" style="margin-bottom: 0;">{{ page.page_header.title }}</h1>
     {% endif %}
     {% if page.page_header.sub_title %}
     <p class="lead">{{ page.page_header.sub_title }}</p>

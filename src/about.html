@@ -372,7 +372,7 @@ contact_area:
     object-position: right bottom;
 }
 
-  /* Force hero title and subtitle higher (override slider positioning) */
+  /* Hero title - same height as index/home page */
   #slider8 .tp-caption.font-weight-600 {
     top: 28% !important;
     transform: translateY(-50%);
@@ -380,6 +380,13 @@ contact_area:
   #slider8 .tp-caption.font-weight-400 {
     top: 38% !important;
     transform: translateY(-50%);
+  }
+  /* About page hero title: HK Grotesk font, same size as other page headers */
+  #slider8 .hero-title {
+    font-family: 'HK Grotesk', sans-serif !important;
+    font-size: 1.75rem !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
   
   /* Style the logo rows */
@@ -518,10 +525,10 @@ contact_area:
         <ul>
           <li data-transition="fade" data-thumb="">
             <img src="{{page.hero_area.bg_image}}" alt="{{page.hero_area.title}}" data-bgposition="right 73%"/>
-            <div class="tp-caption font-weight-600 color-white text-center" 
+            <div class="tp-caption font-weight-600 color-white text-center hero-title" 
             data-x="center" 
             data-y="middle" 
-            data-voffset="['-120','-120','-110','-140']" 
+            data-voffset="['-75','-75','-65','-95']" 
             data-fontsize="['50','50','35','30']" 
             data-lineheight="['65','65','50','45']" 
             data-width="['1000','1000','600','340']" 
@@ -636,8 +643,8 @@ contact_area:
 {% endif %}
 
 {% if page.intro_area.enable %}
-<div class="wrapper light-wrapper intro-area-wrapper" style="padding-top: 0;">
-  <div class="container inner">
+<div class="wrapper light-wrapper intro-area-wrapper" style="padding-top: 0; margin-top: -180px;">
+  <div class="container inner" style="padding-top: 1.5rem;">
     <div class="row justify-content-center">
       <div class="col-lg-10">
         {% if page.intro_area.title %}
@@ -661,7 +668,10 @@ contact_area:
     }
     
     .intro-area-wrapper {
-      margin-top: -150px !important;
+      margin-top: -180px !important;
+    }
+    .intro-area-wrapper .inner {
+      padding-top: 1.5rem !important;
     }
   }
   
@@ -672,7 +682,10 @@ contact_area:
     }
     
     .intro-area-wrapper {
-      margin-top: 20px !important;
+      margin-top: -120px !important;
+    }
+    .intro-area-wrapper .inner {
+      padding-top: 1.5rem !important;
     }
   }
   
@@ -682,7 +695,7 @@ contact_area:
     }
     
     .intro-area-wrapper {
-      margin-top: 20px !important;
+      margin-top: -80px !important;
     }
   }
 </style>
