@@ -306,6 +306,13 @@ contact_area:
     height: 65vh !important;
   }
   
+  /* Tree logo in hero title - exclude from slider img sizing */
+  #slider8 .hero-tree-logo {
+    height: 2.2em !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+  
   /* Style the logo rows */
   .logo-row:not(:last-child) {
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -453,7 +460,7 @@ contact_area:
             data-whitespace="['normal','normal','normal','normal']" 
             data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" 
             data-responsive="on" 
-            data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.title}}  
+            data-responsive_offset="on" style="z-index: 9;"><span style="display: inline-flex; align-items: center; gap: 0.5rem;"><img class="hero-tree-logo" src="/assets/images/logos/tree_white.png" alt="" style="vertical-align: middle;" />{{page.hero_area.title}}</span>
             </div>
             <div class="tp-caption font-weight-400 color-white text-center" 
             data-x="center" data-y="middle" 
