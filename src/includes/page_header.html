@@ -65,6 +65,10 @@
     background-position: center 96% !important;
     background-attachment: scroll !important;
   }
+  /* Dark overlay for better text readability on Publications header */
+  .team-header-wrapper.bg-position-bottom::before {
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
 </style>
 
 {% if page.page_header.background_images and page.page_header.background_images.size > 0 %}
