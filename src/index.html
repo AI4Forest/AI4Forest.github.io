@@ -40,8 +40,17 @@ projects_area:
     - title: "Single Tree Segmentation"
       image: "/assets/images/maps_content/qualitative.jpg"
       url: "/publications"
-    - title: "Distributed Training"
+    - title: "Tree Species Maps"
       image: "/assets/images/main_page/forest_v3.png"
+      url: "/publications"
+    - title: "EO Foundation Models"
+      image: "/assets/images/main_page/forest_v3.png"
+      url: "/publications"
+    - title: "Sparse Neural Networks"
+      image: "/assets/images/main_page/forest_v3.png"
+      url: "/publications"
+    - title: "Uncertainty Quantification"
+      image: "/assets/images/maps_content/uncertainty_quantification.jpg"
       url: "/publications"
 
 logo_blocks:
@@ -330,6 +339,13 @@ contact_area:
     text-transform: uppercase;
   }
   
+  /* Hero subtitle: match title typography */
+  .hero-subtitle {
+    font-family: 'HK Grotesk', sans-serif !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
   /* Tree logo in hero title - exclude from slider img sizing */
   #slider8 .hero-tree-logo {
     height: 2.2em !important;
@@ -486,7 +502,7 @@ contact_area:
             data-responsive="on" 
             data-responsive_offset="on" style="z-index: 9;"><span class="hero-title" style="display: inline-flex; align-items: center; gap: 0.5rem;"><img class="hero-tree-logo" src="/assets/images/logos/tree_white.png" alt="" style="vertical-align: middle;" />{{page.hero_area.title}}</span>
             </div>
-            <div class="tp-caption font-weight-400 color-white text-center" 
+            <div class="tp-caption font-weight-400 color-white text-center hero-subtitle" 
             data-x="center" data-y="middle" 
             data-voffset="['0','0','0','0']" 
             data-fontsize="['26','26','26','20']" 
@@ -501,7 +517,7 @@ contact_area:
             </div>
             
             <!-- Hero buttons container -->
-            <div class="hero-buttons" style="top: 65%;">
+            <div class="hero-buttons" style="top: 72%;">
               <a class="btn btn-l btn-white btn-strong-hover scroll" href="{{page.hero_area.btn_url}}">{{page.hero_area.btn_text}}</a>
               <a class="btn btn-l btn-white btn-strong-hover scroll" href="{{page.hero_area.btn2_url}}">{{page.hero_area.btn2_text}}</a>
             </div>
