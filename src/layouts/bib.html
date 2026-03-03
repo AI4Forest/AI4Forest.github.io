@@ -2,15 +2,16 @@
 layout: default
 ---
 
-<div class="publication-item d-flex" style="margin-bottom: 1.5rem; padding: 0.8rem; border: 1px solid #e8e8e8; border-radius: 6px;">
-  {% if entry.preview %}
-  <div class="publication-thumbnail mr-3" style="width: 110px; height: 110px; overflow: hidden; display: flex; justify-content: flex-end;">
-    <div style="width: 150px; height: 100%;">
-      <img src="{{ entry.preview }}" alt="Publication preview" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
-    </div>
+<div class="publication-item d-flex" data-tags="{{ entry.tags | join: ',' }}" style="margin-bottom: 1.5rem; padding: 0.8rem; border: 1px solid #e8e8e8; border-radius: 6px;">
+  <div class="pub-thumb-col">
+    {% if entry.preview %}
+      <div class="publication-thumbnail mr-3">
+        <img src="{{ '/assets/images/publications_preview/' | append: entry.preview | relative_url }}"
+              class="rounded" data-zoomable
+              style="width:100%; height:100%; object-fit:cover; object-position:right center;">
+      </div>
+    {% endif %}
   </div>
-  {% endif %}
-  
   <div class="publication-content flex-grow-1">
     <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; color: #333;">{{ entry.title }}</h4>
     
@@ -83,11 +84,87 @@ layout: default
       {% if entry.url and entry.url != "" and entry.url != "false" and entry.url != "{}" and entry.url contains "earth" %}
         <a href="{{ entry.url }}" style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">EARTH ENGINE</a>
       {% endif %}
+
+      {% comment %} === Contact Main Author Button === {% endcomment %}
+      {% assign matched_researcher = site.data.team.researchers 
+        | where: "id", entry.author_id 
+        | first %}
+
+      {% if matched_researcher %}
+        <a href="{{ matched_researcher.website_url }}" 
+          style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;"
+          target="_blank">
+          CONTACT
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
 
+<div id="image-lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
 <style>
+/* Lightbox background */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
+
+/* Image */
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 85%;
+  max-height: 80%;
+  border-radius: 6px;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.publication-thumbnail {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: flex-end;
+  overflow: visible; /* <-- allow pop-out */
+  position: relative;
+}
+
+.publication-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+  border-radius: 6px;
+}
+
+.publication-thumbnail:hover img {
+  transform: scale(1.5);
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
 .publications {
   max-width: 800px;
   margin: 0 auto;
@@ -136,6 +213,11 @@ layout: default
   border-color: #47a88a;
 }
 
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
 .authors {
   color: #666;
   font-style: italic;
@@ -172,5 +254,9 @@ layout: default
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 4px;
+}
+
+.hidden-publication {
+  display: none !important;
 }
 </style> 

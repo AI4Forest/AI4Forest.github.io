@@ -13,6 +13,18 @@ page_header:
     <h2 class="section-title mb-40 text-center">Research Publications</h2>
     <div class="row">
       <div class="col-md-12">
+        <div id="tags-filter-container" style="margin-bottom: 1rem;">
+        <strong>Filter by tag:</strong>
+        {% assign all_tags = site.data.publication_tags %}
+        {% for t in all_tags %}
+          <button class="tag-btn" data-tag="{{ t.tag }}" style="margin-right:5px; margin-bottom:5px; padding: 2px 6px; font-size: 0.7rem; border-radius:3px; border:1px solid #47a88a; background-color:#fff; color:#47a88a; cursor:pointer;">
+            {{ t.name }}
+          </button>
+        {% endfor %}
+        <button class="tag-btn" data-tag="all" style="margin-right:5px; margin-bottom:5px; padding: 2px 6px; font-size:0.7rem; border-radius:3px; border:1px solid #47a88a; background-color:#47a88a; color:#fff; cursor:pointer;">
+          All
+        </button>
+      </div>
         <div class="publication-list">
           {% bibliography %}
         </div>
