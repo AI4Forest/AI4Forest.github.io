@@ -7,20 +7,20 @@
 - tag: "disturbance"
   name: Disturbance Detection
 
-- tag: "segmentation"
-  name: Tree Segmentation
+# - tag: "segmentation"
+#   name: Tree Segmentation
 
-- tag: "species"
-  name: Species Maps
+# - tag: "species"
+#   name: Species Maps
 
 - tag: "foundation_models"
   name: Foundation Models
 
-- tag: "sparse_nn"
-  name: Sparse Neural Nets
+# - tag: "sparse_nn"
+#   name: Sparse Neural Nets
 
-- tag: "uncertainty"
-  name: Uncertainty Quantification
+# - tag: "uncertainty"
+#   name: Uncertainty Quantification
 
 - tag: "resolution"
   name: High Resolution
