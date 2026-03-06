@@ -1,6 +1,7 @@
 coordinators:
   - first_name: Philippe
     last_name: Ciais
+    id: philippe_ciais
     lab_name: LSCE
     location: Paris
     image_file: philippe.jpg
@@ -9,6 +10,7 @@ coordinators:
   
   - first_name: Alexandre
     last_name: D'Aspremont
+    id: alexandre_daspremont
     lab_name: CNRS - ENS
     location: Paris
     image_file: alex.jpg
@@ -17,6 +19,7 @@ coordinators:
     
   - first_name: Fabian
     last_name: Gieseke
+    id: fabian_gieseke
     lab_name: University of Münster
     location: Münster
     image_file: fabian.jpg
@@ -25,6 +28,7 @@ coordinators:
     
   - first_name: Cornelius
     last_name: Senf
+    id: cornelius_senf
     lab_name: TU Munich
     location: Munich
     image_file: cornelius.jpeg
@@ -33,6 +37,7 @@ coordinators:
     
   - first_name: Sebastian
     last_name: Pokutta
+    id: sebastian_pokutta
     lab_name: Zuse Institute, Berlin
     location: Berlin
     image_file: sebastian_prokutta.jpg
@@ -42,6 +47,7 @@ coordinators:
 researchers:
   - first_name: Sugandha
     last_name: Arora
+    id: sugandha_arora
     lab_name: University of Münster
     location: Münster
     image_file: sugandha_arora.jpg
@@ -50,6 +56,7 @@ researchers:
 
   - first_name: Gabriel
     last_name: Belouze
+    id: gabriel_belouze
     lab_name: LSCE
     location: Paris
     image_file: gabriel_belouze.png
@@ -58,6 +65,7 @@ researchers:
 
   - first_name: Nikola
     last_name: Besic
+    id: nikola_besic
     lab_name: IGN
     location: Paris
     image_file: Nikola_Besic.JPEG
@@ -66,6 +74,7 @@ researchers:
 
   - first_name: Thomas
     last_name: Boudras
+    id: thomas_boudras
     lab_name: LSCE
     location: Paris
     image_file: Thomas_Boudras.jpg
@@ -74,6 +83,7 @@ researchers:
 
   - first_name: Martin
     last_name: Brandt
+    id: martin_brandt
     lab_name: University of Copenhagen
     location: Paris
     image_file: background_tree_3.png
@@ -82,6 +92,7 @@ researchers:
 
   - first_name: Sarah
     last_name: Brood
+    id: sarah_brood
     lab_name: ENS/INRIA/LSCE
     location: Paris
     image_file: Sarah_Brood.jpg
@@ -90,6 +101,7 @@ researchers:
 
   - first_name: Nina
     last_name: Herrmann
+    id: nina_herrmann
     lab_name: University of Münster
     location: Münster
     image_file: Nina_Herrmann.jpeg
@@ -98,6 +110,7 @@ researchers:
 
   - first_name: Una
     last_name: Kelly
+    id: una_kelly
     lab_name: University of Münster
     location: Münster
     image_file: Una_Kelly.png
@@ -106,14 +119,16 @@ researchers:
 
   - first_name: Julian
     last_name: Kranz
+    id: julian_kranz
     lab_name: University of Münster
     location: Münster
     image_file: Julian_Kranz.jpg
     website_url: "#"
     website_type: link
 
-  - first_name: Xiangyi 
+  - first_name: Xiangyi
     last_name: Li
+    id: xiangyi_li
     lab_name: LSCE
     location: Paris
     image_file: Xiangyi_LI.jpg
@@ -122,6 +137,7 @@ researchers:
 
   - first_name: Jorunn
     last_name: Mense
+    id: jorunn_mense
     lab_name: University of Münster
     location: Münster
     image_file: jorunn.jpg
@@ -130,6 +146,7 @@ researchers:
 
   - first_name: Alvin
     last_name: Opler
+    id: alvin_opler
     lab_name: LSCE
     location: Paris
     image_file: alvin.jpeg
@@ -138,6 +155,7 @@ researchers:
 
   - first_name: Jan
     last_name: Pauls
+    id: jan_pauls
     lab_name: University of Münster
     location: Münster
     image_file: Jan_P.jpg
@@ -146,6 +164,7 @@ researchers:
 
   - first_name: Agnès
     last_name: Pellissier-Tanon
+    id: agnès_tanon
     lab_name: LSCE
     location: Paris
     image_file: background_tree_3.png
@@ -154,6 +173,7 @@ researchers:
 
   - first_name: David
     last_name: Purnell
+    id: david_purnell
     lab_name: LSCE
     location: Paris
     image_file: Dave_P.jpeg
@@ -163,6 +183,7 @@ researchers:
     
   - first_name: François
     last_name: Ritter
+    id: françois_ritter
     lab_name: UCPH/LSCE
     location: Paris
     image_file: background_tree_3.png
@@ -172,6 +193,7 @@ researchers:
 
   - first_name: Martin
     last_name: Schwartz
+    id: martin_schwartz
     lab_name: LSCE
     location: Paris
     image_file: Martin_Schwartz.jpg
@@ -180,6 +202,7 @@ researchers:
 
   - first_name: Karsten
     last_name: Schrödter
+    id: karsten_schrödter
     lab_name: University of Münster
     location: Münster
     image_file: Karsten_Schroedter.jpg
@@ -188,6 +211,7 @@ researchers:
 
   - first_name: Yang
     last_name: Su
+    id: yang_su
     lab_name: ENS
     location: Paris
     image_file: Yang_Su.jpg
@@ -196,6 +220,7 @@ researchers:
 
   - first_name: Alba
     last_name: Viana Soto
+    id: alba_viana_soto
     lab_name: TU Munich
     location: Munich
     image_file: alba.jpg
@@ -204,6 +229,7 @@ researchers:
 
   - first_name: Liang
     last_name: Wan
+    id: liang_wan
     lab_name: LSCE
     location: Paris
     image_file: background_tree_3.png
@@ -212,6 +238,7 @@ researchers:
 
   - first_name: Max
     last_name: Zimmer
+    id: max_zimmer
     lab_name: Zuse Institute Berlin
     location: Berlin
     image_file: Max_Zimmer.png
@@ -220,6 +247,7 @@ researchers:
 
   - first_name: Aurélien
     last_name: De Truchis
+    id: aurelien_truchis
     lab_name: Kayrros
     location: Paris
     image_file: Aurelien_de_Truchis.png
@@ -228,6 +256,7 @@ researchers:
   
   - first_name: Arnaud
     last_name: Broquard
+    id: arnaud_broquard
     lab_name: Kayrros
     location: Paris
     image_file: Arnaud_Broquard.png
@@ -236,6 +265,7 @@ researchers:
 
   - first_name: Ewan
     last_name: Sean
+    id: ewan_sean
     lab_name: Kayrros
     location: Paris
     image_file: Ewan_Sean.jpeg
@@ -244,6 +274,7 @@ researchers:
   
   - first_name: Otto
     last_name: Briner
+    id: otto_briner
     lab_name: LSCE
     location: Paris
     image_file: otto.jpg
@@ -252,26 +283,27 @@ researchers:
     
   - first_name: Ibrahim
     last_name: Fayad
+    id: ibrahim_fayad
     lab_name: Kayrros / LSCE
     location: Paris
     image_file: ibrahim.png
     website_url:  https://scholar.google.com/citations?user=71-hqUwAAAAJ&hl=en
     website_type: google-scholar
     
-  - first_name: Selim 
+  - first_name: Selim
     last_name: Behloul
+    id: selim_behloul
     lab_name: LSCE / IGN
     location: Nancy
     image_file: selim.jpeg
     website_url: https://www.linkedin.com/in/s%C3%A9lim-behloul-454877218/
     website_type: link
     
-    
-
 
 former_researchers:
   - first_name: Fajwel 
     last_name: Fogel
+    id: fajwel_fogel
     lab_name: ENS Paris
     location: Paris
     image_file: fajwel.jpg
