@@ -29,7 +29,7 @@ module Jekyll
         
         bib.each do |entry|
           Jekyll.logger.info "Processing entry: #{entry.key}"
-          next unless entry.complete? && entry.type.to_s == 'article'
+          next unless entry.complete? && ['article', 'inproceedings', 'misc'].include?(entry.type.to_s)
           
           # Convert authors to array of hashes
           authors = entry.author.to_s.split(' and ').map do |author|
@@ -41,12 +41,17 @@ module Jekyll
             end
           end
           
-          # Create publication hash
+          # Create publication hash (journal for articles, booktitle for inproceedings, howpublished/publisher for misc)
+          venue = case entry.type.to_s
+                  when 'inproceedings' then entry.booktitle.to_s
+                  when 'misc' then [entry.journal, entry.howpublished, entry.publisher, entry.number].compact.map(&:to_s).find { |s| !s.strip.empty? } || ''
+                  else entry.journal.to_s
+                  end
           pub = {
             'key' => entry.key,
             'title' => entry.title.to_s,
             'author_array' => authors,
-            'journal' => entry.journal.to_s,
+            'journal' => venue,
             'year' => entry.year.to_s,
             'month' => entry.month.to_s,
             'abstract' => entry.abstract.to_s,
