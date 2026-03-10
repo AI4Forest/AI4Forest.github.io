@@ -16,11 +16,11 @@
 - tag: "foundation_models"
   name: Foundation Models
 
-# - tag: "sparse_nn"
-#   name: Sparse Neural Nets
+- tag: "sparse_nn"
+  name: Sparse Neural Nets
 
-# - tag: "uncertainty"
-#   name: Uncertainty Quantification
+- tag: "uncertainty"
+  name: Uncertainty Quantification
 
 - tag: "resolution"
   name: High Resolution
