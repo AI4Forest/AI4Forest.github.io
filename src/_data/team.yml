@@ -221,10 +221,10 @@ researchers:
   - first_name: Berkant
     last_name: Turan
     id: berkant_turan
-    lab_name: University of Münster
-    location: Münster
+    lab_name: Zuse Institute Berlin
+    location: Berlin
     image_file: berkant_turan.jpg
-    website_url: "#"
+    website_url: https://b-turan.github.io
     website_type: link
 
   - first_name: Alba
