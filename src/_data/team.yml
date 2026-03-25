@@ -218,6 +218,15 @@ researchers:
     website_url: https://scholar.google.com/citations?user=Dn2gnHYAAAAJ&hl=zh-CN
     website_type: google-scholar
 
+  - first_name: Berkant
+    last_name: Turan
+    id: berkant_turan
+    lab_name: University of Münster
+    location: Münster
+    image_file: berkant_turan.jpg
+    website_url: "#"
+    website_type: link
+
   - first_name: Alba
     last_name: Viana Soto
     id: alba_viana_soto
