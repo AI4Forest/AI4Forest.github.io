@@ -6,6 +6,7 @@ categories: announcements
 author: AI4Forest Team
 post_image: "/assets/images/maps_content/canopy_height_pauls.png"
 background_image: "/assets/images/maps_content/canopy_height_pauls.png"
+published: false
 ---
 
 
