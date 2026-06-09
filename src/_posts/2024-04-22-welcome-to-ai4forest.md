@@ -9,14 +9,4 @@ background_image: "/assets/images/maps_content/canopy_height_pauls.png"
 ---
 
 
-# Welcome to AI4Forest
-
-We are excited to announce the launch of AI4Forest, a new initiative focused on advancing forest research through artificial intelligence. Our team of researchers is dedicated to developing innovative solutions for forest monitoring, management, and conservation.
-
-## What's Next?
-
-Stay tuned for updates on our ongoing research projects and upcoming events. We'll be sharing regular updates about our work in forest AI and related fields.
-
-## Get Involved
-
-If you're interested in our research or would like to collaborate, please don't hesitate to reach out to our team. 
+We are excited to announce the launch of AI4Forest, a new initiative focused on advancing forest research through artificial intelligence. Our team of researchers is dedicated to developing innovative solutions for forest monitoring, management, and conservation. What’s Next? Stay tuned for updates on our ongoing research projects and upcoming events. Sharing regular updates about our work in forest AI and related fields. Get Involved if you’re interested in our research or would like to collaborate.

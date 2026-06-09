@@ -1,24 +1,68 @@
 {% if post.post_image %}
-<figure class="overlay overlay1 rounded mb-30">
+<figure class="overlay {% unless page.news_theme %}overlay1{% endunless %} rounded mb-30">
+  {% if page.news_theme %}
+  <img class="post-thumb" src="{{post.post_image}}" alt="{{post.title}}"/>
+  {% else %}
 	<a href="{{post.url}}"><img class="post-thumb" src="{{post.post_image}}" alt="{{post.title}}"/></a>
   <figcaption>
     <h5 class="from-top mb-0">Read More</h5>
   </figcaption>
+  {% endif %}
 </figure>
 {% endif %}
 {% if post.categories %}
  <div class="category">
+   {% if page.news_theme %}
+   <span class="badge badge-pill news-category-badge">{% if post.news_label %}{{ post.news_label }}{% elsif post.categories[0] == "announcements" %}News{% else %}{{post.categories[0]}}{% endif %}</span>
+   {% else %}
  	 <a href="/category/{{post.categories[0] | slugify}}" class="badge badge-pill bg-purple">{{post.categories[0]}}</a>
+   {% endif %}
  </div>
 {% endif %}
+{% if page.news_theme %}
+<h2 class="post-title">{{post.title}}</h2>
+{% else %}
 <h2 class="post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+{% endif %}
 <div class="post-content">
+  {% if page.news_theme %}
+  {% assign clean_content = post.content | strip_html | strip %}
+  <details class="news-expand">
+    <summary>
+      <p class="news-preview">{{ clean_content | truncatewords: 24 }}</p>
+      <span class="news-expand-toggle"><span class="news-expand-more">Show more</span><span class="news-expand-less">Show less</span></span>
+    </summary>
+    <div class="news-expand-content">
+      <div class="news-expand-inner">
+        <p>{{ clean_content | truncatewords: 85 }}</p>
+      </div>
+    </div>
+  </details>
+  {% else %}
   <p>{{post.excerpt | strip_html | truncatewords: 25}}</p>
+  {% endif %}
 </div>
 <!-- /.post-content -->
 <div class="meta mb-0">
 	{% if post.date %}
+	{% if page.news_theme %}
+	<span class="date">
+      <i class="jam jam-clock"></i>
+      {% if post.event_date %}
+      <strong>Talk:</strong>
+      <time datetime="{{ post.event_date | date: '%Y-%m-%d' }}{% if post.event_time %}T{{ post.event_time }}{% endif %}">
+        {{ post.event_date | date: "%Y-%m-%d" }}{% if post.event_time %}, {{ post.event_time }}{% endif %} {% if post.event_timezone %}{{ post.event_timezone }}{% else %}CEST{% endif %}
+      </time>
+      {% else %}
+      <strong>Posted:</strong>
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%Y-%m-%d" }}
+      </time>
+      {% endif %}
+    </span>
+	{% else %}
 	<span class="date"><i class="jam jam-clock"></i>{{post.date | date_to_string}}</span>
 	{% endif %}
-	<span class="comments"><i class="jam jam-user"></i><a href="/authors/{{post.author | slugify}}"> {{post.author}}</a></span>
+	{% endif %}
+	<span class="comments"><i class="jam jam-user"></i>{% if page.news_theme %} {{post.author}}{% else %}<a href="/authors/{{post.author | slugify}}"> {{post.author}}</a>{% endif %}</span>
 </div>

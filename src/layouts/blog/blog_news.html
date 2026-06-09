@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="page-hero-with-nav" style="position: relative;">
+  {% include page_header.html %}
+  {% include header.html container_class="container" extra_class="absolute transparent inverse-text nav-uppercase" light_logo="true" %}
+</div>
+
+<div class="news-page">
+  <div class="wrapper light-wrapper">
+    <div class="container inner">
+      <div class="blog grid grid-view">
+        <div class="row">
+          {% for post in paginator.posts %}
+          <div class="item post col-md-6 col-lg-4">
+            <article class="news-card">
+              {% include post_loop.html %}
+            </article>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% include pagination.html %}
+    </div>
+  </div>
+</div>
+
+{% include footer.html light_logo="true" %}

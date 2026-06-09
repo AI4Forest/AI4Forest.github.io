@@ -2,20 +2,6 @@
   class="navbar {% if include.extra_class %} {{include.extra_class}} {% endif %} navbar-hover-opacity navbar-expand-lg">
   <div
     class="{% if include.container_class %} {{include.container_class}} {% else %} container-fluid {% endif %} flex-row justify-content-center">
-    <div class="navbar-brand">
-      <a href="{{site.baseurl}}/">
-        {% if include.light_logo %}
-        <img src="{{site.data.general_settings.light_logo_1x}}"
-          srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
-          class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-light {% endif %}"
-          alt="{{site.data.general_settings.title}}" />
-        {% endif %}
-        <img src="{{site.data.general_settings.black_logo_1x}}"
-          srcset="{{site.data.general_settings.black_logo_1x}} 1x, {{site.data.general_settings.black_logo_2x}} 2x"
-          class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-dark {% endif %} {% if include.black_logo_disable %} d-none {% endif %}"
-          alt="{{site.data.general_settings.title}}" />
-      </a>
-    </div>
     <div class="navbar-other ml-auto order-lg-3">
       <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
         <li class="nav-item">
@@ -35,10 +21,6 @@
     <!-- /.navbar-other -->
     <div class="navbar-collapse offcanvas-nav">
       <div class="offcanvas-header d-lg-none d-xl-none">
-        <a href="{{site.baseurl}}/">
-          <img src="{{site.data.general_settings.light_logo_1x}}"
-            srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
-            alt="{{site.data.general_settings.title}}" /></a>
         <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
       </div>
       <ul class="navbar-nav {% if include.alignment_class %} {{include.alignment_class}} {% else %} mx-auto {% endif %}">

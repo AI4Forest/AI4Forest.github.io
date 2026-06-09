@@ -116,3 +116,146 @@ button[data-toggle="offcanvas-info"] i.jam-info {
 .section-title.larger.text-uppercase {
     font-size: 1.5rem;
 }
+
+/* News page uses Publications green accent instead of default purple */
+.news-category-badge {
+    background: #47a88a !important;
+    color: #fff !important;
+}
+a.badge.news-category-badge:hover {
+    box-shadow: 0 0 0 4px rgba(71, 168, 138, 0.2) !important;
+}
+.news-page .pagination ul>li>a,
+.news-page .pagination:not(.bg) ul>.active>a,
+.news-page .pagination:not(.bg) ul>.active>a:hover,
+.news-page .pagination ul>li>a:hover {
+    color: #47a88a !important;
+}
+.news-page details.news-expand summary {
+    cursor: pointer;
+    color: #47a88a;
+    font-weight: 400;
+    margin-top: 0.35rem;
+}
+.news-page details.news-expand[open] summary {
+    margin-bottom: 0.5rem;
+}
+.news-page details.news-expand .news-expand-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 260ms ease;
+}
+.news-page details.news-expand .news-expand-inner {
+    overflow: hidden;
+}
+.news-page details.news-expand[open] .news-expand-content {
+    grid-template-rows: 1fr;
+}
+
+/* News page modern card refresh */
+.news-page .row {
+    row-gap: 1.5rem;
+}
+.news-page .news-card {
+    height: 100%;
+    padding: 1rem 1rem 0.9rem;
+    border: 1px solid rgba(71, 168, 138, 0.14);
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 30px rgba(18, 38, 33, 0.08);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.news-page .news-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(71, 168, 138, 0.3);
+    box-shadow: 0 16px 36px rgba(18, 38, 33, 0.14);
+}
+.news-page .news-card figure {
+    margin-bottom: 0.85rem !important;
+    border-radius: 0.7rem;
+    overflow: hidden;
+}
+.news-page .news-card .post-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+.news-page .news-card .post-thumb[src*="talk_serfaty"] {
+    object-position: 5% center;
+}
+.news-page .news-card .category {
+    margin-bottom: 0.55rem;
+}
+.news-page .news-card .news-category-badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.news-page .news-card .post-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin-bottom: 0.55rem;
+}
+.news-page .news-card .post-content p {
+    color: #4a5b56;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+.news-page details.news-expand summary {
+    display: block;
+    list-style: none;
+}
+.news-page details.news-expand summary::-webkit-details-marker {
+    display: none;
+}
+.news-page details.news-expand summary .news-preview {
+    margin-bottom: 0.6rem;
+}
+.news-page details.news-expand summary .news-expand-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(71, 168, 138, 0.3);
+    border-radius: 999px;
+    padding: 0.24rem 0.68rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.03em;
+    background: rgba(71, 168, 138, 0.06);
+    font-weight: 400;
+}
+.news-page details.news-expand[open] summary .news-preview {
+    display: none;
+}
+.news-page details.news-expand summary .news-expand-less {
+    display: none;
+}
+.news-page details.news-expand[open] summary .news-expand-more {
+    display: none;
+}
+.news-page details.news-expand[open] summary .news-expand-less {
+    display: inline;
+}
+.news-page details.news-expand summary .news-expand-toggle::after {
+    content: "+";
+    font-weight: 700;
+    line-height: 1;
+}
+.news-page details.news-expand[open] summary .news-expand-toggle::after {
+    content: "-";
+}
+.news-page .news-card .meta {
+    margin-top: 0.65rem !important;
+    padding-top: 0.55rem;
+    border-top: 1px solid rgba(71, 168, 138, 0.16);
+    color: #6a7a76;
+    font-size: 0.82rem;
+}
+.news-page .news-card .meta .date time {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+}
+.news-page .news-card .meta .date strong {
+    font-weight: 500;
+    margin-right: 0.2rem;
+}
