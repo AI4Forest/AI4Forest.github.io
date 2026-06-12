@@ -108,5 +108,10 @@
     <p class="lead">{{ page.page_header.sub_title }}</p>
     {% endif %}
   </div>
+  {% if page.page_header.photo_credit %}
+  <div class="page-header-photo-credit-overlay">
+    <span class="page-header-photo-credit">{{ page.page_header.photo_credit }}</span>
+  </div>
+  {% endif %}
 </div>
 {% endif %}

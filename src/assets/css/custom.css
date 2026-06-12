@@ -2,6 +2,25 @@
     min-height: 300px !important;
 }
 
+/* Beat .image-wrapper:not(.no-overlay) * { position: relative } in style.css */
+.image-wrapper .page-header-photo-credit-overlay {
+    position: absolute !important;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+.image-wrapper .page-header-photo-credit {
+    position: absolute !important;
+    bottom: 0.35rem;
+    right: 0.5rem;
+    left: auto;
+    top: auto;
+    font-size: 0.65rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
 /* Researchers page: navbar overlays header image (fixed to viewport, no scroll) */
 .page-hero-with-nav .navbar.absolute,
 .navbar.hero-overlay-nav {
