@@ -26,10 +26,20 @@
       <ul class="navbar-nav {% if include.alignment_class %} {{include.alignment_class}} {% else %} mx-auto {% endif %}">
         {% for menu in site.data.navigation.main_menu %}
         {% assign check_menu = menu.menu_type %}
+        {% assign current_path = page.url | remove_first: '/' %}
+        {% assign current_section = current_path | split: '/' | first %}
+        {% assign menu_path = menu.url | remove_first: '/' %}
+        {% assign menu_section = menu_path | split: '/' | first %}
+        {% assign menu_active = false %}
+        {% if menu.url == '/' and page.url == '/' %}
+          {% assign menu_active = true %}
+        {% elsif menu.url != '/' and current_section == menu_section %}
+          {% assign menu_active = true %}
+        {% endif %}
         {% case check_menu %}
         {% when "megamenu" %}
         <li class="nav-item">
-          <a class="nav-link" href="{{site.baseurl}}{{menu.url}}">{{menu.text}}</a>
+          <a class="nav-link{% if menu_active %} active{% endif %}" href="{{site.baseurl}}{{menu.url}}"{% if menu_active %} aria-current="page"{% endif %}>{{menu.text}}</a>
           <ul class="dropdown-menu mega-menu boxed list-view text-left">
             <li class="mega-menu-content">
               <div class="row">
@@ -49,7 +59,7 @@
           <!--/.dropdown-menu -->
         </li>
         {% when "dropdown" %}
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{site.baseurl}}{{menu.url}}">{{menu.text}}</a>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle{% if menu_active %} active{% endif %}" href="{{site.baseurl}}{{menu.url}}"{% if menu_active %} aria-current="page"{% endif %}>{{menu.text}}</a>
           <ul class="dropdown-menu">
             {% for label_two in menu.label_two %}
             <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">{{label_two.sub_menu_text}}</a>
@@ -69,7 +79,7 @@
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{{site.baseurl}}{{menu.url}}">{{menu.text}}</a>
+          <a class="nav-link{% if menu_active %} active{% endif %}" href="{{site.baseurl}}{{menu.url}}"{% if menu_active %} aria-current="page"{% endif %}>{{menu.text}}</a>
         </li>
         {% endcase %}
         {% endfor %}

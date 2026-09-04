@@ -1,0 +1,18 @@
+<article class="person-card">
+  <figure class="person-photo">
+    {% if include.member.image_file and include.member.image_file != '' and include.member.image_file != ' ' %}
+      <img src="{{ relative_url }}/assets/images/people/{{ include.member.image_file }}" alt="{{ include.member.first_name }} {{ include.member.last_name }}" loading="lazy"/>
+    {% else %}
+      <div class="person-placeholder" aria-hidden="true">{{ include.member.first_name | slice: 0 }}{{ include.member.last_name | slice: 0 }}</div>
+    {% endif %}
+  </figure>
+  <div class="person-info">
+    <h3>{{ include.member.first_name }} {{ include.member.last_name }}</h3>
+    <div class="person-lab">{{ include.member.lab_name }}</div>
+    {% if include.member.website_url and include.member.website_url != '' %}
+    <a class="person-link" href="{{ include.member.website_url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ include.member.first_name }} {{ include.member.last_name }}'s profile">
+      {% if include.member.website_type == 'google-scholar' %}<i class="ai ai-google-scholar" aria-hidden="true"></i>{% elsif include.member.website_type == 'github' %}<i class="jam jam-github" aria-hidden="true"></i>{% else %}<i class="jam jam-link" aria-hidden="true"></i>{% endif %}
+    </a>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,17 @@
+{% if page.intro_area.enable %}
+<style>
+  .home-about-section { position:relative; overflow:hidden; background:#fff; }
+  .home-about-section::before { content:""; position:absolute; top:-15rem; right:-12rem; width:32rem; height:32rem; border-radius:50%; background:radial-gradient(circle,rgba(71,168,138,.13),rgba(71,168,138,0) 68%); }
+  .home-about-section .container.inner { position:relative; padding-top:6rem; padding-bottom:6rem; }
+  .home-about-section .section-title { max-width:55rem; margin:0 auto 1.5rem !important; color:#132f3b; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.025em; text-transform:none; }
+  .home-about-section .text-content { max-width:54rem; margin:0 auto; }
+  .home-about-section .text-content p { color:#60737a; font-size:1.05rem; line-height:1.75; text-align:center; }
+  @media(max-width:767px){ .home-about-section .container.inner{padding-top:4rem;padding-bottom:4rem;} }
+</style>
+<section class="wrapper home-about-section" aria-labelledby="home-about-title">
+  <div class="container inner">
+    <h2 id="home-about-title" class="section-title text-center">{{ page.intro_area.title }}</h2>
+    <div class="text-content">{{ page.intro_area.content }}</div>
+  </div>
+</section>
+{% endif %}

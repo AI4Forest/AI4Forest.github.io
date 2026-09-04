@@ -23,7 +23,7 @@ coordinators:
     lab_name: University of Münster
     location: Münster
     image_file: fabian.jpg
-    website_url: https://www.wi.uni-muenster.de/department/mlde/people/fabian-gieseke
+    website_url: https://mlde-lab.github.io/team/fabian-gieseke/
     website_type: link
     
   - first_name: Cornelius
@@ -51,7 +51,7 @@ researchers:
     lab_name: University of Münster
     location: Münster
     image_file: sugandha_arora.jpg
-    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/sugandha-sugandha
+    website_url: https://mlde-lab.github.io/team/
     website_type: link
 
   - first_name: Gabriel
@@ -99,31 +99,13 @@ researchers:
     website_url: https://github.com/sbrood
     website_type: link
 
-  - first_name: Nina
-    last_name: Herrmann
-    id: nina_herrmann
-    lab_name: University of Münster
-    location: Münster
-    image_file: Nina_Herrmann.jpeg
-    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/nina-herrmann-1
-    website_type: link
-
   - first_name: Una
     last_name: Kelly
     id: una_kelly
     lab_name: University of Münster
     location: Münster
     image_file: Una_Kelly.png
-    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/una-kelly
-    website_type: link
-
-  - first_name: Julian
-    last_name: Kranz
-    id: julian_kranz
-    lab_name: University of Münster
-    location: Münster
-    image_file: Julian_Kranz.jpg
-    website_url: "#"
+    website_url: https://mlde-lab.github.io/team/
     website_type: link
 
   - first_name: Xiangyi
@@ -141,7 +123,7 @@ researchers:
     lab_name: University of Münster
     location: Münster
     image_file: jorunn.jpg
-    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/jorunn-anna-mense
+    website_url: https://mlde-lab.github.io/team/
     website_type: link
 
   - first_name: Alvin
@@ -159,7 +141,7 @@ researchers:
     lab_name: University of Münster
     location: Münster
     image_file: Jan_P.jpg
-    website_url: https://janpauls.org/
+    website_url: https://mlde-lab.github.io/team/
     website_type: link
 
   - first_name: Agnès
@@ -206,7 +188,7 @@ researchers:
     lab_name: University of Münster
     location: Münster
     image_file: Karsten_Schroedter.jpg
-    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/karsten-schroedter
+    website_url: https://mlde-lab.github.io/team/karsten-schroedter/
     website_type: link
 
   - first_name: Yang
@@ -310,6 +292,24 @@ researchers:
     
 
 former_researchers:
+  - first_name: Nina
+    last_name: Herrmann
+    id: nina_herrmann
+    lab_name: University of Münster
+    location: Münster
+    image_file: Nina_Herrmann.jpeg
+    website_url: https://www.wi.uni-muenster.de/de/institut/mlde/personen/nina-herrmann-1
+    website_type: link
+
+  - first_name: Julian
+    last_name: Kranz
+    id: julian_kranz
+    lab_name: University of Münster
+    location: Münster
+    image_file: Julian_Kranz.jpg
+    website_url: https://sites.google.com/view/juliankranz/?pli=1&authuser=0
+    website_type: link
+
   - first_name: Fajwel 
     last_name: Fogel
     id: fajwel_fogel

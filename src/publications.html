@@ -2,26 +2,51 @@
 layout: page_2
 page_header:
   enable: true
-  title: "Publications"
+  title: "Publications from the AI4Forest collaboration."
   background_image: "/assets/images/maps_content/Calders_1.png"
   background_position: "center bottom"
 ---
 
+<style>
+  .page-hero-with-nav .team-header-wrapper.bg-position-bottom::before {
+    background: linear-gradient(105deg, rgba(4,24,35,.82) 0%, rgba(8,42,52,.66) 48%, rgba(29,91,76,.55) 100%) !important;
+  }
+  .publications-page { position:relative; overflow:hidden; margin-top:-2rem; background:#f5f8f7; }
+  .publications-page::before { content:""; position:absolute; top:-14rem; right:-12rem; width:32rem; height:32rem; border-radius:50%; background:radial-gradient(circle,rgba(71,168,138,.14),rgba(71,168,138,0) 68%); }
+  .publications-page .container { position:relative; }
+  .publications-heading { max-width:50rem; margin:0 auto 3rem; text-align:center; }
+  .publications-eyebrow { margin-bottom:.7rem; color:#368f74; font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+  .publications-heading h2 { margin:0 0 .9rem; color:#132f3b; font-size:clamp(2rem,4vw,3rem); line-height:1.1; letter-spacing:-.025em; }
+  .publications-heading p { margin:0; color:#60737a; font-size:1.03rem; line-height:1.7; }
+  .publication-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:2.5rem; }
+  .publication-filters .tag-btn { margin:0 !important; padding:.42rem .8rem !important; border:1px solid rgba(54,143,116,.28) !important; border-radius:999px !important; background:#fff !important; color:#286d5b !important; font-size:.7rem !important; font-weight:700; transition:color 180ms ease,background 180ms ease,box-shadow 180ms ease; }
+  .publication-filters .tag-btn:hover,.publication-filters .tag-btn.active,.publication-filters .tag-btn[data-tag="all"] { background:#368f74 !important; color:#fff !important; box-shadow:0 .35rem 1rem rgba(54,143,116,.18); }
+  .publications-page .publication-list { max-width:58rem; margin:0 auto; }
+  .publications-page .publication-item { margin-bottom:1.25rem !important; padding:1.25rem !important; border:1px solid rgba(19,47,59,.1) !important; border-radius:1rem !important; background:rgba(255,255,255,.9); box-shadow:0 .65rem 2rem rgba(19,47,59,.06); transition:transform 220ms ease,box-shadow 220ms ease,border-color 220ms ease; }
+  .publications-page .publication-item:hover { transform:translateY(-3px); border-color:rgba(54,143,116,.25) !important; box-shadow:0 1rem 2.5rem rgba(19,47,59,.11); }
+  .publications-page .publication-content h4 { color:#132f3b !important; font-size:1rem !important; line-height:1.4; }
+  .publications-page .publication-thumbnail { overflow:hidden; border-radius:.7rem; }
+  .publications-page .publication-thumbnail:hover img { transform:scale(1.04); box-shadow:none; }
+  @media(max-width:576px){ .publications-page .publication-item{display:block !important;} .publications-page .pub-thumb-col{margin-bottom:1rem;} .publications-page .publication-thumbnail{width:100%;height:11rem;} }
+</style>
 
-<div class="wrapper light-wrapper" style="margin-top: -50px;">
+<div class="wrapper light-wrapper publications-page">
   <div class="container inner">
-    <h2 class="section-title mb-40 text-center">Research Publications</h2>
+    <header class="publications-heading">
+      <div class="publications-eyebrow">Scientific output</div>
+      <h2>Research Publications</h2>
+      <p>Peer-reviewed research, preprints and methods emerging from the AI4Forest collaboration across machine learning, Earth observation and forest science.</p>
+    </header>
     <div class="row">
       <div class="col-md-12">
-        <div id="tags-filter-container" style="margin-bottom: 1rem;">
-        <strong>Filter by tag:</strong>
+        <div id="tags-filter-container" class="publication-filters" aria-label="Filter publications by topic">
         {% assign all_tags = site.data.publication_tags %}
         {% for t in all_tags %}
-          <button class="tag-btn" data-tag="{{ t.tag }}" style="margin-right:5px; margin-bottom:5px; padding: 2px 6px; font-size: 0.7rem; border-radius:3px; border:1px solid #47a88a; background-color:#fff; color:#47a88a; cursor:pointer;">
+          <button class="tag-btn" data-tag="{{ t.tag }}">
             {{ t.name }}
           </button>
         {% endfor %}
-        <button class="tag-btn" data-tag="all" style="margin-right:5px; margin-bottom:5px; padding: 2px 6px; font-size:0.7rem; border-radius:3px; border:1px solid #47a88a; background-color:#47a88a; color:#fff; cursor:pointer;">
+        <button class="tag-btn active" data-tag="all">
           All
         </button>
       </div>

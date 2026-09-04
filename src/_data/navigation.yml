@@ -3,10 +3,6 @@ main_menu:
     url: "/"
     menu_type: "primary"
 
-  - text: "About"
-    url: "/about"
-    menu_type: "primary"
-
   - text: "Researchers"
     url: "/researchers"
     menu_type: "primary"

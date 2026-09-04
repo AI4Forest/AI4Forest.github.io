@@ -3,179 +3,86 @@ layout: page_2
 custom_font: font4
 page_header:
   enable: true
-  title: "Researchers"
-  background_image: "/assets/images/people/berlin_team.jpeg"
-  background_images:
-    - "/assets/images/people/berlin_team.jpeg"
-    - "/assets/images/people/team.JPG"
+  title: "Different disciplines. One shared view of forests."
+  background_image: "/assets/images/people/researchers-banner-ai-remote-sensing.png"
 ---
 
+<style>
+  .team-header-wrapper { background-position:center !important; }
+  .researchers-page { --team-ink:#132f3b; --team-muted:#60737a; --team-green:#368f74; overflow:hidden; background:#f5f8f7; }
+  .team-intro { position:relative; padding:6rem 0 4.5rem; }
+  .team-intro::before { content:""; position:absolute; top:-13rem; right:-12rem; width:32rem; height:32rem; border-radius:50%; background:radial-gradient(circle,rgba(71,168,138,.14),rgba(71,168,138,0) 68%); }
+  .team-intro-grid { position:relative; max-width:64rem; margin:0 auto; }
+  .team-eyebrow { margin-bottom:.7rem; color:var(--team-green); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+  .team-section-heading h2 { color:var(--team-ink); letter-spacing:-.025em; }
+  .team-intro-copy { max-width:64rem; margin:0; color:var(--team-muted); font-size:1.06rem; line-height:1.75; }
+  .team-expertise { display:flex; flex-wrap:wrap; gap:.55rem; margin:1.8rem 0 0; padding:0; list-style:none; }
+  .team-expertise li { padding:.45rem .8rem; border:1px solid rgba(54,143,116,.2); border-radius:999px; background:rgba(71,168,138,.09); color:#286d5b; font-size:.72rem; font-weight:700; }
+  .team-photo-section { padding:0 0 5rem; }
+  .team-photo-frame { position:relative; margin:0; overflow:hidden; border-radius:1rem; box-shadow:0 1.2rem 3.2rem rgba(19,47,59,.13); }
+  .team-photo-frame img { display:block; width:100%; height:auto; }
+  .team-section { padding:5.5rem 0; }
+  .team-section--white { background:#fff; }
+  .team-section--soft { background:#f5f8f7; }
+  .team-section--former { padding-top:4.5rem; border-top:1px solid rgba(19,47,59,.08); }
+  .team-section-heading { max-width:47rem; margin:0 auto 3rem; text-align:center; }
+  .team-section-heading h2 { margin:0 0 .8rem; font-size:clamp(1.9rem,3.5vw,2.75rem); line-height:1.12; }
+  .team-section-heading p { margin:0; color:var(--team-muted); line-height:1.7; }
+  .people-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5rem; }
+  .people-grid--coordinators { grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .person-card { position:relative; display:flex; flex-direction:column; min-width:0; overflow:hidden; border:1px solid rgba(19,47,59,.1); border-radius:1rem; background:rgba(255,255,255,.86); box-shadow:0 .7rem 2rem rgba(19,47,59,.06); transition:transform 220ms ease,box-shadow 220ms ease,border-color 220ms ease; }
+  .person-card:hover { transform:translateY(-4px); border-color:rgba(54,143,116,.28); box-shadow:0 1.1rem 2.6rem rgba(19,47,59,.13); }
+  .person-photo { position:relative; aspect-ratio:1/.92; overflow:hidden; margin:0; background:linear-gradient(145deg,#dcebe6,#e8ebf4); }
+  .person-photo::after { content:""; position:absolute; right:0; bottom:0; left:0; height:32%; background:linear-gradient(to top,rgba(19,47,59,.17),transparent); pointer-events:none; }
+  .person-photo img { width:100%; height:100%; object-fit:cover; object-position:center 24%; transition:transform 500ms ease; }
+  .person-card:hover .person-photo img { transform:scale(1.025); }
+  .person-placeholder { display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:rgba(19,47,59,.5); font-size:2.3rem; font-weight:700; }
+  .person-info { display:flex; flex:1; flex-direction:column; align-items:center; padding:1.25rem 1rem 1.15rem; text-align:center; }
+  .person-info h3 { margin:0 0 .4rem; color:var(--team-ink); font-size:1.03rem; line-height:1.25; }
+  .person-lab { margin-bottom:.8rem; color:var(--team-muted); font-size:.76rem; line-height:1.35; }
+  .person-link { display:inline-flex; align-items:center; justify-content:center; width:2rem; height:2rem; margin-top:auto; border-radius:50%; background:rgba(71,168,138,.11); color:var(--team-green); transition:color 180ms ease,background 180ms ease; }
+  .person-link:hover,.person-link:focus-visible { color:#fff; background:var(--team-green); }
+  .team-section--former .person-card { box-shadow:none; }
+  .team-section--former .person-photo img { filter:saturate(.7); }
+  @media(max-width:1199px){ .people-grid,.people-grid--coordinators{grid-template-columns:repeat(3,minmax(0,1fr));} }
+  @media(max-width:767px){ .team-intro{padding:4rem 0 3.5rem;} .team-section{padding:4rem 0;} .people-grid,.people-grid--coordinators{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;} }
+  @media(max-width:430px){ .people-grid,.people-grid--coordinators{grid-template-columns:1fr;} .person-card{max-width:19rem;width:100%;margin:0 auto;} }
+</style>
+
 <div class="researchers-page">
-<div class="wrapper light-wrapper" style="margin-top: -100px;">
-  <div class="container-fluid inner px-4">
-    <div class="row">
-      <div class="col-lg-10 col-md-11 mx-auto">
-        <p class="lead text-left mb-30">
-          AI4Forest is coordinated by a distinguished team of scientists from leading French and German research institutions. Their expertise spans over climate science, remote sensing, artificial intelligence, optimization to forest ecosystem dynamics. Together, they guide the strategic direction of the project, ensuring scientific excellence and effective integration of interdisciplinary approaches for advancing forest monitoring at national and global scale.
-        </p>
-        <div class="mb-40 coordinator-bios">
-          <p><strong>Philippe Ciais</strong> is Research Director at LSCE, specializing in quantifying the global carbon cycle and forest–climate interactions via remote sensing.</p>
-          <p><strong>Alexandre d'Aspremont</strong> is CNRS Research Director at ENS, focused on convex optimization and its applications in machine learning, statistics, and Earth observation.</p>
-          <p><strong>Fabian Gieseke</strong> leads the Machine Learning & Data Engineering group at the University of Münster, developing DL methods for high-performance computing.</p>
-          <p><strong>Sebastian Pokutta</strong> is Vice President of the Zuse Institute Berlin and Professor at TU Berlin, doing research in scalable optimization and DL algorithms for complex systems.</p>
-          <p><strong>Cornelius Senf</strong> leads the Remote Sensing Group at TUM, advancing spaceborne monitoring techniques to map and analyze forest disturbances.</p>
-        </div>
-      </div>
+  <section class="team-intro">
+    <div class="container"><div class="team-intro-grid">
+      <div><div class="team-eyebrow">French–German collaboration</div><p class="team-intro-copy">AI4Forest brings together scientists from leading French and German research institutions. Their expertise spans climate science, remote sensing, artificial intelligence, mathematical optimization and forest ecology—connecting methodological innovation with the knowledge needed to understand forests at national and global scales.</p></div>
+      <ul class="team-expertise" aria-label="Team expertise"><li>Machine Learning</li><li>Remote Sensing</li><li>Forest Ecology</li><li>Climate Science</li><li>Optimization</li><li>Earth Observation</li></ul>
+    </div></div>
+  </section>
+
+  <section class="team-photo-section" aria-label="AI4Forest team photograph">
+    <div class="container">
+      <figure class="team-photo-frame">
+        <img src="{{ relative_url }}/assets/images/people/berlin_team.jpeg" alt="Members of the AI4Forest team gathered in Berlin" loading="eager"/>
+      </figure>
     </div>
-  </div>
-</div>
+  </section>
 
-{% if site.data.team and site.data.team.coordinators.size > 0 %}
-<div class="wrapper light-wrapper" style="margin-top: -100px;">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Project Coordinators</h2>
-    <div class="row text-center justify-content-center">
-      {% assign sorted_coordinators = site.data.team.coordinators | sort: 'last_name' %}
-      {% for member in sorted_coordinators %}
-      <div class="col-lg-2 col-md-4 mx-2">
-        {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
-        <figure class="img-blob blob1 mb-50 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
-        </figure>
-        {% endif %}
-        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
-        <div class="meta mb-5 text-center">{{ member.lab_name }}</div>
-        <ul class="social social-s ml-auto">
-          <li>
-            <a href="{{ member.website_url }}">
-              {% if member.website_type == 'google-scholar' %}
-              <i class="ai ai-google-scholar" style="color: #47a88a;"></i>
-              {% elsif member.website_type == 'github' %}
-              <i class="jam jam-github"></i>
-              {% else %}
-              <i class="jam jam-link"></i>
-              {% endif %}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!--/column -->
-      {% endfor %}
-    </div>
-    <!--/.row -->
-  </div>
-  <!-- /.container -->
-</div>
-{% else %}
-<div class="wrapper light-wrapper">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Project Coordinators</h2>
-    <p class="text-center">Coordinator information is being updated.</p>
-  </div>
-</div>
-{% endif %}
-<!-- /.wrapper -->
+  {% if site.data.team and site.data.team.coordinators.size > 0 %}
+  <section class="team-section team-section--white"><div class="container">
+    <header class="team-section-heading"><div class="team-eyebrow">Scientific leadership</div><h2>Project Coordinators</h2><p>Five complementary perspectives guide the scientific programme and connect its work across institutions, disciplines and national borders.</p></header>
+    <div class="people-grid people-grid--coordinators">{% assign sorted_coordinators = site.data.team.coordinators | sort: 'last_name' %}{% for member in sorted_coordinators %}{% include researcher_card.html member=member %}{% endfor %}</div>
+  </div></section>
+  {% endif %}
 
-{% if site.data.team and site.data.team.researchers.size > 0 %}
-<div class="wrapper light-wrapper" style="margin-top: -150px;">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Researchers</h2>
-    
-    <!-- Team members -->
-    <div class="row text-center justify-content-center">
-      {% assign sorted_researchers = site.data.team.researchers | sort: 'last_name' %}
-      {% for member in sorted_researchers %}
-      <div class="col-lg-2 col-md-4 mx-2">
-        {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
-        <figure class="img-blob blob1 mb-25 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
-        </figure>
-        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
-        {% else %}
-        <div style="height: 9.2rem;"></div>
-        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
-        {% endif %}
-        <div class="meta mb-5 text-center">{{ member.lab_name }}</div>
-        <ul class="social social-s ml-auto">
-          <li>
-            <a href="{{ member.website_url }}">
-              {% if member.website_type == 'google-scholar' %}
-              <i class="ai ai-google-scholar" style="color: #47a88a;"></i>
-              {% elsif member.website_type == 'github' %}
-              <i class="jam jam-github"></i>
-              {% else %}
-              <i class="jam jam-link"></i>
-              {% endif %}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!--/column -->
-      {% endfor %}
-    </div>
-    <!--/.row -->
-  </div>
-  <!-- /.container -->
-</div>
-{% else %}
-<div class="wrapper light-wrapper" style="margin-top: -150px;">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Researchers</h2>
-    <p class="text-center">Researcher information is being updated.</p>
-  </div>
-</div>
-{% endif %}
+  {% if site.data.team and site.data.team.researchers.size > 0 %}
+  <section class="team-section team-section--soft"><div class="container">
+    <header class="team-section-heading"><div class="team-eyebrow">The people behind the research</div><h2>Researchers</h2><p>An interdisciplinary team developing scalable methods, high-resolution forest products and new ways to interpret environmental change.</p></header>
+    <div class="people-grid">{% assign sorted_researchers = site.data.team.researchers | sort: 'last_name' %}{% for member in sorted_researchers %}{% include researcher_card.html member=member %}{% endfor %}</div>
+  </div></section>
+  {% endif %}
 
-
-
-{% if site.data.team and site.data.team.former_researchers.size > 0 %}
-<div class="wrapper light-wrapper" style="margin-top: -150px;">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Former Researchers</h2>
-    
-    <!-- Team members -->
-    <div class="row text-center justify-content-center">
-      {% assign sorted_former_researchers = site.data.team.former_researchers | sort: 'last_name' %}
-      {% for member in sorted_former_researchers %}
-      <div class="col-lg-2 col-md-4 mx-2">
-        {% if member.image_file and member.image_file != '' and member.image_file != ' ' %}
-        <figure class="img-blob blob1 mb-25 profilepic">
-          <img src="{{relative_url}}/assets/images/people/{{ member.image_file }}" alt="{{ member.first_name }} {{ member.last_name }}" style="width: 15rem; transform: scale(1.0);" />
-        </figure>
-        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
-        {% else %}
-        <div style="height: 9.2rem;"></div>
-        <h4 class="mb-15 text-center">{{ member.first_name }}</br>{{ member.last_name }}</h4>
-        {% endif %}
-        <div class="meta mb-5 text-center">{{ member.lab_name }}</div>
-        <ul class="social social-s ml-auto">
-          <li>
-            <a href="{{ member.website_url }}">
-              {% if member.website_type == 'google-scholar' %}
-              <i class="ai ai-google-scholar" style="color: #47a88a;"></i>
-              {% elsif member.website_type == 'github' %}
-              <i class="jam jam-github"></i>
-              {% else %}
-              <i class="jam jam-link"></i>
-              {% endif %}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!--/column -->
-      {% endfor %}
-    </div>
-    <!--/.row -->
-  </div>
-  <!-- /.container -->
+  {% if site.data.team and site.data.team.former_researchers.size > 0 %}
+  <section class="team-section team-section--white team-section--former"><div class="container">
+    <header class="team-section-heading"><div class="team-eyebrow">Part of our journey</div><h2>Former Researchers</h2><p>Researchers whose expertise and contributions have helped shape AI4Forest.</p></header>
+    <div class="people-grid">{% assign sorted_former_researchers = site.data.team.former_researchers | sort: 'last_name' %}{% for member in sorted_former_researchers %}{% include researcher_card.html member=member %}{% endfor %}</div>
+  </div></section>
+  {% endif %}
 </div>
-{% else %}
-<div class="wrapper light-wrapper" style="margin-top: -150px;">
-  <div class="container-fluid inner px-5">
-    <h2 class="section-title mb-40 text-center">Researchers</h2>
-    <p class="text-center">Researcher information is being updated.</p>
-  </div>
-</div>
-{% endif %}
-</div>
-<!-- /.wrapper --> 

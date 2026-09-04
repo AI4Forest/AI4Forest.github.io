@@ -1,9 +1,31 @@
+  <style>
+    .footer-ai4forest-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.35rem;
+      color: #fff !important;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .footer-ai4forest-brand img {
+      width: 2.7rem;
+      height: 2.7rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  </style>
   <footer class="{% if include.extra_class %} {{include.extra_class}} {% else %} dark-wrapper inverse-text {% endif %}" style="padding: 0.8rem 0 0 0;">
     <div class="container inner" style="padding: 1rem 0;">
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <div class="widget">
-            <h3 class="widget-title" style="margin: 0; font-size: 0.75rem;">AI4Forest</h3>
+            <a class="footer-ai4forest-brand" href="{{ site.baseurl }}/" aria-label="AI4Forest home">
+              <img src="{{ site.baseurl }}/assets/images/logos/tree_white.png" alt=""/>
+              <span>AI4Forest</span>
+            </a>
             <p style="margin: 0; font-size: 0.65rem;">Advancing forest monitoring through artificial intelligence and remote sensing technologies.</p>
           </div>
         </div>
@@ -37,7 +59,7 @@
               Fabian Gieseke<br>
               University of Münster<br>
               Münster, Germany<br>
-              E-Mail: <a href="mailto:fabian.gieseke@uni-muenster.de">fabian.gieseke (at) uni-muenster.de</a>
+              E-Mail: <span class="footer-email" data-address="ZmFiaWFuLmdpZXNla2VAdW5pLW11ZW5zdGVyLmRl">Contact Fabian Gieseke</span>
             </div>
           </div>
         </div>
@@ -47,8 +69,20 @@
       <div class="row">
         <div class="col-12 text-center">
           <p style="margin: 0; font-size: 0.65rem;">Copyright © AI4Forest. All rights reserved.</p>
-          <p style="margin: 0; font-size: 0.65rem;">Website built and maintained by Sarah Brood, Jorunn Anna Mense, Hugo Rechatin, and the AI4Forest team.</p>
+          <p style="margin: 0; font-size: 0.65rem;">Website built and maintained by Sarah Brood, Jorunn Anna Mense, Hugo Rechatin, Fabian Gieseke, and the AI4Forest team.</p>
         </div>
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.footer-email[data-address]').forEach(function (placeholder) {
+        var address = window.atob(placeholder.dataset.address);
+        var link = document.createElement('a');
+        link.href = 'mailto:' + address;
+        link.textContent = address;
+        link.setAttribute('aria-label', 'Send an email to Fabian Gieseke');
+        placeholder.replaceChildren(link);
+      });
+    });
+  </script>

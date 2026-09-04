@@ -6,19 +6,55 @@ custom_font: font4
 
 hero_area:
   enable: true
-  bg_image: "/assets/images/maps_content/canopy_height_pauls.png"
+  bg_image: "/assets/images/main_page/pexels-forest-1868529.jpg"
   title: "AI4Forest"
   sub_title: "<em>German-French research cooperation</em>"
-  btn_text: "See Projects"
+  description: "We unite French and German expertise in artificial intelligence and Earth observation. Together, we develop new methods to understand and protect forests in a changing climate."
+  btn_text: "Explore Projects"
   btn_url: "#research-foci"
-  btn2_text: "See People"
+  btn2_text: "Meet the Researchers"
   btn2_url: "/researchers"
 
 about_area: 
   enable: true
-  title: ""
-  sub_title: "Climate change is one of the most crucial and complex challenges of the 21st century, with far-reaching impacts on ecosystems, economies, and societies worldwide. Among the many natural systems affected, forests play a pivotal role, not only as rich biodiversity regions but also as vital carbon sinks that help mitigate the adverse effects of global warming. Recognizing the importance of preserving and managing forest ecosystems, the French-German research initiative AI4Forest is dedicated to exploring how cutting-edge artificial intelligence can be used to better understand, monitor, and respond to the environmental stresses brought about by climate change."
+  title: "Two objectives. One clearer view of forests."
+  sub_title: "Climate change is reshaping forests faster than conventional monitoring can capture. AI4Forest combines Earth observation and scalable artificial intelligence to turn massive satellite and airborne datasets into timely insight - from individual trees to global forest biomes."
   description: test test test
+
+intro_area:
+  enable: true
+  title: "Transforming Forest Monitoring Through AI and Satellite Data"
+  content: |
+    <p>We are entering a new era of precision and scale in environmental monitoring. Modern satellite constellations capture high-resolution imagery of the entire planet with unprecedented frequency, making it possible to observe forest properties that could previously only be studied at a limited number of ground plots.</p>
+    <p>At the same time, breakthroughs in deep learning unlock new ways to analyze vast, high-dimensional time series. AI4Forest connects these advances to deliver detailed and frequently updated forest information while reducing the computational and storage costs of global-scale analysis.</p>
+
+text_area:
+  enable: false
+  title: "Our Mission"
+  content: |
+    <p class="mission-lead">We advance forest monitoring through scalable AI methods and high-resolution Earth observation. Our work connects research excellence, interdisciplinary collaboration and applied sustainability.</p>
+    <div class="mission-grid">
+      <div><h3>Research Excellence</h3><p>We conduct foundational research at the intersection of artificial intelligence and forest science, improving how forest dynamics, health and carbon fluxes are quantified.</p></div>
+      <div><h3>Interdisciplinary Collaboration</h3><p>We unite computer science, ecology and climate research while training a new generation of experts across France and Germany.</p></div>
+      <div><h3>Applied Sustainability</h3><p>We deliver insights that support evidence-based forest management, ecological resilience and climate mitigation.</p></div>
+    </div>
+
+testimonials:
+  enable: true
+  title: "What People Say"
+  sub_title: "Hear from our partners and collaborators about their experience working with AI4Forest"
+  image: "/assets/images/main_page/satellite_.png"
+  feedback:
+    - quote: |
+        Satellites offer a unique way to observe forests but previously, they were limited to forest cover and greenness. Now with AI and the use of multiple sensors, we can make new maps of trees height, biomass, species that are going to revolutionize our knowledge of forest ecology and help understand how forest respond to climate change, including increasing disturbances.
+      name: "Philippe Ciais"
+      designation: "Forest Ecology Specialist<br>LSCE"
+      image: "/assets/images/main_page/background_tree_3.png"
+    - quote: |
+        With the AI4Forest project, we aim to enhance forest monitoring by combining cutting-edge AI techniques with satellite time-series data. Our goal is to provide high-resolution, up-to-date forest information - down to individual trees - on a global scale. This will enable more effective responses to deforestation and support climate change mitigation strategies.
+      name: "Fabian Gieseke"
+      designation: "Machine Learning and Data Engineering<br>University of Münster"
+      image: "/assets/images/main_page/satellite_.png"
 
 forest_image:
   enable: true
@@ -75,16 +111,16 @@ logo_blocks:
   - enable: true
     title: "Grant Providers"
     logos:
-      - image: "/assets/images/logos/ANR.jpg"
+      - image: "/assets/images/logos/anr-transparent.png"
         url: "https://anr.fr/"
         style: "max-height: 2.7rem; width: auto;"
-      - image: "/assets/images/logos/bmbf.jpg"
-        url: "https://www.bmbf.de/DE/Home/home_node.html"
+      - image: "/assets/images/logos/bmftr.svg"
+        url: "https://www.bmftr.bund.de/"
         style: "max-height: 3.9rem; width: auto;"
       - image: "/assets/images/logos/dlr.svg"
         url: "https://projekttraeger.dlr.de/de"
         style: "max-height: 2.9rem; width: auto;"
-      - image: "/assets/images/logos/vde_vdi.png"
+      - image: "/assets/images/logos/vde-vdi-transparent.png"
         url: "https://www.vdivde-it.de/en"
         style: "max-height: 3.9rem; width: auto;"
 
@@ -296,16 +332,28 @@ contact_area:
   /* Set the entire hero container to full viewport height */
   .hero-container {
     height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background: #071f2d;
   }
 
-  /* Top section with image - 65% of viewport */
+  /* Let the opening image occupy the complete first screen. */
   .hero-image-section {
-    height: 65vh;
+    height: 100vh;
+    height: 100svh;
     position: relative;
     overflow: hidden;
+  }
+
+  .hero-image-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(3, 20, 31, 0.5) 0%, rgba(3, 20, 31, 0.25) 45%, rgba(3, 20, 31, 0.58) 100%);
   }
 
   /* Bottom section with logos - 35% of viewport */
@@ -320,17 +368,34 @@ contact_area:
   
   /* Ensure the slider fits perfectly in the top section */
   .rev_slider_wrapper.fullscreen-container {
-    height: 65vh !important;
+    height: 100vh !important;
+    height: 100svh !important;
   }
 
   #slider8 {
-    height: 65vh !important;
-    max-height: 65vh !important;
+    height: 100vh !important;
+    height: 100svh !important;
+    max-height: none !important;
   }
   
   #slider8 img {
     object-fit: cover;
-    height: 65vh !important;
+    object-position: center center;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100svh !important;
+  }
+
+  #slider8 .tp-caption,
+  #slider8 .hero-buttons {
+    z-index: 3 !important;
+  }
+
+  .hero-description {
+    max-width: 46rem;
+    padding: 0 1.5rem;
+    font-family: 'HK Grotesk', sans-serif !important;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
   
   /* Hero title: section-title style (uppercase, letter-spacing) */
@@ -434,9 +499,107 @@ contact_area:
   
   .hero-buttons .btn {
     margin: 0 10px;
-    min-width: 140px;
+    min-width: 175px;
+    border: 1px solid transparent !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(3, 20, 31, 0.25);
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease !important;
   }
-  
+
+  .hero-buttons .btn:first-child {
+    color: #fff !important;
+    background: #47a88a !important;
+    border-color: #47a88a !important;
+  }
+
+  .hero-buttons .btn:last-child {
+    color: #fff !important;
+    background: rgba(7, 31, 45, 0.72) !important;
+    border-color: rgba(255, 255, 255, 0.62) !important;
+    backdrop-filter: blur(6px);
+  }
+
+  .hero-buttons .btn:hover,
+  .hero-buttons .btn:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 0.8rem 2rem rgba(3, 20, 31, 0.38);
+  }
+
+  .hero-buttons .btn:first-child:hover,
+  .hero-buttons .btn:first-child:focus-visible {
+    background: #368f74 !important;
+    border-color: #368f74 !important;
+  }
+
+  .hero-buttons .btn:last-child:hover,
+  .hero-buttons .btn:last-child:focus-visible {
+    background: rgba(71, 168, 138, 0.82) !important;
+    border-color: #71c4aa !important;
+  }
+
+  .hero-grant-providers {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    min-height: 7rem;
+    padding: 0.7rem 1.5rem 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(4, 24, 35, 0.78);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-grant-label {
+    margin-bottom: 0.45rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .hero-grant-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .hero-grant-logos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.3rem;
+    min-width: 11rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.2rem;
+    background: transparent;
+  }
+
+  .hero-grant-logos img {
+    display: block;
+    width: auto;
+    max-width: 10rem;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 0.82;
+    transition: filter 220ms ease, opacity 220ms ease;
+  }
+
+  /* The official BMFTR SVG includes a generous protected area. */
+  .hero-grant-logos img[src*="bmftr.svg"] {
+    width: auto;
+    max-width: 13rem;
+    height: 4.6rem;
+  }
+
+  .hero-grant-logos a:hover img,
+  .hero-grant-logos a:focus-visible img {
+    filter: none;
+    opacity: 1;
+  }
+
   @media (max-width: 768px) {
     .logo-item {
       width: 33.333%;
@@ -449,7 +612,32 @@ contact_area:
     .hero-buttons .btn {
       margin: 5px 0;
       width: 80%;
-      max-width: 200px;
+      max-width: 230px;
+    }
+
+    .hero-grant-providers {
+      min-height: 6.2rem;
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+    }
+
+    .hero-grant-logos {
+      gap: 0.65rem;
+    }
+
+    .hero-grant-logos a {
+      height: 2.5rem;
+      min-width: 5rem;
+      padding: 0.3rem 0.4rem;
+    }
+
+    .hero-grant-logos img {
+      max-width: 7.5rem;
+    }
+
+    .hero-grant-logos img[src*="bmftr.svg"] {
+      max-width: 9rem;
+      height: 3.4rem;
     }
   }
   
@@ -515,11 +703,24 @@ contact_area:
             data-responsive_offset="on" 
             style="z-index: 9;">{{page.hero_area.sub_title}}
             </div>
+
+            <div class="tp-caption font-weight-400 color-white text-center hero-description"
+            data-x="center" data-y="middle"
+            data-voffset="['55','55','55','70']"
+            data-fontsize="['17','17','16','15']"
+            data-lineheight="['26','26','24','22']"
+            data-width="['760','700','560','340']"
+            data-textalign="['center','center','center','center']"
+            data-whitespace="['normal','normal','normal','normal']"
+            data-frames="[{&quot;delay&quot;:1750,&quot;speed&quot;:1200,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:25px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;auto:auto;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
+            data-responsive="on"
+            data-responsive_offset="on"
+            style="z-index: 9;">{{ page.hero_area.description }}</div>
             
             <!-- Hero buttons container -->
-            <div class="hero-buttons" style="top: 72%;">
-              <a class="btn btn-l btn-white btn-strong-hover scroll" href="{{page.hero_area.btn_url}}">{{page.hero_area.btn_text}}</a>
-              <a class="btn btn-l btn-white btn-strong-hover scroll" href="{{page.hero_area.btn2_url}}">{{page.hero_area.btn2_text}}</a>
+            <div class="hero-buttons" style="top: 70%;">
+              <a class="btn btn-l scroll" href="{{page.hero_area.btn_url}}">{{page.hero_area.btn_text}}</a>
+              <a class="btn btn-l" href="{{page.hero_area.btn2_url}}">{{page.hero_area.btn2_text}}</a>
             </div>
           </li>
         </ul>
@@ -528,6 +729,20 @@ contact_area:
       <!-- /.rev_slider -->
     </div>
     <!-- /.rev_slider_wrapper -->
+
+    {% assign grant_provider_block = page.logo_blocks | where: "title", "Grant Providers" | first %}
+    {% if grant_provider_block %}
+    <div class="hero-grant-providers text-center" aria-label="Grant Providers">
+      <div class="hero-grant-label">Supported by</div>
+      <div class="hero-grant-logos">
+        {% for logo in grant_provider_block.logos %}
+        <a href="{{ logo.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ grant_provider_block.title }}">
+          <img src="{{ logo.image }}" alt=""/>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </div>
   
   <!-- Bottom section with logos - 25% -->
@@ -556,73 +771,378 @@ contact_area:
 </div>
 {% endif %}
 
+{% include home_intro.html %}
 
-<div class="wrapper light-wrapper" style="margin-top: -250px;">
-  <div class="container-fluid inner px-4">
-    {% if page.about_area.enable %}
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          {% if page.about_area.title %}
-           <h2 class="section-title mb-20">{{ page.about_area.title }}</h2>
-          {% endif %}
-          {% if  page.about_area.sub_title %}
-           <p class="lead larger text-justify" style="font-size: 1.1rem; line-height: 1.5; color: #666;">{{page.about_area.sub_title}}</p>
-          {% endif %}
-          <div class="space20"></div>
-          {% if page.about_area.image %}
-          <figure class="mb-30">
-            <img src="{{page.about_area.image}}" alt="{{page.about_area.title}}" class="img-fluid"/>
-          </figure>
-          {% endif %}
-          <div class="space20"></div>
-          <ul class="progress-list">
-            {% for skills in page.about_area.skills %}
-            <li>
-              <p>{{skills.title}}</p>
-              <div class="progressbar line {{skills.style}}" data-value="{{skills.numbers}}"></div>
-            </li>
+
+{% if page.about_area.enable %}
+<style>
+  .project-objectives {
+    position: relative;
+    overflow: hidden;
+    padding: 6.5rem 0 7rem;
+    background: #f5f8f7;
+  }
+
+  .project-objectives::before {
+    content: "";
+    position: absolute;
+    top: -16rem;
+    right: -13rem;
+    width: 34rem;
+    height: 34rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(71, 168, 138, 0.13), rgba(71, 168, 138, 0) 68%);
+    pointer-events: none;
+  }
+
+  .objectives-heading {
+    position: relative;
+    z-index: 1;
+    max-width: 52rem;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .objectives-eyebrow,
+  .objective-number {
+    color: #368f74;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .objectives-heading h2 {
+    margin: 0.75rem 0 1rem;
+    color: #132f3b;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+
+  .objectives-intro {
+    margin: 0;
+    color: #526870;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .objective-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: stretch;
+  }
+
+  .objective-summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.2rem 2.35rem;
+    border: 1px solid rgba(19, 47, 59, 0.12);
+    border-radius: 0.85rem;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 0.85rem 2.2rem rgba(19, 47, 59, 0.055);
+  }
+
+  .objective-summary::before {
+    content: "";
+    position: absolute;
+    top: 1.45rem;
+    bottom: 1.45rem;
+    left: 0;
+    width: 0.25rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    background: linear-gradient(180deg, #47a88a, #697bc7);
+  }
+
+  .objective-number {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .objective-summary h3 {
+    margin: 0 0 0.65rem;
+    color: #132f3b;
+    font-size: clamp(1.45rem, 2.3vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .objective-summary p {
+    margin: 0;
+    color: #60737a;
+    line-height: 1.65;
+  }
+
+  .objective-highlight {
+    color: #287b66;
+    font-weight: 650;
+  }
+
+  .objective-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.45rem;
+  }
+
+  .objective-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(54, 143, 116, 0.2);
+    border-radius: 999px;
+    background: rgba(71, 168, 138, 0.09);
+    color: #286d5b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+  }
+
+  .objective-map {
+    position: relative;
+    height: clamp(20rem, 34vw, 26rem);
+    margin: 2.5rem 0 0;
+    overflow: hidden;
+    border-right: 1px solid rgba(95, 77, 157, 0.38);
+    border-left: 1px solid rgba(95, 77, 157, 0.38);
+    border-radius: 1.1rem;
+    background: radial-gradient(circle at 55% 45%, #32135e 0%, #130c2d 58%, #091d2a 100%);
+    box-shadow: 0 1.4rem 3.5rem rgba(19, 47, 59, 0.16);
+  }
+
+  .objective-map img {
+    position: absolute;
+    inset: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 700ms ease;
+  }
+
+  .objective-map:hover img {
+    transform: scale(1.02);
+  }
+
+  .institutions-carousel {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    min-width: 36rem;
+    margin: 5rem auto 0;
+    text-align: center;
+  }
+
+  .institutions-heading {
+    width: min(48rem, 100%);
+    margin: 0 auto 1.8rem;
+  }
+
+  .institutions-heading h3 {
+    margin-bottom: 0.7rem;
+    color: #132f3b;
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+  }
+
+  .institutions-heading p {
+    margin: 0;
+    color: #60737a;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .institutions-window {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  }
+
+  .institutions-track {
+    display: flex;
+    width: max-content;
+    animation: institutions-scroll 24s linear infinite;
+    will-change: transform;
+  }
+
+  .institutions-window:hover .institutions-track,
+  .institutions-window:focus-within .institutions-track {
+    animation-play-state: paused;
+  }
+
+  .institutions-group {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+
+  .institutions-group a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 4rem;
+  }
+
+  .institutions-group img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.58;
+    transition: filter 220ms ease, opacity 220ms ease;
+  }
+
+  .institutions-group a:hover img,
+  .institutions-group a:focus-visible img {
+    filter: none;
+    opacity: 1;
+  }
+
+  @keyframes institutions-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .institutions-track { animation: none; }
+    .institutions-group[aria-hidden="true"] { display: none; }
+  }
+
+  @media (max-width: 991px) {
+    .project-objectives { padding: 5rem 0; }
+    .objective-grid { grid-template-columns: 1fr; }
+    .objective-map { height: 23rem; }
+    .institutions-carousel { width: 75%; min-width: 0; }
+  }
+
+  @media (max-width: 576px) {
+    .project-objectives { padding: 4rem 0; }
+    .objectives-heading { margin-bottom: 2.5rem; }
+    .objectives-intro { font-size: 1rem; }
+    .objective-summary { padding: 1.6rem 1.4rem; }
+    .objective-map { height: 16rem; }
+    .institutions-carousel { width: 100%; margin-top: 3.25rem; }
+    .institutions-group { gap: 1.5rem; padding-right: 1.5rem; }
+    .institutions-group a { width: 6.5rem; height: 3.2rem; }
+  }
+</style>
+
+<section class="project-objectives" aria-labelledby="objectives-title">
+  <div class="container">
+    <header class="objectives-heading">
+      <div class="objectives-eyebrow">Our mission</div>
+      <h2 id="objectives-title">{{ page.about_area.title }}</h2>
+      <p class="objectives-intro">{{ page.about_area.sub_title }}</p>
+    </header>
+
+    <div class="objective-grid">
+      <article class="objective-summary">
+        <div class="objective-number">Objective 01</div>
+        <h3>AI-based high-resolution forest maps</h3>
+        <p>AI4Forest creates and evaluates high-accuracy maps of European forests and other major forest biomes worldwide, at spatial and temporal resolutions reaching the <span class="objective-highlight">level of individual trees</span>. Tree health, biomass and carbon content can be monitored <span class="objective-highlight">monthly or even weekly</span>. Combining spaceborne and airborne observations also helps attribute forest change to climate extremes, management decisions and policy.</p>
+        <div class="objective-tags" aria-label="Objective 1 key topics">
+          <span class="objective-tag">Individual trees</span>
+          <span class="objective-tag">Biomass &amp; carbon</span>
+          <span class="objective-tag">Forest health</span>
+          <span class="objective-tag">High-resolution mapping</span>
+        </div>
+      </article>
+
+      <article class="objective-summary">
+        <div class="objective-number">Objective 02</div>
+        <h3>Scalable AI for global-scale analyses</h3>
+        <p>Modern satellite constellations produce enormous time-series datasets whose analysis can otherwise take days or weeks. AI4Forest develops <span class="objective-highlight">efficient, scalable AI methods</span> that reduce computational and storage costs during both training and inference. These techniques enable <span class="objective-highlight">global forest monitoring</span> and can transfer to other data-intensive scientific domains.</p>
+        <div class="objective-tags" aria-label="Objective 2 key topics">
+          <span class="objective-tag">Scalable AI</span>
+          <span class="objective-tag">Satellite time series</span>
+          <span class="objective-tag">Efficient inference</span>
+          <span class="objective-tag">Global monitoring</span>
+        </div>
+      </article>
+    </div>
+
+    <figure class="objective-map">
+      <img src="{{ site.baseurl }}/assets/images/maps_content/canopy_height_pauls.png" alt="Global high-resolution canopy height map" loading="lazy"/>
+    </figure>
+
+    {% assign institutions_block = page.logo_blocks | where: "title", "Institutions" | first %}
+    {% if institutions_block %}
+    <div class="institutions-carousel" aria-label="Project institutions">
+      <header class="institutions-heading">
+        <h3>Participating Research Institutions</h3>
+        <p>AI4Forest brings together leading French and German institutes with complementary expertise in machine learning, remote sensing, climate science and forest ecology. By connecting methodological research with domain knowledge, the partnership turns large Earth-observation datasets into robust tools for understanding forests at scale.</p>
+      </header>
+      <div class="institutions-window">
+        <div class="institutions-track">
+          <div class="institutions-group">
+            {% for logo in institutions_block.logos %}
+            <a href="{{ logo.url }}" target="_blank" rel="noopener noreferrer" aria-label="Institution website">
+              <img src="{{ logo.image }}" alt=""/>
+            </a>
             {% endfor %}
-          </ul>
+          </div>
+          <div class="institutions-group" aria-hidden="true">
+            {% for logo in institutions_block.logos %}
+            <a href="{{ logo.url }}" tabindex="-1">
+              <img src="{{ logo.image }}" alt=""/>
+            </a>
+            {% endfor %}
+          </div>
         </div>
       </div>
+    </div>
     {% endif %}
   </div>
-</div>
+</section>
+{% endif %}
 
 {% if page.projects_area.enable %}
 <style>
-  .projects-col { flex: 0 0 20%; max-width: 20%; padding: 0 1.25rem; }
-  @media (max-width: 991px) { .projects-col { flex: 0 0 33.333%; max-width: 33.333%; padding: 0 1rem; } }
+  .projects-area-wrapper { position: relative; overflow: hidden; background: #fff; }
+  .projects-header { max-width: 48rem; margin: 0 auto 3rem; text-align: center; }
+  .projects-eyebrow { margin-bottom: 0.7rem; color: #368f74; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+  .projects-header h2 { margin-bottom: 0.8rem; color: #132f3b; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-transform: none; }
+  .projects-header p { margin: 0; color: #60737a; font-size: 1.02rem; line-height: 1.65; }
+  .projects-col { flex: 0 0 25%; max-width: 25%; padding: 0 0.75rem; }
+  @media (max-width: 991px) { .projects-col { flex: 0 0 50%; max-width: 50%; padding: 0 0.75rem; } }
   @media (max-width: 767px) { .projects-col { flex: 0 0 50%; max-width: 50%; padding: 0 0.75rem; } }
-  .projects-area-wrapper .row { margin: 0 -1.25rem; }
-  @media (max-width: 991px) { .projects-area-wrapper .row { margin: 0 -1rem; } }
+  .projects-area-wrapper .row { margin: 0 -0.75rem; }
+  @media (max-width: 991px) { .projects-area-wrapper .row { margin: 0 -0.75rem; } }
   @media (max-width: 767px) { .projects-area-wrapper .row { margin: 0 -0.75rem; } }
-  .projects-figure { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 0.3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: all 0.4s ease; }
-  .projects-figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%); opacity: 0; transition: opacity 0.4s ease; }
-  .projects-area-wrapper a:hover .projects-figure { box-shadow: 0 12px 40px rgba(88, 179, 154, 0.25); transform: translateY(-4px); }
-  .projects-area-wrapper a:hover .projects-figure::after { opacity: 1; }
-  .projects-area-wrapper a:hover .projects-figure img { transform: scale(1.08); }
+  .projects-figure { position: relative; aspect-ratio: 1.15; overflow: hidden; border: 1px solid rgba(19,47,59,0.1); border-radius: 0.85rem; background: #0a2230; box-shadow: 0 8px 28px rgba(19,47,59,0.1); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .projects-figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(4,24,35,0.9) 0%, rgba(4,24,35,0.15) 58%, transparent 78%); transition: background 0.35s ease; }
+  .projects-area-wrapper a:hover .projects-figure { box-shadow: 0 16px 42px rgba(30,115,91,0.2); transform: translateY(-5px); }
+  .projects-area-wrapper a:hover .projects-figure::after { background: linear-gradient(to top, rgba(32,112,90,0.92) 0%, rgba(4,24,35,0.12) 62%, transparent 82%); }
+  .projects-area-wrapper a:hover .projects-figure img { transform: scale(1.055); }
   .projects-figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
   .projects-col:first-child .projects-figure img { object-position: left center; }
-  .projects-figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem 1rem; color: #fff; font-size: 0.9rem; font-weight: 600; z-index: 2; opacity: 0; transform: translateY(10px); transition: all 0.4s ease; }
-  .projects-area-wrapper a:hover .projects-figcaption { opacity: 1; transform: translateY(0); }
-  .projects-area-wrapper .projects-label { color: #666; font-size: 0.85rem; font-weight: 500; transition: color 0.3s ease; }
-  .projects-area-wrapper a:hover .projects-label { color: var(--color-default); }
+  .projects-figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.4rem 1.2rem; color: #fff; font-size: 0.95rem; font-weight: 600; line-height: 1.25; z-index: 2; }
+  .projects-index { display: block; margin-bottom: 0.4rem; color: rgba(255,255,255,0.65); font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase; }
+  @media (max-width: 576px) { .projects-header { margin-bottom: 2rem; } .projects-figcaption { padding: 1rem 0.85rem; font-size: 0.8rem; } }
 </style>
-<div id="research-foci" class="wrapper light-wrapper projects-area-wrapper" style="margin-top: -7rem; padding-top: 0.5rem; padding-bottom: 2rem;">
+<div id="research-foci" class="wrapper light-wrapper projects-area-wrapper" style="margin-top: 0; padding-bottom: 3rem;">
   <div class="container inner">
-    {% if page.projects_area.title %}
-    <h2 class="section-title text-center mb-40">{{ page.projects_area.title }}</h2>
-    {% endif %}
+    <header class="projects-header">
+      <div class="projects-eyebrow">From methods to impact</div>
+      {% if page.projects_area.title %}<h2>{{ page.projects_area.title }}</h2>{% endif %}
+      <p>Eight connected research areas transform Earth-observation data into detailed, reliable and computationally efficient information about forests.</p>
+    </header>
     <div class="row justify-content-center">
       {% for project in page.projects_area.projects %}
       <div class="projects-col mb-30">
         <a href="{{ project.url }}" class="d-block text-decoration-none">
-          <figure class="main projects-figure mb-15">
+          <figure class="main projects-figure mb-0">
             <img src="{{ project.image }}" alt="{{ project.title }}" class="img-fluid"/>
-            <figcaption class="projects-figcaption">{{ project.title }}</figcaption>
+            <figcaption class="projects-figcaption"><span class="projects-index">Focus {{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>{{ project.title }}</figcaption>
           </figure>
-          <h4 class="post-title text-center mb-0 projects-label" style="font-size: 0.9rem;">{{ project.title }}</h4>
         </a>
       </div>
       {% endfor %}
@@ -645,8 +1165,36 @@ contact_area:
 </div>
 {% endif %}
 
-{% if page.intro_area.enable %}
-<div class="wrapper light-wrapper intro-area-wrapper" style="padding-top: 0;">
+{% if false %}
+<style>
+  .home-about-section { background:#fff; }
+  .home-about-section .container.inner { padding-top:6rem; padding-bottom:6rem; }
+  .home-about-section .section-title,
+  .home-mission-section .section-title,
+  .home-testimonials .section-title { margin-bottom:1rem !important; color:#132f3b; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.025em; text-transform:none; }
+  .home-about-section .text-content>p { max-width:52rem; margin-right:auto; margin-left:auto; color:#60737a; font-size:1.03rem; line-height:1.75; text-align:center; }
+  .about-insight-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-top:3rem; }
+  .about-insight { position:relative; padding:2rem; overflow:hidden; border:1px solid rgba(19,47,59,.1); border-radius:1rem; background:#f5f8f7; }
+  .about-insight>span { display:block; margin-bottom:.65rem; color:#368f74; font-size:.7rem; font-weight:700; letter-spacing:.16em; }
+  .about-insight h3 { margin-bottom:.6rem; color:#132f3b; font-size:1.35rem; }
+  .about-insight p { margin:0; color:#60737a; line-height:1.65; }
+  .home-mission-section { margin-top:0 !important; background:#f5f8f7 !important; }
+  .home-mission-section .container.inner { padding-top:6rem !important; padding-bottom:6rem !important; }
+  .mission-lead { max-width:48rem; margin:0 auto 3rem; color:#60737a; font-size:1.05rem; line-height:1.75; text-align:center; }
+  .mission-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; }
+  .mission-grid>div { padding:1.8rem; border-top:3px solid #47a88a; border-radius:.25rem .25rem .9rem .9rem; background:#fff; box-shadow:0 .75rem 2rem rgba(19,47,59,.06); }
+  .mission-grid h3 { margin-bottom:.6rem; color:#132f3b; font-size:1.15rem; }
+  .mission-grid p { margin:0; color:#60737a; line-height:1.65; }
+  .home-testimonials { background:#fff !important; }
+  .home-testimonials .container.inner { padding-top:6rem; padding-bottom:6rem !important; }
+  .home-testimonials .lead { max-width:44rem; margin:0 auto; color:#60737a; font-size:1rem; }
+  .home-testimonials #testimonial-image { overflow:hidden; border-radius:1rem; box-shadow:0 1.2rem 3rem rgba(19,47,59,.15); }
+  .home-testimonials #testimonial-image img { width:100%; aspect-ratio:1/1.08; object-fit:cover; }
+  .home-testimonials blockquote { color:#40575f; }
+  .home-testimonials blockquote h6 { color:#132f3b; }
+  @media(max-width:767px){ .about-insight-grid,.mission-grid{grid-template-columns:1fr;} .home-about-section .container.inner,.home-mission-section .container.inner,.home-testimonials .container.inner{padding-top:4rem !important;padding-bottom:4rem !important;} }
+</style>
+<div class="wrapper light-wrapper intro-area-wrapper home-about-section" style="padding-top: 0;">
   <div class="container inner">
     <div class="row justify-content-center">
       <div class="col-lg-10">
@@ -670,9 +1218,7 @@ contact_area:
       margin-top: -200px !important;
     }
     
-    .intro-area-wrapper {
-      margin-top: -150px !important;
-    }
+    .intro-area-wrapper { margin-top: 0 !important; }
   }
   
   @media (max-width: 991px) {
@@ -681,9 +1227,7 @@ contact_area:
       margin-top: -140px !important;
     }
     
-    .intro-area-wrapper {
-      margin-top: 20px !important;
-    }
+    .intro-area-wrapper { margin-top: 0 !important; }
   }
   
   @media (max-width: 576px) {
@@ -691,14 +1235,12 @@ contact_area:
       margin-bottom: 0 !important;
     }
     
-    .intro-area-wrapper {
-      margin-top: 20px !important;
-    }
+    .intro-area-wrapper { margin-top: 0 !important; }
   }
 </style>
 
 {% if page.text_area.enable %}
-<div class="wrapper bg-white" style="margin-top: 50px;">
+<div class="wrapper bg-white home-mission-section" style="margin-top: 50px;">
   <div class="container inner" style="padding-top: 30px; padding-bottom: 30px;">
     <div class="row justify-content-center">
       <div class="col-lg-10">
@@ -715,7 +1257,7 @@ contact_area:
 {% endif %}
 
 {% if page.testimonials.enable %}
-<div class="wrapper light-wrapper">
+<div class="wrapper light-wrapper home-testimonials">
   <div class="container inner pb-0">
     {% if page.testimonials.title %}
     <div class="row">
@@ -806,51 +1348,6 @@ $(document).ready(function() {
   }, 500);
 });
 </script>
-{% endif %}
-
-<!-- Logo Blocks -->
-{% if page.logo_blocks %}
-<div class="wrapper bg-white">
-  <div class="container inner">
-    {% for block in page.logo_blocks %}
-    <div class="row justify-content-center text-center {% if forloop.first %}logo-block-first{% else %}logo-block-second{% endif %}">
-      <div class="col-lg-10">
-        <h2 class="section-title mb-20">{{ block.title }}</h2>
-        <div class="space10"></div>
-        <div class="row align-items-center justify-content-center">
-          {% for logo in block.logos %}
-          <div class="col mb-30">
-            <figure class="mb-0">
-              <a href="{{ logo.url }}" target="_blank">
-                <img src="{{ logo.image }}" alt="" class="img-fluid" style="{{ logo.style }}">
-              </a>
-            </figure>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-
-<style>
-  /* Logo blocks spacing */
-  .logo-block-first {
-    margin-bottom: 0;
-    margin-top: -70px;
-  }
-  
-  .logo-block-second {
-    margin-top: -30px;
-  }
-  
-  @media (max-width: 768px) {
-    .logo-block-second {
-      margin-top: 10px; /* Positive margin on mobile to prevent overlap */
-    }
-  }
-</style>
 {% endif %}
 
 <!--wrapper video CTA-->

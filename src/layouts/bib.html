@@ -17,6 +17,7 @@ layout: default
     
     <p style="margin-bottom: 0.4rem; font-size: 0.75rem; color: #555;">
       {% assign author_array = entry.author | split: " and " %}
+      {% assign penultimate_author_index = author_array.size | minus: 1 %}
       {% for author_name in author_array %}
         {% assign name_parts = author_name | split: ", " %}
         {% if name_parts.size > 1 %}
@@ -41,7 +42,7 @@ layout: default
             {{ first_name | slice: 0 }}.
           {% endif %}
           <span>{{ last_name }}</span>{% unless forloop.last %}, {% endunless %}
-          {% if forloop.last == false and forloop.index == author_array.size | minus:1 %}
+          {% if forloop.last == false and forloop.index == penultimate_author_index %}
             and 
           {% endif %}
         {% endif %}
@@ -308,4 +309,4 @@ ol {
   visibility: visible;
   opacity: 1;
 }
-</style> 
+</style>
