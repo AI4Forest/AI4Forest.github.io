@@ -14,3 +14,7 @@ main_menu:
   - text: "News"
     url: "/news/"
     menu_type: "primary"
+
+  - text: "Contact"
+    url: "/contact/"
+    menu_type: "primary"

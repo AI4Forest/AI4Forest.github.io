@@ -4,14 +4,29 @@
   .home-about-section::before { content:""; position:absolute; top:-15rem; right:-12rem; width:32rem; height:32rem; border-radius:50%; background:radial-gradient(circle,rgba(71,168,138,.13),rgba(71,168,138,0) 68%); }
   .home-about-section .container.inner { position:relative; padding-top:6rem; padding-bottom:6rem; }
   .home-about-section .section-title { max-width:55rem; margin:0 auto 1.5rem !important; color:#132f3b; font-size:clamp(2rem,4vw,3rem); line-height:1.12; letter-spacing:-.025em; text-transform:none; }
-  .home-about-section .text-content { max-width:54rem; margin:0 auto; }
-  .home-about-section .text-content p { color:#60737a; font-size:1.05rem; line-height:1.75; text-align:center; }
+  .home-about-section .intro-layout { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); align-items:center; column-gap:clamp(1.5rem,3vw,3rem); row-gap:1rem; margin-top:1.5rem; }
+  .home-about-section .text-content { min-width:0; }
+  .home-about-section .intro-closing { grid-column:1 / -1; }
+  .home-about-section .text-content p { color:#60737a; font-size:1.05rem; line-height:1.75; text-align:justify; hyphens:auto; }
+  .home-about-section .text-content p:last-child { margin-bottom:0; }
+  .home-about-section .intro-highlight { color:#287b66; font-weight:650; }
+  .home-about-section .intro-forest { width:100%; max-width:16rem; margin:0 auto; }
+  .home-about-section .intro-forest img { display:block; width:100%; height:auto; border-radius:.85rem; }
+  @media(max-width:991px){ .home-about-section .intro-layout{grid-template-columns:minmax(0,1fr);} .home-about-section .intro-forest{width:100%;max-width:16rem;margin:0 auto;} }
   @media(max-width:767px){ .home-about-section .container.inner{padding-top:4rem;padding-bottom:4rem;} }
 </style>
 <section class="wrapper home-about-section" aria-labelledby="home-about-title">
   <div class="container inner">
     <h2 id="home-about-title" class="section-title text-center">{{ page.intro_area.title }}</h2>
-    <div class="text-content">{{ page.intro_area.content }}</div>
+    <div class="intro-layout" lang="en">
+      <div class="text-content">{{ page.intro_area.content }}</div>
+      {% if page.forest_image.enable %}
+      <figure class="intro-forest">
+        <img src="{{ page.forest_image.image | relative_url }}" alt="Illustration of four green trees" loading="lazy"/>
+      </figure>
+      {% endif %}
+      <div class="text-content intro-closing">{{ page.intro_area.closing_content }}</div>
+    </div>
   </div>
 </section>
 {% endif %}

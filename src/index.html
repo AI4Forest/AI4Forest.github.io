@@ -9,7 +9,7 @@ hero_area:
   bg_image: "/assets/images/main_page/pexels-forest-1868529.jpg"
   title: "AI4Forest"
   sub_title: "<em>German-French research cooperation</em>"
-  description: "We unite French and German expertise in artificial intelligence and Earth observation. Together, we develop new methods to understand and protect forests in a changing climate."
+  description: "French-German research combining AI and Earth observation to understand and protect forests."
   btn_text: "Explore Projects"
   btn_url: "#research-foci"
   btn2_text: "Meet the Researchers"
@@ -25,8 +25,9 @@ intro_area:
   enable: true
   title: "Transforming Forest Monitoring Through AI and Satellite Data"
   content: |
-    <p>We are entering a new era of precision and scale in environmental monitoring. Modern satellite constellations capture high-resolution imagery of the entire planet with unprecedented frequency, making it possible to observe forest properties that could previously only be studied at a limited number of ground plots.</p>
-    <p>At the same time, breakthroughs in deep learning unlock new ways to analyze vast, high-dimensional time series. AI4Forest connects these advances to deliver detailed and frequently updated forest information while reducing the computational and storage costs of global-scale analysis.</p>
+    <p>We are entering a new era of precision and scale in environmental monitoring. Modern satellite constellations capture <strong class="intro-highlight">high-resolution imagery</strong> of the entire planet with unprecedented frequency, making it possible to observe forest properties that could previously only be studied at a limited number of ground plots.</p>
+  closing_content: |
+    <p>At the same time, <strong class="intro-highlight">breakthroughs in deep learning</strong> unlock new ways to analyze vast, high-dimensional time series. AI4Forest connects these advances to deliver <strong class="intro-highlight">detailed and frequently updated forest information</strong> while <strong class="intro-highlight">reducing the computational and storage costs</strong> of global-scale analysis.</p>
 
 text_area:
   enable: false
@@ -42,7 +43,6 @@ text_area:
 testimonials:
   enable: true
   title: "What People Say"
-  sub_title: "Hear from our partners and collaborators about their experience working with AI4Forest"
   image: "/assets/images/main_page/satellite_.png"
   feedback:
     - quote: |
@@ -641,31 +641,100 @@ contact_area:
     }
   }
   
-  @media (max-width: 480px) {
-    .hero-buttons {
-      top: 75%;
+  /* Use document flow on phones so slider offsets cannot overlap the copy. */
+  @media (max-width: 767px) {
+    .hero-container,
+    .hero-image-section {
+      min-height: 620px;
     }
-    
-    .hero-buttons .btn {
-      font-size: 14px;
-      padding: 8px 16px;
-      min-width: 120px;
-      width: 70%;
-      max-width: 160px;
+
+    .hero-image-section .rev_slider_wrapper.fullscreen-container,
+    #slider8 {
+      min-height: 620px !important;
     }
-    
-    .tp-caption.font-weight-600 {
-      margin-top: -60px !important;
-      font-size: 36px !important;
+
+    #slider8 .tp-revslider-slidesli {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      padding: 72px 16px 160px !important;
+    }
+
+    #slider8 .tp-parallax-wrap,
+    #slider8 .tp-loop-wrap,
+    #slider8 .tp-mask-wrap {
+      position: relative !important;
+      inset: auto !important;
+      width: 100% !important;
+      flex-shrink: 0;
+    }
+
+    #slider8 .tp-caption {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #slider8 .tp-caption.font-weight-600 {
+      font-size: clamp(26px, 7.5vw, 36px) !important;
       line-height: 1.2 !important;
     }
-    
-    .tp-caption.font-weight-400 {
-      margin-top: -30px !important;
-      font-size: 20px !important;
-      line-height: 1.3 !important;
+
+    #slider8 .hero-subtitle {
+      padding-top: 16px !important;
+      font-size: 15px !important;
+      line-height: 1.4 !important;
+    }
+
+    #slider8 .hero-description {
+      font-size: 16px !important;
+      line-height: 1.5 !important;
+    }
+
+    #slider8 .hero-buttons {
+      position: relative;
+      top: auto !important;
+      width: 100% !important;
+      flex: 0 0 auto;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    #slider8 .hero-buttons .btn {
+      box-sizing: border-box;
+      width: 100% !important;
+      max-width: 360px !important;
+      min-width: 0;
+      min-height: 44px;
+      margin: 0;
+      padding: 14px 20px !important;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: normal;
+    }
+
+    .hero-grant-logos {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-grant-logos a {
+      min-width: 0;
+      padding: 0;
+    }
+
+    .hero-grant-logos img,
+    .hero-grant-logos img[src*="bmftr.svg"] {
+      max-width: 100%;
+      max-height: 3.4rem;
     }
   }
+
 </style>
 
 <!-- Full height hero container -->
@@ -875,6 +944,8 @@ contact_area:
     margin: 0;
     color: #60737a;
     line-height: 1.65;
+    text-align: justify;
+    hyphens: auto;
   }
 
   .objective-highlight {
@@ -930,6 +1001,9 @@ contact_area:
   .objective-map:hover img {
     transform: scale(1.02);
   }
+
+  .research-institutions { background: #fff; padding: 3rem 0; }
+  .research-institutions .institutions-carousel { margin-top: 0; }
 
   .institutions-carousel {
     position: relative;
@@ -1043,7 +1117,7 @@ contact_area:
       <p class="objectives-intro">{{ page.about_area.sub_title }}</p>
     </header>
 
-    <div class="objective-grid">
+    <div class="objective-grid" lang="en">
       <article class="objective-summary">
         <div class="objective-number">Objective 01</div>
         <h3>AI-based high-resolution forest maps</h3>
@@ -1073,12 +1147,16 @@ contact_area:
       <img src="{{ site.baseurl }}/assets/images/maps_content/canopy_height_pauls.png" alt="Global high-resolution canopy height map" loading="lazy"/>
     </figure>
 
+  </div>
+</section>
+<section class="research-institutions" aria-label="Participating research institutions">
+  <div class="container">
     {% assign institutions_block = page.logo_blocks | where: "title", "Institutions" | first %}
     {% if institutions_block %}
     <div class="institutions-carousel" aria-label="Project institutions">
       <header class="institutions-heading">
         <h3>Participating Research Institutions</h3>
-        <p>AI4Forest brings together leading French and German institutes with complementary expertise in machine learning, remote sensing, climate science and forest ecology. By connecting methodological research with domain knowledge, the partnership turns large Earth-observation datasets into robust tools for understanding forests at scale.</p>
+        <p>AI4Forest brings together <strong class="objective-highlight">leading French and German institutes</strong> with complementary expertise in machine learning, remote sensing, climate science and forest ecology. By connecting <strong class="objective-highlight">methodological research with domain knowledge</strong>, the partnership turns large Earth-observation datasets into robust tools for <strong class="objective-highlight">understanding forests at scale</strong>.</p>
       </header>
       <div class="institutions-window">
         <div class="institutions-track">
@@ -1106,7 +1184,7 @@ contact_area:
 
 {% if page.projects_area.enable %}
 <style>
-  .projects-area-wrapper { position: relative; overflow: hidden; background: #fff; }
+  .projects-area-wrapper { position: relative; overflow: hidden; background: #f5f8f7 !important; }
   .projects-header { max-width: 48rem; margin: 0 auto 3rem; text-align: center; }
   .projects-eyebrow { margin-bottom: 0.7rem; color: #368f74; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
   .projects-header h2 { margin-bottom: 0.8rem; color: #132f3b; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; text-transform: none; }
@@ -1151,19 +1229,7 @@ contact_area:
 </div>
 {% endif %}
 
-{% if page.forest_image.enable %}
-<div class="wrapper light-wrapper forest-image-wrapper" style="margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
-  <div class="container inner">
-    <div class="row justify-content-center">
-      <div class="col-lg-4">
-        <figure class="mb-0">
-          <img src="{{page.forest_image.image}}" alt="{{page.about_area.title}}" class="img-fluid" style="max-width: 100%; height: auto;"/>
-        </figure>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
+
 
 {% if false %}
 <style>
@@ -1257,6 +1323,7 @@ contact_area:
 {% endif %}
 
 {% if page.testimonials.enable %}
+<style>.home-testimonials { background: #fff !important; }</style>
 <div class="wrapper light-wrapper home-testimonials">
   <div class="container inner pb-0">
     {% if page.testimonials.title %}

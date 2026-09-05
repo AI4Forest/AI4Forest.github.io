@@ -1,63 +1,79 @@
 ---
-layout: page
-title: "Contact Us"
-sub_title: |
-  Aenean lacinia bibendum nulla sed consectetur
-header_image: "/assets/images/art/bg3.jpg"
-white_menu: true
-
-contact_info:
-  enable: true
-  contact_data:
-    - icon: "/assets/images/icons/ui-gps.png"
-      info: "Moon Street Light Avenue<br> 14/05 Jupiter, JP 80630"
-
-    - icon: "/assets/images/icons/co-telephone.png"
-      info: "00 (123) 456 78 90<br/> 00 (987) 654 32 10"
-
-    - icon: "/assets/images/icons/co-email-5.png"
-      info:
-      - "manager@email.com <br/>"
-      - "asistant@email.com"
-
-contact_form:
-  enable: true
-  title: "Request Photography Pricing"
-  sub_title: "For more information please get in touch using the form below:"
-  action_email: "tortoizthemes@gmail.com"
-  bg_image: "/assets/images/art/bg20.jpg"
-  forms_data: 
-
-    - field_type: "input"
-      field_name: "user_first_name"
-      placeholder: "First Name" 
-      error_message: "First Name Is required"
-
-    - field_type: "input"
-      field_name: "user_last_name"
-      placeholder: "Last Name" 
-      error_message: "Last Name Is required"
-
-    - field_type: "input"
-      field_name: "user_phone"
-      placeholder: "Phone Number" 
-      error_message: "Phone Number Is required"
-
-    - field_type: "input"
-      field_name: "user_email"
-      placeholder: "Email"
-      error_message: "Email Is required"
-
-    - field_type: "textarea"
-      field_name: "user_message"
-      placeholder: "Message"
-      error_message: "Message Is required"
-
-google_maps:
-  enable: true
-  
+layout: default
+title: Contact
+permalink: /contact/
+custom_font: font4
+formspree_endpoint: ""
 ---
-
-{% include contact_info.html %}
-{% include contact_2.html %}
-{% include gmap.html %}
+{% include header.html container_class="container" extra_class="nav-uppercase" %}
+<style>
+  .contact-page { color:#60737a; background:#fff; }
+  .contact-heading { position:relative; height:360px; background:#f5f8f7; }
+  .contact-map { display:block; width:100%; height:100%; border:0; }
+  .contact-map-title { position:absolute; top:1rem; left:1rem; padding:.6rem 1rem; background:rgba(255,255,255,.94); border-radius:.35rem; pointer-events:none; }
+  .contact-heading h1 { color:#132f3b; font-size:clamp(2.5rem,5vw,3.5rem); margin-bottom:.75rem; }
+  .contact-heading p { margin:0; font-size:1.1rem; }
+  .contact-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:clamp(2rem,5vw,5rem); padding-top:4rem; padding-bottom:4rem; }
+  .contact-page h2 { color:#132f3b; font-size:1.7rem; margin-bottom:1rem; }
+  .contact-page h3 { color:#132f3b; font-size:1rem; margin-bottom:.5rem; }
+  .contact-page a { color:#287b66; overflow-wrap:anywhere; }
+  .contact-page address { font-style:normal; line-height:1.8; }
+  .contact-detail { margin-top:1.5rem; }
+  .contact-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+  .contact-field-wide { grid-column:1 / -1; }
+  .contact-page label { display:block; color:#132f3b; font-size:.8rem; font-weight:600; }
+  .contact-page .form-control { width:100%; margin:0; border:1px solid #cbd8d3; border-radius:.35rem; background:#f9fbfa; }
+  .contact-page textarea { min-height:9rem; resize:vertical; }
+  .contact-page .btn { margin:1rem 0 0; background:#368f74; color:#fff; white-space:normal; }
+  .contact-note { font-size:.8rem; margin:1rem 0 0; }
+  @media(max-width:767px) { .contact-grid { grid-template-columns:minmax(0,1fr); padding-top:2.5rem; padding-bottom:2.5rem; } .contact-fields { grid-template-columns:minmax(0,1fr); } }
+</style>
+<main class="contact-page">
+  <header class="contact-heading">
+    <iframe class="contact-map" title="OpenStreetMap: Leonardo-Campus 3, Münster" src="https://www.openstreetmap.org/export/embed.html?bbox=7.59405%2C51.97279%2C7.61005%2C51.97879&amp;layer=mapnik&amp;marker=51.97579%2C7.60205"></iframe>
+    <div class="contact-map-title"><h1>Contact</h1><p>Leonardo-Campus 3 · Münster</p></div>
+  </header>
+  <div class="container contact-grid">
+    <section aria-labelledby="contact-details-title">
+      <h2 id="contact-details-title">Get in Touch</h2>
+      <p>For questions about our research and opportunities to collaborate, please contact:</p>
+      <h3><strong>Fabian Gieseke</strong></h3>
+      <address>
+        <a href="https://www.wi.uni-muenster.de/department/dasc">Machine Learning and Data Engineering</a><br>
+        University of Münster<br>
+        Leonardo-Campus 3<br>
+        48149 Münster, Germany
+      </address>
+    </section>
+    <section aria-labelledby="contact-message-title">
+      <h2 id="contact-message-title">Write a Message</h2>
+      <form id="ai4forest-contact" {% if page.formspree_endpoint != empty %}action="{{ page.formspree_endpoint }}" method="post"{% endif %}>
+        <div class="contact-fields">
+          <div><label for="contact-name">Name *</label><input class="form-control" id="contact-name" name="name" autocomplete="name" required maxlength="150"></div>
+          <div><label for="contact-email">Email *</label><input class="form-control" id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+          <div class="contact-field-wide"><label for="contact-subject">Subject *</label><input class="form-control" id="contact-subject" name="subject" required maxlength="200"></div>
+          <div class="contact-field-wide"><label for="contact-message">Message *</label><textarea class="form-control" id="contact-message" name="message" required maxlength="5000"></textarea></div>
+        </div>
+        {% if page.formspree_endpoint != empty %}
+        <button class="btn" type="submit">Send message</button>
+        {% else %}
+        <button class="btn" type="submit">Open email draft</button>
+        <p class="contact-note">This opens your email app with your message. Please send it from there.</p>
+        <noscript><p>Please enable JavaScript to prepare an email draft.</p></noscript>
+        {% endif %}
+        <p class="contact-note">* Required fields.</p>
+      </form>
+    </section>
+  </div>
+</main>
+{% if page.formspree_endpoint == empty %}
+<script>
+  document.getElementById('ai4forest-contact').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const fields = new FormData(event.currentTarget);
+    const body = fields.get('message') + '\n\nFrom: ' + fields.get('name') + '\nEmail: ' + fields.get('email');
+    window.location.href = 'mailto:fabian.gieseke@uni-muenster.de?subject=' + encodeURIComponent(fields.get('subject')) + '&body=' + encodeURIComponent(body);
+  });
+</script>
+{% endif %}
+{% include footer.html light_logo="true" %}
