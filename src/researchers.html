@@ -67,21 +67,21 @@ page_header:
 
   {% if site.data.team and site.data.team.coordinators.size > 0 %}
   <section class="team-section team-section--white"><div class="container">
-    <header class="team-section-heading"><div class="team-eyebrow">Scientific leadership</div><h2>Project Coordinators</h2><p>Five complementary perspectives guide the scientific programme and connect its work across institutions, disciplines and national borders.</p></header>
+    <header class="team-section-heading"><div class="team-eyebrow">Scientific leadership</div><h2>Project Coordinators</h2></header>
     <div class="people-grid people-grid--coordinators">{% assign sorted_coordinators = site.data.team.coordinators | sort: 'last_name' %}{% for member in sorted_coordinators %}{% include researcher_card.html member=member %}{% endfor %}</div>
   </div></section>
   {% endif %}
 
   {% if site.data.team and site.data.team.researchers.size > 0 %}
   <section class="team-section team-section--soft"><div class="container">
-    <header class="team-section-heading"><div class="team-eyebrow">The people behind the research</div><h2>Researchers</h2><p>An interdisciplinary team developing scalable methods, high-resolution forest products and new ways to interpret environmental change.</p></header>
+    <header class="team-section-heading"><div class="team-eyebrow">The people behind the research</div><h2>Researchers</h2></header>
     <div class="people-grid">{% assign sorted_researchers = site.data.team.researchers | sort: 'last_name' %}{% for member in sorted_researchers %}{% include researcher_card.html member=member %}{% endfor %}</div>
   </div></section>
   {% endif %}
 
   {% if site.data.team and site.data.team.former_researchers.size > 0 %}
   <section class="team-section team-section--white team-section--former"><div class="container">
-    <header class="team-section-heading"><div class="team-eyebrow">Part of our journey</div><h2>Former Researchers</h2><p>Researchers whose expertise and contributions have helped shape AI4Forest.</p></header>
+    <header class="team-section-heading"><div class="team-eyebrow">Part of our journey</div><h2>Former Researchers</h2></header>
     <div class="people-grid">{% assign sorted_former_researchers = site.data.team.former_researchers | sort: 'last_name' %}{% for member in sorted_former_researchers %}{% include researcher_card.html member=member %}{% endfor %}</div>
   </div></section>
   {% endif %}
