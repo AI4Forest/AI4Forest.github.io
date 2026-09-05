@@ -8,8 +8,8 @@ formspree_endpoint: ""
 {% include header.html container_class="container" extra_class="nav-uppercase" %}
 <style>
   .contact-page { color:#60737a; background:#fff; }
-  .contact-heading { position:relative; height:360px; background:#f5f8f7; }
-  .contact-map { display:block; width:100%; height:100%; border:0; }
+  .contact-heading { position:relative; width:100%; height:360px; overflow:hidden; background:#f5f8f7; }
+  .contact-heading .contact-map { position:absolute; inset:0; display:block; width:100%; height:360px; max-width:none; border:0; }
   .contact-map-title { position:absolute; top:1rem; left:1rem; padding:.6rem 1rem; background:rgba(255,255,255,.94); border-radius:.35rem; pointer-events:none; }
   .contact-heading h1 { color:#132f3b; font-size:clamp(2.5rem,5vw,3.5rem); margin-bottom:.75rem; }
   .contact-heading p { margin:0; font-size:1.1rem; }
@@ -30,7 +30,7 @@ formspree_endpoint: ""
 </style>
 <main class="contact-page">
   <header class="contact-heading">
-    <iframe class="contact-map" title="OpenStreetMap: Leonardo-Campus 3, Münster" src="https://www.openstreetmap.org/export/embed.html?bbox=7.59405%2C51.97279%2C7.61005%2C51.97879&amp;layer=mapnik&amp;marker=51.97579%2C7.60205"></iframe>
+    <iframe class="contact-map" width="1200" height="360" loading="eager" title="OpenStreetMap: Leonardo-Campus 3, Münster" src="https://www.openstreetmap.org/export/embed.html?bbox=7.59405%2C51.97279%2C7.61005%2C51.97879&amp;layer=mapnik&amp;marker=51.97579%2C7.60205"></iframe>
   </header>
   <div class="container contact-grid">
     <section aria-labelledby="contact-details-title">
@@ -71,13 +71,25 @@ formspree_endpoint: ""
     </section>
   </div>
 </main>
+<script>
+  // A restored cross-origin map can retain an outdated internal viewport.
+  // Recreate only the map after history restoration, preserving the form.
+  window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) return;
+    window.requestAnimationFrame(function () {
+      const map = document.querySelector('.contact-map');
+      if (map) map.replaceWith(map.cloneNode(true));
+    });
+  });
+</script>
 {% if page.formspree_endpoint == empty %}
 <script>
   document.getElementById('ai4forest-contact').addEventListener('submit', function (event) {
     event.preventDefault();
     const fields = new FormData(event.currentTarget);
     const body = fields.get('message') + '\n\nFrom: ' + fields.get('name') + '\nEmail: ' + fields.get('email');
-    window.location.href = 'mailto:fabian.gieseke@uni-muenster.de?subject=' + encodeURIComponent(fields.get('subject')) + '&body=' + encodeURIComponent(body);
+    const recipients = ['ZmFiaWFuLmdpZXNla2VAdW5pLW11ZW5zdGVyLmRl', 'cGhpbGlwcGUuY2lhaXNAbHNjZS5pcHNsLmZy'].map(value => atob(value)).join(',');
+    window.location.href = 'mailto:' + recipients + '?subject=' + encodeURIComponent(fields.get('subject')) + '&body=' + encodeURIComponent(body);
   });
 </script>
 {% endif %}

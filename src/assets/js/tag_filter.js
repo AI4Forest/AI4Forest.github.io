@@ -19,24 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update Button Styles
     buttons.forEach(btn => {
-      const isActive = activeTags.has(btn.dataset.tag);
-      btn.style.backgroundColor = isActive ? "#47a88a" : "#fff";
-      btn.style.color = isActive ? "#fff" : "#47a88a";
+      const isActive = activeTags.has(btn.dataset.tag) || (btn.dataset.tag === "all" && activeTags.size === 0);
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", String(isActive));
     });
   }
 
   function handleTagClick(tag) {
-    if (tag === "all") {
-      activeTags.clear();
-      activeTags.add("all");
-    } else {
-      activeTags.delete("all");
-      if (activeTags.has(tag)) {
-        activeTags.delete(tag);
-      } else {
-        activeTags.add(tag);
-      }
-    }
+    activeTags.clear();
+    activeTags.add(tag);
     updateVisibility();
   }
 
@@ -61,53 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Run on load
   syncFromHash();
+  updateVisibility();
 
   // Run if the hash changes while the user is already on the page
   window.addEventListener("hashchange", syncFromHash);
 });
-// document.addEventListener("DOMContentLoaded", function () {
-//   const buttons = document.querySelectorAll(".tag-btn");
-//   const publications = document.querySelectorAll(".publication-item");
-
-//   buttons.forEach(button => {
-//     button.addEventListener("click", function () {
-//       const selectedTag = this.dataset.tag;
-
-//       publications.forEach(pub => {
-//         const pubTags = pub.dataset.tags
-//           ? pub.dataset.tags.split(",").map(t => t.trim())
-//           : [];
-
-//         if (selectedTag === "all" || pubTags.includes(selectedTag)) {
-//            pub.classList.remove("hidden-publication");
-//         } else {
-//             pub.classList.add("hidden-publication");
-//         }
-//       });
-
-//       // Highlight selected button
-//       buttons.forEach(b => {
-//         b.style.backgroundColor = "#fff";
-//         b.style.color = "#47a88a";
-//       });
-
-//       this.style.backgroundColor = "#47a88a";
-//       this.style.color = "#fff";
-//     });
-//   });
-//   function filterByHash() {
-//     const hash = window.location.hash.replace("#", ""); // e.g., "biomass"
-//     if (hash) {
-//       const targetButton = document.querySelector(`.tag-btn[data-tag="${hash}"]`);
-//       if (targetButton) {
-//         targetButton.click(); // This re-uses your existing click logic
-//       }
-//     }
-//   }
-
-//   // Run on page load
-//   filterByHash();
-
-//   // Run if the user clicks a link to the same page with a different hash
-//   window.addEventListener("hashchange", filterByHash);
-// });

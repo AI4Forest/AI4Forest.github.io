@@ -3,8 +3,8 @@ main_menu:
     url: "/"
     menu_type: "primary"
     
-  - text: "Researchers"
-    url: "/researchers"
+  - text: "Team"
+    url: "/team/"
     menu_type: "primary"
 
   - text: "Publications"

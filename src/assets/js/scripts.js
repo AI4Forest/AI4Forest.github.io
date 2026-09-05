@@ -34,7 +34,7 @@ $(document).ready(function() {
 			}
 		};
 		var banner = new Headhesive('.navbar', options);
-		// Researchers page: move navbar to body so position:fixed works (no scroll)
+		// Team page: move navbar to body so position:fixed works (no scroll)
 		if ($(".page-hero-with-nav").length) {
 			var $heroNav = $(".page-hero-with-nav .navbar.absolute:not(.banner--clone)");
 			if ($heroNav.length) {
@@ -214,7 +214,7 @@ $(document).ready(function() {
 			margin: $bslider.data("margin")
 		});
 	});
-	// Custom researchers header slider (no Owl - fades between images)
+	// Custom team header slider (no Owl - fades between images)
 	$('.team-header-slider').each(function() {
 		var $slider = $(this);
 		var $slides = $slider.find('.team-header-slide');

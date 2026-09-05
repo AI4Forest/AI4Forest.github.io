@@ -20,7 +20,7 @@ page_header:
   .publications-heading p { margin:0; color:#60737a; font-size:1.03rem; line-height:1.7; }
   .publication-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:2.5rem; }
   .publication-filters .tag-btn { margin:0 !important; padding:.42rem .8rem !important; border:1px solid rgba(54,143,116,.28) !important; border-radius:999px !important; background:#fff !important; color:#286d5b !important; font-size:.7rem !important; font-weight:700; transition:color 180ms ease,background 180ms ease,box-shadow 180ms ease; }
-  .publication-filters .tag-btn:hover,.publication-filters .tag-btn.active,.publication-filters .tag-btn[data-tag="all"] { background:#368f74 !important; color:#fff !important; box-shadow:0 .35rem 1rem rgba(54,143,116,.18); }
+  .publication-filters .tag-btn.active { background:#368f74 !important; color:#fff !important; box-shadow:0 .35rem 1rem rgba(54,143,116,.18); }
   .publications-page .publication-list { max-width:58rem; margin:0 auto; }
   .publications-page .publication-item { margin-bottom:1.25rem !important; padding:1.25rem !important; border:1px solid rgba(19,47,59,.1) !important; border-radius:1rem !important; background:rgba(255,255,255,.9); box-shadow:0 .65rem 2rem rgba(19,47,59,.06); transition:transform 220ms ease,box-shadow 220ms ease,border-color 220ms ease; }
   .publications-page .publication-item:hover { transform:translateY(-3px); border-color:rgba(54,143,116,.25) !important; box-shadow:0 1rem 2.5rem rgba(19,47,59,.11); }
@@ -42,11 +42,11 @@ page_header:
         <div id="tags-filter-container" class="publication-filters" aria-label="Filter publications by topic">
         {% assign all_tags = site.data.publication_tags %}
         {% for t in all_tags %}
-          <button class="tag-btn" data-tag="{{ t.tag }}">
+          <button type="button" aria-pressed="false" class="tag-btn" data-tag="{{ t.tag }}">
             {{ t.name }}
           </button>
         {% endfor %}
-        <button class="tag-btn active" data-tag="all">
+        <button type="button" aria-pressed="true" class="tag-btn active" data-tag="all">
           All
         </button>
       </div>

@@ -23,7 +23,7 @@
       Laboratoire des Sciences du Climat et de l'Environnement<br>
       Université Paris Saclay<br>
       Tél. : 01.69.08.95.06<br>
-      <a href="mailto:philippe.ciais@lsce.ipsl.fr" class="nocolor">philippe.ciais (at) lsce.ipsl.fr</a>
+      <a class="info-email" data-email="cGhpbGlwcGUuY2lhaXNAbHNjZS5pcHNsLmZy">Email</a>
       <div class="space20"></div>
       <strong>Prof. Dr. Alexandre d'Aspremont</strong><br>
       CNRS - ENS<br>
@@ -31,30 +31,64 @@
       Paris, France<br>
       48 rue Barrault<br>
       75013 Paris<br>
-      <a href="mailto:aspremon@ens.fr" class="nocolor">aspremont (at) ens.fr</a>
+      <a class="info-email" data-email="YXNwcmVtb25AZW5zLmZy">Email</a>
       <div class="space20"></div>
       <strong>Prof. Dr. Fabian Gieseke</strong><br>
       University of Münster<br>
       Leonardo Campus 3<br>
       48149 Münster<br>
       Telefon: +49 251 83-38151<br>
-      <a href="mailto:fabian.gieseke@wi.uni-muenster.de" class="nocolor">fabian.gieseke (at) wi.uni-muenster.de</a>
+      <a class="info-email" data-email="ZmFiaWFuLmdpZXNla2VAdW5pLW11ZW5zdGVyLmRl">Email</a>
       <div class="space20"></div>
       <strong>Prof. Dr. Sebastian Pokutta</strong><br>
       Einrichtung FG Mathematische Optimierung<br>
       Takustraße 7<br>
       14195 Berlin<br>
       Tel.: +49 30 84185-209<br>
-      <a href="mailto:pokutta@math.tu-berlin.de" class="nocolor">pokutta (at) math.tu-berlin.de</a>
+      <a class="info-email" data-email="cG9rdXR0YUBtYXRoLnR1LWJlcmxpbi5kZQ==">Email</a>
       <div class="space20"></div>
       <strong>Prof. Dr. Cornelius Senf</strong><br>
       School of Life Sciences<br>
       Hans-Carl-v.-Carlowitz-Platz 2<br>
       85354 Freising<br>
       Tel.: +49.8161.71.4371<br>
-      <a href="mailto:cornelius.senf@tum.de" class="nocolor">cornelius.senf (at) tum.de</a>
+      <a class="info-email" data-email="Y29ybmVsaXVzLnNlbmZAdHVtLmRl">Email</a>
     </address>
   </div>
   <!-- /.widget -->
 </div>
-<!-- /.offcanvas-info --> 
+<!-- /.offcanvas-info -->
+<style>
+  .offcanvas-info.inverse-text a.info-email {
+    color: #71c4aa !important;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+  .offcanvas-info.inverse-text a.info-email:hover,
+  .offcanvas-info.inverse-text a.info-email:focus-visible {
+    color: #9bdfc7 !important;
+    text-decoration: underline;
+  }
+</style>
+<script>
+(function () {
+  const panel = document.querySelector('.offcanvas-info');
+  if (!panel) return;
+  const links = panel.querySelectorAll('.info-email');
+  function updateEmails() {
+    const isOpen = panel.classList.contains('open');
+    links.forEach(function (link) {
+      if (isOpen) {
+        const address = atob(link.dataset.email);
+        link.textContent = address;
+        link.setAttribute('href', 'mailto:' + address);
+      } else {
+        link.textContent = 'Email';
+        link.removeAttribute('href');
+      }
+    });
+  }
+  new MutationObserver(updateEmails).observe(panel, { attributes: true, attributeFilter: ['class'] });
+  updateEmails();
+})();
+</script>
