@@ -30,7 +30,11 @@ page_header:
   @media(max-width:576px){ .publications-page .publication-item{display:block !important;} .publications-page .pub-thumb-col{margin-bottom:1rem;} .publications-page .publication-thumbnail{width:100%;height:11rem;} }
   .poster-gallery { margin-bottom:4rem; }
   .poster-gallery .overlay { aspect-ratio:1000 / 707; margin-bottom:0; }
+  .poster-gallery .poster-portrait-row { margin-top:30px; }
+  .poster-gallery .poster-portrait-row .overlay { aspect-ratio:600 / 1000; }
   .poster-gallery img { display:block; width:100%; height:auto; }
+  .poster-gallery .overlay > a { display:flex; align-items:center; height:100%; background:#f5f8f7; }
+  .poster-gallery .overlay > a img { height:100%; object-fit:contain; }
   .poster-gallery .poster-placeholder, .poster-gallery .poster-placeholder span.bg { cursor:default !important; }
   .poster-gallery .overlay1:focus-within figcaption,
   .poster-gallery .overlay1:focus-within span.bg { opacity:1; }
@@ -67,25 +71,26 @@ page_header:
       <div class="tiles"><div class="items row">
         <div class="item col-md-6 col-lg-4">
           <figure class="overlay overlay1 rounded">
-            <a href="{{ '/assets/posters/Jan_Pauls_ICML_2024.png' | relative_url }}" data-toggle="modal" data-target="#poster-preview" aria-haspopup="dialog" aria-label="View poster: Estimating Canopy Height at Scale (ICML 2024)"><img src="{{ '/assets/posters/Jan_Pauls_ICML_2024-thumb.jpg' | relative_url }}" width="1000" height="707" alt="Estimating Canopy Height at Scale — Jan Pauls and co-authors, ICML 2024"></a>
+            <a href="{{ '/assets/posters/Jan_Pauls_ICML_2024.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Estimating Canopy Height at Scale · ICML 2024" data-poster-height="2829" data-poster-pdf="{{ '/assets/posters/Jan_Pauls_ICML_2024.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Estimating Canopy Height at Scale · ICML 2024"><img src="{{ '/assets/posters/Jan_Pauls_ICML_2024-thumb.jpg' | relative_url }}" width="1000" height="707" alt="Estimating Canopy Height at Scale" loading="lazy"></a>
             <figcaption><h5 class="from-top mb-0">Estimating Canopy Height at Scale<br><small>ICML 2024 · View poster</small></h5></figcaption>
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay1 hover-scale rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
-            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Fajwel_Vogel_ESA_2025.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Open-Canopy: Towards Very High Resolution Forest Monitoring · ESA Living Planet Symposium 2025" data-poster-height="2000" data-poster-pdf="{{ '/assets/posters/Fajwel_Vogel_ESA_2025.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Open-Canopy: Towards Very High Resolution Forest Monitoring · ESA Living Planet Symposium 2025"><img src="{{ '/assets/posters/Fajwel_Vogel_ESA_2025-thumb.jpg' | relative_url }}" width="1000" height="500" alt="Open-Canopy: Towards Very High Resolution Forest Monitoring" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">Open-Canopy: Towards Very High Resolution Forest Monitoring<br><small>ESA Living Planet Symposium 2025 · View poster</small></h5></figcaption>
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay2 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Ibrahim_Fayad_ICML_2024.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="DUNIA: Pixel-Sized Embeddings via Cross-Modal Alignment for Earth Observation Applications" data-poster-height="2917" data-poster-pdf="{{ '/assets/posters/Ibrahim_Fayad_ICML_2024.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: DUNIA: Pixel-Sized Embeddings via Cross-Modal Alignment for Earth Observation Applications"><img src="{{ '/assets/posters/Ibrahim_Fayad_ICML_2024-thumb.jpg' | relative_url }}" width="1000" height="729" alt="DUNIA: Pixel-Sized Embeddings via Cross-Modal Alignment for Earth Observation Applications" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">DUNIA: Pixel-Sized Embeddings via Cross-Modal Alignment for Earth Observation Applications<br><small>View poster</small></h5></figcaption>
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay3 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
-            <figcaption><h5 class="from-top mb-5">Coming soon</h5><p class="from-bottom">More research posters</p></figcaption>
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Karsten_Schroedter_AISTATS_2026.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Canopy Tree Height Estimation using Quantile Regression: Modeling and Evaluating Uncertainty in Remote Sensing · AISTATS 2026" data-poster-width="4000" data-poster-height="2667" data-poster-pdf="{{ '/assets/posters/Karsten_Schroedter_AISTATS_2026.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Canopy Tree Height Estimation using Quantile Regression: Modeling and Evaluating Uncertainty in Remote Sensing · AISTATS 2026"><img src="{{ '/assets/posters/Karsten_Schroedter_AISTATS_2026-thumb.jpg' | relative_url }}" width="1000" height="667" alt="Canopy Tree Height Estimation using Quantile Regression: Modeling and Evaluating Uncertainty in Remote Sensing — Karsten Schrödter, Jan Pauls and Fabian Gieseke" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">Canopy Tree Height Estimation using Quantile Regression<br><small>AISTATS 2026 · View poster</small></h5></figcaption>
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
@@ -98,6 +103,32 @@ page_header:
           <figure class="overlay overlay5 rounded poster-placeholder">
             <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
             <figcaption><h5 class="mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+      </div></div>
+      <div class="tiles poster-portrait-row"><div class="items row">
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Martin_Schwarz_ESA_2025.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Retrieving yearly forest growth from satellite data: FORMS-T, a deep learning based approach · ESA Living Planet Symposium 2025" data-poster-width="2401" data-poster-height="4000" data-poster-pdf="{{ '/assets/posters/Martin_Schwarz_ESA_2025.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Retrieving yearly forest growth from satellite data: FORMS-T, a deep learning based approach · ESA Living Planet Symposium 2025"><img src="{{ '/assets/posters/Martin_Schwarz_ESA_2025-thumb.jpg' | relative_url }}" width="600" height="1000" alt="Retrieving yearly forest growth from satellite data: FORMS-T, a deep learning based approach — Martin Schwartz and co-authors" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">FORMS-T<br><small>Martin Schwartz · ESA 2025 · View poster</small></h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
       </div></div>
@@ -147,9 +178,19 @@ page_header:
     var preview = document.getElementById('poster-preview');
     // Keep the dialog above the fixed navbar and load the full image on demand.
     document.body.appendChild(preview);
-    window.jQuery(preview).on('show.bs.modal', function () {
+    window.jQuery(preview).on('show.bs.modal', function (event) {
+      var trigger = event.relatedTarget;
+      if (!trigger) return;
       var image = preview.querySelector('[data-poster-src]');
-      if (!image.src) image.src = image.dataset.posterSrc;
+      image.src = trigger.href;
+      image.alt = 'Full poster: ' + trigger.dataset.posterTitle;
+      image.width = Number(trigger.dataset.posterWidth || 4000);
+      image.height = Number(trigger.dataset.posterHeight);
+      preview.querySelector('.modal-title').textContent = trigger.dataset.posterTitle;
+      var downloads = preview.querySelectorAll('.poster-download');
+      downloads[0].href = trigger.dataset.posterPdf;
+      downloads[1].href = trigger.href;
+      downloads[1].textContent = '↓ Download JPG · ' + image.width + ' × ' + image.height;
     });
   });
 </script>
