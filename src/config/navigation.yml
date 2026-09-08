@@ -8,5 +8,5 @@ main_menu:
     menu_type: "primary"
 
   - text: "Research"
-    url: "/publications"
+    url: "/research/"
     menu_type: "primary"

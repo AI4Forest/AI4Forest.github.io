@@ -1,5 +1,7 @@
 ---
 layout: page_2
+title: Research
+permalink: /research/
 page_header:
   enable: true
   title: "Research from the AI4Forest collaboration."
@@ -36,6 +38,8 @@ page_header:
   .poster-gallery .overlay > a { display:flex; align-items:center; height:100%; background:#f5f8f7; }
   .poster-gallery .overlay > a img { height:100%; object-fit:contain; }
   .poster-gallery .poster-thumbnail-fill > a img { object-fit:cover; }
+  .poster-gallery .poster-placeholder > span { display:block; height:100%; background:#e5e5e5; }
+  .poster-gallery .poster-placeholder > span > img { width:100%; height:100%; object-fit:contain; filter:grayscale(1); opacity:.65; }
   .poster-gallery .poster-placeholder, .poster-gallery .poster-placeholder span.bg { cursor:default !important; }
   .poster-gallery .overlay1:focus-within figcaption,
   .poster-gallery .overlay1:focus-within span.bg { opacity:1; }
@@ -95,15 +99,15 @@ page_header:
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay4 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
-            <figcaption><h5 class="mb-5">Coming soon</h5><p class="mb-0">More research posters</p></figcaption>
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay5 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
-            <figcaption><h5 class="mb-0">Coming soon</h5></figcaption>
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
       </div></div>
@@ -116,19 +120,19 @@ page_header:
         </div>
         <div class="item col-sm-6 col-lg-3">
           <figure class="overlay overlay1 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
             <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
         <div class="item col-sm-6 col-lg-3">
           <figure class="overlay overlay1 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
             <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
         <div class="item col-sm-6 col-lg-3">
           <figure class="overlay overlay1 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-portrait.svg' | relative_url }}" width="600" height="1000" alt="Question mark: future research poster" loading="lazy"></span>
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
             <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
           </figure>
         </div>
