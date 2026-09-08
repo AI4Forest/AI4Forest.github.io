@@ -2,7 +2,7 @@
 layout: page_2
 page_header:
   enable: true
-  title: "Publications from the AI4Forest collaboration."
+  title: "Research from the AI4Forest collaboration."
   background_image: "/assets/images/maps_content/Calders_1.png"
   background_position: "center bottom"
 ---
@@ -35,6 +35,7 @@ page_header:
   .poster-gallery img { display:block; width:100%; height:auto; }
   .poster-gallery .overlay > a { display:flex; align-items:center; height:100%; background:#f5f8f7; }
   .poster-gallery .overlay > a img { height:100%; object-fit:contain; }
+  .poster-gallery .poster-thumbnail-fill > a img { object-fit:cover; }
   .poster-gallery .poster-placeholder, .poster-gallery .poster-placeholder span.bg { cursor:default !important; }
   .poster-gallery .overlay1:focus-within figcaption,
   .poster-gallery .overlay1:focus-within span.bg { opacity:1; }
@@ -76,7 +77,7 @@ page_header:
           </figure>
         </div>
         <div class="item col-md-6 col-lg-4">
-          <figure class="overlay overlay1 rounded">
+          <figure class="overlay overlay1 rounded poster-thumbnail-fill">
             <a href="{{ '/assets/posters/Fajwel_Vogel_ESA_2025.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Open-Canopy: Towards Very High Resolution Forest Monitoring · ESA Living Planet Symposium 2025" data-poster-height="2000" data-poster-pdf="{{ '/assets/posters/Fajwel_Vogel_ESA_2025.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Open-Canopy: Towards Very High Resolution Forest Monitoring · ESA Living Planet Symposium 2025"><img src="{{ '/assets/posters/Fajwel_Vogel_ESA_2025-thumb.jpg' | relative_url }}" width="1000" height="500" alt="Open-Canopy: Towards Very High Resolution Forest Monitoring" loading="lazy"></a>
             <figcaption><h5 class="from-top mb-0">Open-Canopy: Towards Very High Resolution Forest Monitoring<br><small>ESA Living Planet Symposium 2025 · View poster</small></h5></figcaption>
           </figure>
