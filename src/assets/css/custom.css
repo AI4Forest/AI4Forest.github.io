@@ -112,6 +112,20 @@ button[data-toggle="offcanvas-info"] i.jam-info {
     font-size: 1.8em;
 }
 
+/* Keep navigation typography independent of page-specific font styles. */
+.navbar .navbar-nav .nav-item > .nav-link {
+    letter-spacing: 0.5px;
+    font-family: 'HK Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+@media (min-width: 992px) {
+    .navbar .navbar-nav .nav-item > .nav-link {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
 /* Navbar: nav links in section-title style (uppercase, letter-spacing) */
 .navbar-nav .nav-link {
     position: relative;

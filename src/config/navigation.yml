@@ -7,6 +7,6 @@ main_menu:
     url: "/team/"
     menu_type: "primary"
 
-  - text: "Publications"
+  - text: "Research"
     url: "/publications"
     menu_type: "primary"

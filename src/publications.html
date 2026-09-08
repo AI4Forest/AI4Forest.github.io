@@ -28,14 +28,83 @@ page_header:
   .publications-page .publication-thumbnail { overflow:hidden; border-radius:.7rem; }
   .publications-page .publication-thumbnail:hover img { transform:scale(1.04); box-shadow:none; }
   @media(max-width:576px){ .publications-page .publication-item{display:block !important;} .publications-page .pub-thumb-col{margin-bottom:1rem;} .publications-page .publication-thumbnail{width:100%;height:11rem;} }
+  .poster-gallery { margin-bottom:4rem; }
+  .poster-gallery .overlay { aspect-ratio:1000 / 707; margin-bottom:0; }
+  .poster-gallery img { display:block; width:100%; height:auto; }
+  .poster-gallery .poster-placeholder, .poster-gallery .poster-placeholder span.bg { cursor:default !important; }
+  .poster-gallery .overlay1:focus-within figcaption,
+  .poster-gallery .overlay1:focus-within span.bg { opacity:1; }
+  .poster-gallery .overlay1:focus-within figcaption * { transform:translateY(-50%); }
+  .poster-gallery figure:focus-within { outline:3px solid #368f74; outline-offset:4px; }
+  @media (prefers-reduced-motion:reduce) { .poster-gallery .overlay * { transition:none !important; } }
+  #poster-preview { z-index:10001; }
+  #poster-preview .modal-dialog { max-width: min(1400px, 96vw); margin:1rem auto; }
+  #poster-preview .modal-content { background:#f5f8f7; border:0; border-top:1.6rem solid #f5f8f7; border-radius:.5rem; overflow:hidden; }
+  #poster-preview .poster-close { position:absolute; top:.5rem; right:.5rem; z-index:2; display:grid; place-items:center; width:1.6rem; height:1.6rem; padding:0; border:0; border-radius:50%; background:#f5f8f7; color:#286d5b; font-size:1.15rem; line-height:1; cursor:pointer; }
+  #poster-preview .modal-title { margin:0 auto 0 0; font-size:.75rem; line-height:1.4; color:#132f3b; }
+  #poster-preview .modal-body { padding:0; background:#151515; text-align:center; }
+  #poster-preview .modal-body img { display:block; width:100%; height:auto; max-height:calc(100vh - 130px); object-fit:contain; }
+  #poster-preview .modal-footer { justify-content:flex-end; flex-wrap:wrap; min-height:1.6rem; padding:.15rem .85rem; gap:.45rem; border:0; background:#f5f8f7; }
+  #poster-preview .modal-footer > * { margin:0; }
+  #poster-preview .modal-footer .modal-title { margin-right:auto; }
+  #poster-preview .poster-download { display:inline-flex; align-items:center; gap:.3rem; padding:0 .4rem; line-height:1.4; border:0; color:#286d5b; font-size:.65rem; font-weight:600; }
+  #poster-preview .poster-download:hover { text-decoration:underline; }
+  #poster-preview a:focus-visible, #poster-preview button:focus-visible { outline:2px solid #132f3b; outline-offset:3px; }
+  @media(max-width:767px) { #poster-preview .modal-footer .modal-title { flex-basis:100%; } }
 </style>
 
 <div class="wrapper light-wrapper publications-page">
   <div class="container inner">
     <header class="publications-heading">
-      <div class="publications-eyebrow">Scientific output</div>
-      <h2>Research Publications</h2>
+      <div class="publications-eyebrow">Scientific Output</div>
       <p>Peer-reviewed research, preprints and methods emerging from the AI4Forest collaboration across machine learning, Earth observation and forest science.</p>
+    </header>
+    <section class="poster-gallery" aria-labelledby="poster-gallery-title">
+      <header class="publications-heading">
+        <h2 id="poster-gallery-title">Poster Gallery</h2>
+        <p>Explore our research through posters presented at scientific conferences.</p>
+      </header>
+      <div class="tiles"><div class="items row">
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Jan_Pauls_ICML_2024.png' | relative_url }}" data-toggle="modal" data-target="#poster-preview" aria-haspopup="dialog" aria-label="View poster: Estimating Canopy Height at Scale (ICML 2024)"><img src="{{ '/assets/posters/Jan_Pauls_ICML_2024-thumb.jpg' | relative_url }}" width="1000" height="707" alt="Estimating Canopy Height at Scale — Jan Pauls and co-authors, ICML 2024"></a>
+            <figcaption><h5 class="from-top mb-0">Estimating Canopy Height at Scale<br><small>ICML 2024 · View poster</small></h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay1 hover-scale rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay2 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+          </figure>
+        </div>
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay3 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-5">Coming soon</h5><p class="from-bottom">More research posters</p></figcaption>
+          </figure>
+        </div>
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay4 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="mb-5">Coming soon</h5><p class="mb-0">More research posters</p></figcaption>
+          </figure>
+        </div>
+        <div class="item col-md-6 col-lg-4">
+          <figure class="overlay overlay5 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.svg' | relative_url }}" width="1000" height="707" alt="Placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+      </div></div>
+    </section>
+    <header class="publications-heading">
+      <h2>Publications</h2>
+      <p>Browse our papers and preprints, and filter them by research topic.</p>
     </header>
     <div class="row">
       <div class="col-md-12">
@@ -57,3 +126,30 @@ page_header:
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="poster-preview" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="poster-preview-title">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="poster-close" data-dismiss="modal" aria-label="Close poster preview"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <img data-poster-src="{{ '/assets/posters/Jan_Pauls_ICML_2024.jpg' | relative_url }}" width="4000" height="2829" alt="Full poster: Estimating Canopy Height at Scale, ICML 2024">
+      </div>
+      <div class="modal-footer">
+        <h2 class="modal-title" id="poster-preview-title">Estimating Canopy Height at Scale · ICML 2024</h2>
+        <a class="poster-download" href="{{ '/assets/posters/Jan_Pauls_ICML_2024.pdf' | relative_url }}" download><span aria-hidden="true">↓</span> Download PDF</a>
+        <a class="poster-download" href="{{ '/assets/posters/Jan_Pauls_ICML_2024.jpg' | relative_url }}" download><span aria-hidden="true">↓</span> Download JPG · 4000 × 2829</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var preview = document.getElementById('poster-preview');
+    // Keep the dialog above the fixed navbar and load the full image on demand.
+    document.body.appendChild(preview);
+    window.jQuery(preview).on('show.bs.modal', function () {
+      var image = preview.querySelector('[data-poster-src]');
+      if (!image.src) image.src = image.dataset.posterSrc;
+    });
+  });
+</script>
