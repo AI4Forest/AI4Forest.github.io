@@ -60,6 +60,37 @@ page_header:
   #poster-preview .poster-download:hover { text-decoration:underline; }
   #poster-preview a:focus-visible, #poster-preview button:focus-visible { outline:2px solid #132f3b; outline-offset:3px; }
   @media(max-width:767px) { #poster-preview .modal-footer .modal-title { flex-basis:100%; } }
+  .publication-content { min-width:0; }
+  .publication-meta { display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-bottom:.6rem; }
+  .publication-venue-badge { display:inline-block; padding:.2rem .55rem; border-radius:.3rem; background:#edf3f0; color:#47645a; font-size:.64rem; font-weight:700; letter-spacing:.04em; }
+  .publication-venue-badge.conference-badge { background:#286d5b; color:#fff; }
+  .publication-year { font-size:.8rem; color:#60737a; font-variant-numeric:tabular-nums; }
+  .publications-page .publication-content h4 { margin-bottom:.45rem; }
+  .publication-content h4 a { color:inherit; }
+  .publication-content h4 a:hover { color:#286d5b; }
+  .publication-authors, .publication-venue { font-size:.75rem; line-height:1.6; margin:0 0 .35rem; color:#60737a; }
+  .publication-venue { font-style:italic; }
+  .publication-thumbnail { width:140px; height:110px; }
+  .publication-thumbnail img { width:100%; height:100%; object-fit:contain; cursor:zoom-in; }
+  .publication-topic-tags { display:flex; flex-wrap:wrap; gap:.35rem; margin:.65rem 0; }
+  .publication-topic-tags span { color:#47645a; font-size:.6rem; background:#f0f5f2; border:1px solid #dce8e1; border-radius:2rem; padding:.1rem .5rem; }
+  .publication-links { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; }
+  .publication-links a, .publication-links button { border:0; cursor:pointer; line-height:1.5; white-space:nowrap; font-size:.65rem; font-weight:600; color:#286d5b; background:#eaf3ee; padding:.2rem .5rem; border-radius:.25rem; }
+  .publication-details { margin-top:0; }
+  .publication-detail-body, .publication-details pre { padding:.8rem; margin:.5rem 0 0; background:#f5f8f7; border-radius:.4rem; font-size:.75rem; line-height:1.6; }
+  .publication-detail-body p { margin-bottom:.3rem; }
+  .publication-details pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+  .publication-conference-filters { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.4rem; margin:-1rem 0 1rem; }
+  .publication-conference-filters > span { font-size:.7rem; color:#60737a; margin-right:.3rem; }
+  .venue-filter { border:1px solid #c8ddd2; border-radius:2rem; padding:.3rem .7rem; color:#286d5b; background:#fff; font-size:.7rem; cursor:pointer; }
+  .venue-filter.active { color:#fff; background:#286d5b; }
+  .publication-results { text-align:center; font-size:.75rem; color:#60737a; margin-bottom:1.5rem; }
+  .publication-list > ol { list-style:none; padding:0; }
+  .hidden-publication { display:none !important; }
+  .publications-page :is(a,button,summary):focus-visible { outline:2px solid #286d5b; outline-offset:3px; }
+  #image-lightbox { display:none; position:fixed; inset:0; z-index:10002; padding:60px 20px; background:rgba(0,0,0,.85); }
+  #image-lightbox .lightbox-content { display:block; margin:auto; max-width:90%; max-height:80vh; }
+  #image-lightbox .lightbox-close { position:absolute; top:15px; right:30px; color:#fff; font-size:30px; cursor:pointer; }
 </style>
 
 <div class="wrapper light-wrapper publications-page">
@@ -155,6 +186,14 @@ page_header:
           All
         </button>
       </div>
+        <div class="publication-conference-filters" role="group" aria-label="Filter publications by conference">
+          <span>Conference</span>
+          <button type="button" class="venue-filter active" data-conference="all" aria-pressed="true">All venues</button>
+          <button type="button" class="venue-filter" data-conference="ICML" aria-pressed="false">ICML</button>
+          <button type="button" class="venue-filter" data-conference="AISTATS" aria-pressed="false">AISTATS</button>
+          <button type="button" class="venue-filter" data-conference="CPAL" aria-pressed="false">CPAL</button>
+        </div>
+        <p class="publication-results" aria-live="polite"></p>
         <div class="publication-list">
           {% bibliography %}
         </div>
@@ -199,3 +238,5 @@ page_header:
     });
   });
 </script>
+
+<div id="image-lightbox" class="lightbox"><span class="lightbox-close">&times;</span><img class="lightbox-content" id="lightbox-img" alt="Expanded publication figure"></div>

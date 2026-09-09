@@ -18,11 +18,12 @@
 }
 
 
-@article{pauls2025capturing,
+@inproceedings{pauls2025capturing,
   title = {Capturing Temporal Dynamics in Large-Scale Canopy Tree Height Estimation},
   author = {Pauls, Jan and Zimmer, Max and Turan, Berkant and Saatchi, Sassan and Ciais, Philippe and Pokutta, Sebastian and Gieseke, Fabian},
   author_id = {jan_pauls},
-  journal = {arXiv preprint arXiv:2501.19328},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  conference = {ICML},
   year = {2025},
   url = {https://arxiv.org/abs/2501.19328},
   abstract = {https://arxiv.org/abs/2501.19328},
@@ -34,11 +35,12 @@
 }
 
 
-@article{fayad2025dunia,
+@inproceedings{fayad2025dunia,
   title = {DUNIA: Pixel-Sized Embeddings via Cross-Modal Alignment for Earth Observation Applications},
   author = {Fayad, Ibrahim and Zimmer, Max and Schwartz, Martin and Ciais, Philippe and Gieseke, Fabian and Belouze, Gabriel and Brood, Sarah and De Truchis, Aurelien and d'Aspremont, Alexandre},
   author_id = {ibrahim_fayad},
-  journal = {arXiv preprint arXiv:2502.17066},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  conference = {ICML},
   year = {2025},
   url = {https://arxiv.org/abs/2502.17066},
   abstract = {https://arxiv.org/abs/2502.17066},
@@ -67,11 +69,12 @@
 }
 
 
-@article{pauls2024estimating,
+@inproceedings{pauls2024estimating,
   title={Estimating canopy height at scale},
   author={Pauls, Jan and Zimmer, Max and Kelly, Una M and Schwartz, Martin and Saatchi, Sassan and Ciais, Philippe and Pokutta, Sebastian and Brandt, Martin and Gieseke, Fabian},
   author_id={jan_pauls},
-  journal={arXiv preprint arXiv:2406.01076},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  conference = {ICML},
   year={2024},
   preview={pauls2024estimating.png},
   url = {https://arxiv.org/abs/2406.01076},
@@ -255,6 +258,7 @@
 }
 
 @inproceedings{SchroedterPG2026CanopyTree,
+  conference = {AISTATS},
   author = {Karsten Schr{\"o}dter and Jan Pauls and Fabian Gieseke},
   title = {Canopy Tree Height Estimation using Quantile Regression: Modeling and Evaluating Uncertainty in Remote Sensing},
   booktitle = {Proceedings of the 29th Annual Conference on Artificial Intelligence and Statistics (AISTATS)},
@@ -264,7 +268,9 @@
   note = {Publication status: accepted / in press (not yet published)},
   author_id = {karsten_schroedter},
   preview = {schroedter2026_uncertainty_quantification.jpg},
-  tags ={uncertainty}
+  tags ={uncertainty},
+  abstract_preview= {Accurate tree height estimation is vital for ecological monitoring and biomass assessment. We apply quantile regression to existing tree height estimation models based on satellite data to incorporate uncertainty quantification. Most current approaches for tree height estimation rely on point predictions, which limits their applicability in risk-sensitive scenarios. In this work, we show that, with minor modifications of a given prediction head, existing models can be adapted to provide statistically calibrated uncertainty estimates via quantile regression. Furthermore, we demonstrate how our results correlate with known challenges in remote sensing (e.g., terrain complexity, vegetation heterogeneity), indicating that the model is less confident in more challenging conditions.},
+  url = {https://arxiv.org/abs/2604.06988}
 }
 
 @article{zimmer2025sparseswaps,
@@ -299,3 +305,16 @@
   abstract_preview = {Many existing neural network pruning approaches rely on either retraining or inducing a strong bias in order to converge to a sparse solution throughout training. A third paradigm, compression-aware training, aims to obtain state-of-the-art dense models that are robust to a wide range of compression ratios using a single dense training run while also avoiding retraining.}
 }
 
+
+@inproceedings{schroedter2026bitwisequant,
+  title = {Trainable Bitwise Soft Quantization for Input Feature Compression},
+  author = {Schrödter, Karsten and Stenkamp, Jan and Herrmann, Nina and Gieseke, Fabian},
+  booktitle = {Third Conference on Parsimony and Learning (CPAL)},
+  conference = {CPAL},
+  year = {2026},
+  tags = {compression},
+  url = {https://www.mldelab.de/publications/},
+  preview = {schroedter_2026_cpal.png},
+  author_id = {karsten_schroedter},
+  abstract_preview = {Resource-constrained Internet of Things devices often rely on remote servers for machine learning inference, but data transmission is limited by bandwidth, latency, and energy constraints. We propose a task-specific, trainable feature quantization layer that compresses neural network inputs using a user-defined number of bits per feature. Our bitwise soft quantization approach uses sigmoid approximations of step functions to learn quantization thresholds and values, enabling simple on-device compression. Experiments show that it outperforms standard quantization methods and achieves 5×–16× compression compared to 32-bit inputs without significant performance loss.}
+}

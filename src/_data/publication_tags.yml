@@ -24,3 +24,5 @@
 
 - tag: "resolution"
   name: High Resolution
+- tag: "compression"
+  name: Model & Data Compression

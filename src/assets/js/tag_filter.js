@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".tag-btn");
   const publications = document.querySelectorAll(".publication-item");
   let activeTags = new Set();
+  let activeConference = "all";
+  const venueButtons = document.querySelectorAll(".venue-filter");
 
   function updateVisibility() {
     publications.forEach(pub => {
@@ -10,13 +12,24 @@ document.addEventListener("DOMContentLoaded", function () {
         : [];
 
       // Logic: Show if 'all' is active OR if no tags are selected OR if the pub has EVERY active tag
-      const isVisible = activeTags.size === 0 || 
-                        activeTags.has("all") || 
+      const matchesTopic = activeTags.size === 0 ||
+                        activeTags.has("all") ||
                         Array.from(activeTags).every(tag => pubTags.includes(tag));
 
-      pub.classList.toggle("hidden-publication", !isVisible);
+      const matchesVenue = activeConference === "all" || pub.dataset.conference === activeConference;
+      pub.classList.toggle("hidden-publication", !(matchesTopic && matchesVenue));
     });
 
+    const result = document.querySelector('.publication-results');
+    if (result) {
+      const count = Array.from(publications).filter(pub => !pub.classList.contains('hidden-publication')).length;
+      result.textContent = count ? `${count} of ${publications.length} publications` : 'No publications match these filters. Select All and All venues to reset.';
+    }
+    venueButtons.forEach(button => {
+      const selected = button.dataset.conference === activeConference;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
     // Update Button Styles
     buttons.forEach(btn => {
       const isActive = activeTags.has(btn.dataset.tag) || (btn.dataset.tag === "all" && activeTags.size === 0);
@@ -31,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
     updateVisibility();
   }
 
+  venueButtons.forEach(button => button.addEventListener('click', () => {
+    activeConference = button.dataset.conference;
+    updateVisibility();
+  }));
   // Bind click events to buttons
   buttons.forEach(button => {
     button.addEventListener("click", () => handleTagClick(button.dataset.tag));
@@ -39,15 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- FIX: Logic to read the # from the URL ---
   function syncFromHash() {
     const hash = window.location.hash.replace("#", "");
+    activeTags.clear();
     if (hash) {
-      activeTags.clear();
       // Supports single (#biomass) or multiple (#biomass,canopy)
       hash.split(",").forEach(t => {
         const cleanTag = t.trim();
         if (cleanTag) activeTags.add(cleanTag);
       });
-      updateVisibility();
     }
+    updateVisibility();
   }
 
   // Run on load

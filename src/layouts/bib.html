@@ -1,312 +1,51 @@
 ---
 layout: default
 ---
-
-<div class="publication-item d-flex" data-tags="{{ entry.tags | join: ',' }}" style="margin-bottom: 1.5rem; padding: 0.8rem; border: 1px solid #e8e8e8; border-radius: 6px;">
-  <div class="pub-thumb-col">
-    {% if entry.preview %}
-      <div class="publication-thumbnail mr-3">
-        <img src="{{ '/assets/images/publications_preview/' | append: entry.preview | relative_url }}"
-              class="rounded" data-zoomable
-              style="width:100%; height:100%; object-fit:cover; object-position:right center;">
-      </div>
-    {% endif %}
-  </div>
+{% assign venue = entry.booktitle | default: entry.journal %}
+{% assign venue_lower = venue | downcase %}
+{% assign publication_kind = 'Journal' %}
+{% if entry.conference %}
+  {% assign publication_kind = entry.conference %}
+{% elsif venue_lower contains 'workshop' %}
+  {% assign publication_kind = 'Workshop' %}
+{% elsif venue_lower contains 'arxiv' or venue == nil or venue == '' %}
+  {% assign publication_kind = 'Preprint' %}
+{% elsif entry.type == 'inbook' %}
+  {% assign publication_kind = 'Book chapter' %}
+{% elsif entry.booktitle %}
+  {% assign publication_kind = 'Conference' %}
+{% endif %}
+<article class="publication-item d-flex" data-tags="{{ entry.tags | join: ',' }}" data-conference="{{ entry.conference | default: 'other' }}">
+  {% if entry.preview %}
+  <div class="pub-thumb-col"><div class="publication-thumbnail mr-3"><img src="{{ '/assets/images/publications_preview/' | append: entry.preview | relative_url }}" alt="Figure from {{ entry.title | escape }}" loading="lazy" data-zoomable></div></div>
+  {% endif %}
   <div class="publication-content flex-grow-1">
-    <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; color: #333;">{{ entry.title }}</h4>
-    
-    <p style="margin-bottom: 0.4rem; font-size: 0.75rem; color: #555;">
-      {% assign author_array = entry.author | split: " and " %}
-      {% assign penultimate_author_index = author_array.size | minus: 1 %}
-      {% for author_name in author_array %}
-        {% assign name_parts = author_name | split: ", " %}
-        {% if name_parts.size > 1 %}
-          {% assign last_name = name_parts[0] %}
-          {% assign first_name = name_parts[1] %}
-        {% else %}
-          {% assign name_words = author_name | split: " " %}
-          {% assign last_name = name_words | last %}
-          {% assign name_words_butlast = name_words | pop %}
-          {% assign first_name = name_words_butlast | join: " " %}
-        {% endif %}
-        
-        {% if forloop.index > 3 and author_array.size > 4 and forloop.index < author_array.size %}
-          {% if forloop.index == 4 %}
-            and {{ author_array.size | minus: 3 }} more authors
-            {% break %}
-          {% endif %}
-        {% else %}
-          {% if first_name contains "." %}
-            {{ first_name }}
-          {% else %}
-            {{ first_name | slice: 0 }}.
-          {% endif %}
-          <span>{{ last_name }}</span>{% unless forloop.last %}, {% endunless %}
-          {% if forloop.last == false and forloop.index == penultimate_author_index %}
-            and 
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </p>
-    
-    <div style="display: flex; align-items: center; margin-bottom: 0.4rem;">
-      {% if entry.journal contains "arXiv" or entry.url contains "arxiv" %}
-        <span style="background-color: #47a88a; color: white; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 3px; margin-right: 0.5rem; text-transform: uppercase; font-weight: 500;">Preprint</span>
-        <span style="color: #666; font-style: italic; font-size: 0.7rem;">arXiv preprint{% if entry.arxiv %} arXiv:{{ entry.arxiv }}{% endif %}</span>
-      {% elsif entry.booktitle contains "Workshop" %}
-        <span style="background-color: #47a88a; color: white; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 3px; margin-right: 0.5rem; text-transform: uppercase; font-weight: 500;">Workshop</span>
-        <span style="color: #666; font-style: italic; font-size: 0.7rem;">{{ entry.booktitle }}</span>
-      {% else %}
-        <span style="color: #666; font-style: italic; font-size: 0.7rem;">{{ entry.journal | default: entry.booktitle }}</span>
-      {% endif %}
-      
-      <span style="margin-left: auto; color: #47a88a; font-size: 0.9rem; font-weight: 500;">{{ entry.year }}</span>
-    </div>
-    
+    <div class="publication-meta"><span class="publication-venue-badge{% if entry.conference %} conference-badge{% endif %}">{{ publication_kind }}{% if entry.conference %} {{ entry.year | slice: -2, 2 }}{% endif %}</span><span class="publication-year">{{ entry.year }}</span></div>
+    <h4>{% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% else %}{{ entry.title }}{% endif %}</h4>
+    <p class="publication-authors">{% assign authors = entry.author | split: ' and ' %}{% for author in authors %}{% assign parts = author | split: ', ' %}{% if parts.size > 1 %}{{ parts[1] }} {{ parts[0] }}{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    {% if venue %}<p class="publication-venue">{{ venue }}</p>{% endif %}
+    <div class="publication-topic-tags">{% assign topics = entry.tags | split: ',' %}{% for topic in topics %}{% assign clean_topic = topic | strip %}{% for known in site.data.publication_tags %}{% if known.tag == clean_topic %}<span>{{ known.name }}</span>{% endif %}{% endfor %}{% endfor %}</div>
+    {% assign detail_id = entry.title | slugify %}
     <div class="publication-links">
-
-      {% if entry.abstract %}
-        <span class="abs-wrapper">
-          <a  href="{{ entry.abstract }}" 
-            style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank" 
-             data-abstract="{{ entry.abstract_preview | default: entry.abstract }}"> <!-- | truncate: 200 }}"> -->
-            ABS
-          </a>
-          <span class="abstract-tooltip">
-             {{ entry.abstract_preview | default: entry.abstract }} <!-- | truncate: 200 }} -->
-          </span>
-        </span>
-      {% endif %}
-      {% if entry.pdf and entry.pdf != "" and entry.pdf != "false" and entry.pdf != "{}" %}
-        <a href="{{ entry.pdf }}" style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">PDF</a>
-      {% endif %}
-      
-      {% if entry.code and entry.code != "" and entry.code != "false" and entry.code != "{}" %}
-        <a href="{{ entry.code }}" style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">CODE</a>
-      {% endif %}
-      
-      {% if entry.doi and entry.doi != "" and entry.doi != "false" and entry.doi != "{}" %}
-        <a href="https://doi.org/{{ entry.doi }}" style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">DOI</a>
-      {% endif %}
-      
-      {% if entry.url and entry.url != "" and entry.url != "false" and entry.url != "{}" and entry.url contains "earth" %}
-        <a href="{{ entry.url }}" style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;" target="_blank">EARTH ENGINE</a>
-      {% endif %}
-
-      {% comment %} === Contact Main Author Button === {% endcomment %}
-      {% assign matched_researcher = site.data.team.researchers 
-        | where: "id", entry.author_id 
-        | first %}
-
-      {% if matched_researcher %}
-        <a href="{{ matched_researcher.website_url }}" 
-          style="display: inline-block; background-color: rgba(71, 168, 138, 0.15); color: #47a88a; border: none; padding: 0.15rem 0.4rem; font-size: 0.6rem; margin-right: 0.3rem; border-radius: 3px; text-decoration: none; font-weight: 500;"
-          target="_blank">
-          CONTACT
-        </a>
-      {% endif %}
+      {% if entry.url %}<a href="{{ entry.url }}">Paper ↗</a>{% endif %}
+      {% if entry.pdf and entry.pdf != 'false' and entry.pdf != '{}' and entry.pdf != '' %}<a href="{{ entry.pdf }}">PDF ↗</a>{% endif %}
+      {% if entry.code and entry.code != 'false' and entry.code != '{}' and entry.code != '' %}<a href="{{ entry.code }}">Code ↗</a>{% endif %}
+      {% if entry.doi and entry.doi != 'false' and entry.doi != '{}' and entry.doi != '' %}{% assign clean_doi = entry.doi | remove: 'https://doi.org/' %}<a href="https://doi.org/{{ clean_doi }}">DOI ↗</a>{% endif %}
+      {% if entry.author_id %}{% assign author_profile = site.data.team.researchers | where: 'id', entry.author_id | first %}{% if author_profile.website_url %}<a href="{{ author_profile.website_url }}">Contact ↗</a>{% endif %}{% endif %}
+      {% if entry.abstract_preview %}<button type="button" data-toggle="collapse" data-target="#abstract-{{ detail_id }}" aria-controls="abstract-{{ detail_id }}" aria-expanded="false">Abstract</button>{% endif %}
+      <button type="button" data-toggle="collapse" data-target="#bibtex-{{ detail_id }}" aria-controls="bibtex-{{ detail_id }}" aria-expanded="false">BibTeX</button>
+    </div>
+    <div class="publication-details">
+      {% if entry.abstract_preview %}<div class="collapse" id="abstract-{{ detail_id }}"><div class="publication-detail-body"><p>{{ entry.abstract_preview }}</p>{% if entry.abstract %}<a href="{{ entry.abstract }}">Read full abstract ↗</a>{% endif %}</div></div>{% endif %}
+      <div class="collapse" id="bibtex-{{ detail_id }}"><pre><code>@{{ entry.type | default: 'article' }}{ {{- entry.key }},
+  title = { {{- entry.title -}} },
+  author = { {{- entry.author -}} },
+  year = { {{- entry.year -}} }{% if entry.booktitle %},
+  booktitle = { {{- entry.booktitle -}} }{% elsif entry.journal %},
+  journal = { {{- entry.journal -}} }{% endif %}{% if entry.doi %},
+  doi = { {{- entry.doi | remove: 'https://doi.org/' -}} }{% endif %}{% if entry.url %},
+  url = { {{- entry.url -}} }{% endif %}
+}</code></pre></div>
     </div>
   </div>
-</div>
-
-<div id="image-lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-</div>
-<style>
-/* Lightbox background */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
-}
-
-/* Image */
-.lightbox-content {
-  display: block;
-  margin: auto;
-  max-width: 85%;
-  max-height: 80%;
-  border-radius: 6px;
-}
-
-/* Close button */
-.lightbox-close {
-  position: absolute;
-  top: 25px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-  font-weight: 300;
-  cursor: pointer;
-}
-
-.publication-thumbnail {
-  width: 110px;
-  height: 110px;
-  display: flex;
-  justify-content: flex-end;
-  overflow: visible; /* <-- allow pop-out */
-  position: relative;
-}
-
-.publication-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: zoom-in;
-  border-radius: 6px;
-}
-
-.publication-thumbnail:hover img {
-  transform: scale(1.5);
-  z-index: 10;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  position: relative;
-}
-
-.publications {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.publication-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  font-size: 0.7rem;
-}
-
-.publication-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-
-.publication-authors {
-  font-size: 0.7rem;
-  margin-bottom: 0.2rem;
-}
-
-.publication-btn {
-  background-color: rgba(71, 168, 138, 0.7);
-  color: white;
-  border: none;
-  padding: 0.15rem 0.4rem;
-  font-size: 0.55rem;
-  margin-right: 4px;
-  border-radius: 3px;
-  transition: all 0.2s ease;
-}
-
-.publication-btn:hover {
-  background-color: rgba(71, 168, 138, 1);
-  color: white;
-}
-
-.publication-item:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-  border-color: #47a88a;
-}
-
-ol {
-  list-style: none;
-  padding-left: 0;
-}
-
-.authors {
-  color: #666;
-  font-style: italic;
-  margin: 5px 0;
-}
-
-.venue {
-  color: #888;
-  margin: 5px 0;
-}
-
-.date {
-  color: #888;
-  margin: 5px 0;
-}
-
-.links {
-  margin-top: 10px;
-}
-
-.links a {
-  display: inline-block;
-  margin-right: 15px;
-  color: #47a88a;
-  text-decoration: none;
-}
-
-.links a:hover {
-  text-decoration: underline;
-}
-
-.abstract {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
-}
-
-.hidden-publication {
-  display: none !important;
-}
-
-/* Abstract hover tooltip */
-.abs-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.abs-wrapper .abstract-tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: 320px;
-  background-color: rgb(71, 168, 137); 
-  color: #ffffff;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  border-radius: 6px;
-  padding: 10px 14px;
-  position: absolute;
-  z-index: 100;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-
-  /* Arrow */
-  &::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: #333;
-  }
-}
-
-.abs-wrapper:hover .abstract-tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-</style>
+</article>
