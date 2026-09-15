@@ -168,6 +168,32 @@ page_header:
           </figure>
         </div>
       </div></div>
+      <div class="tiles poster-portrait-row"><div class="items row">
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/Brick_kilns_Eurips_2025.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="Brick Kilns Across India: A Temporal Analysis of Brick Kiln Distribution and Technology Types · EurIPS 2025" data-poster-width="2830" data-poster-height="4000" data-poster-pdf="{{ '/assets/posters/Brick_kilns_Eurips_2025.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: Brick Kilns Across India · EurIPS 2025"><img src="{{ '/assets/posters/Brick_kilns_Eurips_2025-thumb.jpg' | relative_url }}" width="708" height="1000" alt="Brick Kilns Across India: A Temporal Analysis of Brick Kiln Distribution and Technology Types — Sugandha Arora and co-authors" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">Brick Kilns Across India<br><small>EurIPS 2025 · View poster</small></h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+        <div class="item col-sm-6 col-lg-3">
+          <figure class="overlay overlay1 rounded poster-placeholder">
+            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
+            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          </figure>
+        </div>
+      </div></div>
     </section>
     <header class="publications-heading">
       <h2>Publications</h2>
