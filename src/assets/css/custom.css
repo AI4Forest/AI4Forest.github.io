@@ -354,3 +354,14 @@ a.badge.news-category-badge:hover {
     font-weight: 500;
     margin-right: 0.2rem;
 }
+
+/* Speaker portraits and attribution on event cards. */
+.news-page .news-card .post-thumb[src*="alexander-brenning"] {
+    object-fit: contain;
+    background: #f5f8f7;
+}
+.photo-credit {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.85rem;
+}

@@ -11,8 +11,11 @@ layout: default
           <div class="post mb-0">
             {% if page.post_image %}
             <figure class="rounded text-center">
-              <img src="{{page.post_image}}" alt="{{page.title}}"/>
+              <img src="{{page.post_image}}" alt="{{page.post_image_alt | default: page.title}}"/>
             </figure>
+            {% if page.photo_credit %}
+            <p class="photo-credit text-center">Photo: <a href="{{ page.photo_source }}">{{ page.photo_credit }}</a></p>
+            {% endif %}
             {% endif %}
             <div class="space40"></div>
             <div class="post-content">

@@ -1,14 +1,17 @@
 {% if post.post_image %}
 <figure class="overlay {% unless page.news_theme %}overlay1{% endunless %} rounded mb-30">
   {% if page.news_theme %}
-  <img class="post-thumb" src="{{post.post_image}}" alt="{{post.title}}"/>
+  <img class="post-thumb" src="{{post.post_image}}" alt="{{post.post_image_alt | default: post.title}}"/>
   {% else %}
-	<a href="{{post.url}}"><img class="post-thumb" src="{{post.post_image}}" alt="{{post.title}}"/></a>
+	<a href="{{post.url}}"><img class="post-thumb" src="{{post.post_image}}" alt="{{post.post_image_alt | default: post.title}}"/></a>
   <figcaption>
     <h5 class="from-top mb-0">Read More</h5>
   </figcaption>
   {% endif %}
 </figure>
+{% if post.photo_credit %}
+<p class="photo-credit">Photo: <a href="{{ post.photo_source }}">{{ post.photo_credit }}</a></p>
+{% endif %}
 {% endif %}
 {% if post.categories %}
  <div class="category">
@@ -34,7 +37,11 @@
     </summary>
     <div class="news-expand-content">
       <div class="news-expand-inner">
+        {% if post.full_event_content %}
+        {{ post.content }}
+        {% else %}
         <p>{{ clean_content | truncatewords: 85 }}</p>
+        {% endif %}
       </div>
     </div>
   </details>
@@ -53,6 +60,7 @@
       <time datetime="{{ post.event_date | date: '%Y-%m-%d' }}{% if post.event_time %}T{{ post.event_time }}{% endif %}">
         {{ post.event_date | date: "%Y-%m-%d" }}{% if post.event_time %}, {{ post.event_time }}{% endif %} {% if post.event_timezone %}{{ post.event_timezone }}{% else %}CEST{% endif %}
       </time>
+      {% if post.event_time_note %}<span>({{ post.event_time_note }})</span>{% endif %}
       {% else %}
       <strong>Posted:</strong>
       <time datetime="{{ post.date | date_to_xmlschema }}">
