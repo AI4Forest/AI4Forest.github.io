@@ -11,8 +11,8 @@ main_menu:
     url: "/research/"
     menu_type: "primary"
 
-  - text: "News"
-    url: "/news/"
+  - text: "Events"
+    url: "/events/"
     menu_type: "primary"
 
   - text: "Contact"
