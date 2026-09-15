@@ -162,9 +162,9 @@ page_header:
           </figure>
         </div>
         <div class="item col-sm-6 col-lg-3">
-          <figure class="overlay overlay1 rounded poster-placeholder">
-            <span><img src="{{ '/assets/posters/placeholder-tree.png' | relative_url }}" width="1024" height="1024" alt="Tree illustration: placeholder for a future research poster" loading="lazy"></span>
-            <figcaption><h5 class="from-top mb-0">Coming soon</h5></figcaption>
+          <figure class="overlay overlay1 rounded">
+            <a href="{{ '/assets/posters/CDSC.jpg' | relative_url }}" data-toggle="modal" data-target="#poster-preview" data-poster-title="AI4Forest · CDSC" data-poster-width="2830" data-poster-height="4000" data-poster-pdf="{{ '/assets/posters/CDSC.pdf' | relative_url }}" aria-haspopup="dialog" aria-label="View poster: AI4Forest · CDSC"><img src="{{ '/assets/posters/CDSC-thumb.jpg' | relative_url }}" width="708" height="1000" alt="AI4Forest CDSC poster: Tree Canopy Height, project overview and forest disturbances" loading="lazy"></a>
+            <figcaption><h5 class="from-top mb-0">AI4Forest<br><small>CDSC · View poster</small></h5></figcaption>
           </figure>
         </div>
       </div></div>
