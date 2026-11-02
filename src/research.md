@@ -63,7 +63,7 @@ page_header:
   .publication-content { min-width:0; }
   .publication-meta { display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-bottom:.6rem; }
   .publication-venue-badge { display:inline-block; padding:.2rem .55rem; border-radius:.3rem; background:#edf3f0; color:#47645a; font-size:.64rem; font-weight:700; letter-spacing:.04em; }
-  .publication-venue-badge.conference-badge { background:#286d5b; color:#fff; }
+  .publication-venue-badge.conference-badge { background:#edf3f0; color:#47645a; }
   .publication-year { font-size:.8rem; color:#60737a; font-variant-numeric:tabular-nums; }
   .publications-page .publication-content h4 { margin-bottom:.45rem; }
   .publication-content h4 a { color:inherit; }
@@ -212,9 +212,11 @@ page_header:
           All
         </button>
       </div>
-        <div class="publication-conference-filters" role="group" aria-label="Filter publications by conference">
-          <span>Conference</span>
+        <div class="publication-conference-filters" role="group" aria-label="Filter publications by venue or type">
+          <span>Venue</span>
           <button type="button" class="venue-filter active" data-conference="all" aria-pressed="true">All venues</button>
+          <button type="button" class="venue-filter" data-conference="journal" aria-pressed="false">Journals</button>
+          <button type="button" class="venue-filter" data-conference="conference" aria-pressed="false">Conferences</button>
           <button type="button" class="venue-filter" data-conference="ICML" aria-pressed="false">ICML</button>
           <button type="button" class="venue-filter" data-conference="AISTATS" aria-pressed="false">AISTATS</button>
           <button type="button" class="venue-filter" data-conference="CPAL" aria-pressed="false">CPAL</button>

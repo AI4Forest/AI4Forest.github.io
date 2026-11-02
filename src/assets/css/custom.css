@@ -360,6 +360,15 @@ a.badge.news-category-badge:hover {
     object-fit: contain;
     background: #f5f8f7;
 }
+.news-page .news-card .post-thumb[src*="nico-lang-talk"] {
+    object-fit: contain;
+    background: #f5f8f7;
+}
+.news-page .news-card .post-thumb[src*="nico-lang-talk-limited-domain"] {
+    object-fit: contain;
+    object-position: left top;
+    background: #f5f8f7;
+}
 .photo-credit {
     font-size: 0.75rem;
     line-height: 1.4;

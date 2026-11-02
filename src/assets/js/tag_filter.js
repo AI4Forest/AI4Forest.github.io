@@ -16,7 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         activeTags.has("all") ||
                         Array.from(activeTags).every(tag => pubTags.includes(tag));
 
-      const matchesVenue = activeConference === "all" || pub.dataset.conference === activeConference;
+      const pubType = pub.dataset.publicationType || "other";
+      let matchesVenue = activeConference === "all";
+      if (!matchesVenue) {
+        if (activeConference === "journal") {
+          matchesVenue = pubType === "journal";
+        } else if (activeConference === "conference") {
+          matchesVenue = pubType === "conference" || pubType === "workshop";
+        } else {
+          matchesVenue = pub.dataset.conference === activeConference;
+        }
+      }
       pub.classList.toggle("hidden-publication", !(matchesTopic && matchesVenue));
     });
 

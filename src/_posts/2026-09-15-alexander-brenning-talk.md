@@ -13,6 +13,7 @@ full_event_content: true
 event_date: 2026-10-15
 event_time: "10:00"
 event_timezone: CEST
+talk_series_group: past
 ---
 
 **Speaker:** Prof. Dr. Alexander Brenning, Friedrich Schiller University Jena, Germany

@@ -18,7 +18,7 @@ layout: default
       <section class="mb-50" aria-labelledby="talk-series-heading">
         <h2 id="talk-series-heading">AI4Forest Talk Series</h2>
         {% assign today = site.time | date: '%Y-%m-%d' %}
-        {% assign talks = site.posts | where: 'news_label', 'Talk' | sort: 'event_date' %}
+        {% assign talks = site.posts | where: 'news_label', 'Talk' | sort: 'event_date' | reverse %}
         {% assign talk_groups = 'Upcoming Talks,Past Talks' | split: ',' %}
         {% for group in talk_groups %}
         <section class="mt-30" aria-labelledby="{{ group | slugify }}">
@@ -28,10 +28,15 @@ layout: default
             <div class="row">
               {% for post in talks %}
                 {% assign event_day = post.event_date | date: '%Y-%m-%d' %}
+                {% assign talk_series_group = post.talk_series_group | downcase %}
                 {% assign show_talk = false %}
-                {% if group == 'Upcoming Talks' and event_day >= today %}
+                {% if group == 'Upcoming Talks' and talk_series_group == 'upcoming' %}
                   {% assign show_talk = true %}
-                {% elsif group == 'Past Talks' and event_day < today %}
+                {% elsif group == 'Past Talks' and talk_series_group == 'past' %}
+                  {% assign show_talk = true %}
+                {% elsif talk_series_group == blank and group == 'Upcoming Talks' and event_day >= today %}
+                  {% assign show_talk = true %}
+                {% elsif talk_series_group == blank and group == 'Past Talks' and event_day < today %}
                   {% assign show_talk = true %}
                 {% endif %}
                 {% if show_talk %}

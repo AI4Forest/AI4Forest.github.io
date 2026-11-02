@@ -15,12 +15,31 @@ layout: default
 {% elsif entry.booktitle %}
   {% assign publication_kind = 'Conference' %}
 {% endif %}
-<article class="publication-item d-flex" data-tags="{{ entry.tags | join: ',' }}" data-conference="{{ entry.conference | default: 'other' }}">
+{% assign publication_badge = publication_kind %}
+{% assign year_suffix = entry.year | append: '' | slice: -2, 2 %}
+{% assign publication_type = 'journal' %}
+{% if entry.conference or entry.booktitle %}
+  {% assign publication_type = 'conference' %}
+{% elsif publication_kind == 'Preprint' %}
+  {% assign publication_type = 'preprint' %}
+{% elsif publication_kind == 'Workshop' %}
+  {% assign publication_type = 'workshop' %}
+{% elsif publication_kind == 'Book chapter' %}
+  {% assign publication_type = 'book_chapter' %}
+{% endif %}
+{% if entry.conference %}
+  {% assign publication_badge = publication_kind | append: ' ' | append: year_suffix %}
+{% elsif entry.booktitle and venue %}
+  {% assign publication_badge = venue %}
+{% elsif publication_kind == 'Journal' and venue %}
+  {% assign publication_badge = venue %}
+{% endif %}
+<article class="publication-item d-flex" data-tags="{{ entry.tags | join: ',' }}" data-conference="{{ entry.conference | default: 'other' }}" data-publication-type="{{ publication_type }}">
   {% if entry.preview %}
   <div class="pub-thumb-col"><div class="publication-thumbnail mr-3"><img src="{{ '/assets/images/publications_preview/' | append: entry.preview | relative_url }}" alt="Figure from {{ entry.title | escape }}" loading="lazy" data-zoomable></div></div>
   {% endif %}
   <div class="publication-content flex-grow-1">
-    <div class="publication-meta"><span class="publication-venue-badge{% if entry.conference %} conference-badge{% endif %}">{{ publication_kind }}{% if entry.conference %} {{ entry.year | slice: -2, 2 }}{% endif %}</span><span class="publication-year">{{ entry.year }}</span></div>
+    <div class="publication-meta"><span class="publication-venue-badge{% if entry.conference or entry.booktitle %} conference-badge{% endif %}">{{ publication_badge }}</span><span class="publication-year">{{ entry.year }}</span></div>
     <h4>{% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% else %}{{ entry.title }}{% endif %}</h4>
     <p class="publication-authors">{% assign authors = entry.author | split: ' and ' %}{% for author in authors %}{% assign parts = author | split: ', ' %}{% if parts.size > 1 %}{{ parts[1] }} {{ parts[0] }}{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
     {% if venue %}<p class="publication-venue">{{ venue }}</p>{% endif %}
